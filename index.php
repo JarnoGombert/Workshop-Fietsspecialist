@@ -20,15 +20,15 @@ $row['id'] = 1;
     <title>Document</title>
 </head>
 <body>
-    <header><?php include('php/header.php'); ?></header>
+    <header><?php include('header.php'); ?></header>
     <main>
         <?php 
         if ($row['id'] == "1") {
-            include('php/startpagina.php');
+            include('startpagina.php');
         } else {
-            include('php/vervolgpagina.php');
+            include('vervolgpagina.php');
         } ?>
     </main>
-    <footer><?php include('php/footer.php'); ?></footer>
+    <footer><?php include('footer.php'); ?></footer>
 </body>
 </html>
