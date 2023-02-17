@@ -1,0 +1,10 @@
+//RewriteRule ^cms/$ https://www.sitework.nl/cms/index.php [R=301]
+RewriteRule ^([^/]*)/([^/]*)/([^/]*)/$ /index.php?page=$1&title=$2&beginnenbij=$3 [L]
+RewriteRule ^([^/]*)/([^/]*)/$ /index.php?page=$1&title=$2 [L]
+RewriteRule ^([^/]*)/$ /index.php?title=$1 [L]
+
+ErrorDocument 400 /400.shtml
+ErrorDocument 401 /401.shtml
+ErrorDocument 403 /403.shtml
+ErrorDocument 404 /404.shtml
+ErrorDocument 500 /500.shtml
