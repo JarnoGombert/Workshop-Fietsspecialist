@@ -1,4 +1,8 @@
 <?php
+require "cms/login/config.php";
+session_start(); 
+ob_start(); 
+
 // voorwaarde startpagina ophalen
 // ==============================
 if (!$_GET["page"] && !$_GET["title"]) {
