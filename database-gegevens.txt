@@ -1,0 +1,3 @@
+Database: jgombert_digifixx
+gebruikersnaam: jgombert_digifixx
+wachtwoord: 5.H+AmgFH_Ge
