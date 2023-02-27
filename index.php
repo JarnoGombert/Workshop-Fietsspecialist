@@ -1,13 +1,22 @@
 <?php
-// ($sql = $mysqli->prepare(
-//         "SELECT *,DATE_FORMAT(datum, '%W %e %M %Y') as datum1 FROM digifixx WHERE paginaurl = ? $taalquery AND status = 'actief'"
-//     )) or die($mysqli->error . __LINE__);
-//     $voorwaarde = $_GET["title"];
-//     $sql->bind_param("s", $voorwaarde);
-// $sql->execute();
-// $result = $sql->get_result();
-// $row = $result->fetch_assoc();
-$row['id'] = 1;
+// voorwaarde startpagina ophalen
+// ==============================
+if (!$_GET["page"] && !$_GET["title"]) {
+    ($sql = $mysqli->prepare(
+        "SELECT * FROM digifixxcms WHERE id = ? AND status = 'actief'"
+    )) or die($mysqli->error . __LINE__);
+    $voorwaarde = 1;
+    $sql->bind_param("i", $voorwaarde);
+} else {
+    ($sql = $mysqli->prepare(
+        "SELECT * FROM digifixxcms WHERE paginaurl = ? AND status = 'actief'"
+    )) or die($mysqli->error . __LINE__);
+    $voorwaarde = $_GET["title"];
+    $sql->bind_param("s", $voorwaarde);
+}
+$sql->execute();
+$result = $sql->get_result();
+$row = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +26,7 @@ $row['id'] = 1;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title><?=$row['item1'];?></title>
 </head>
 <body>
     <header><?php include('header.php'); ?></header>
