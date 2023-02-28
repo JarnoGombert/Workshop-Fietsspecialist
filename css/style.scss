@@ -19,41 +19,41 @@ body
 }
 header
 {
+    background-color: $primary-color;
     width: 100%;
-    height: 159px;
-    border-bottom: 2px solid 333;
-
-    @include mq(1400px){
-        background-color: green;
-    }
-    @include mm-mx(1400px, 1440px){
-        background-color: red;
-    }
-    @include mm(1440px){
-        background-color: $primary-color;
-    }
+    height: 125px;
 }
 .Header-Bar
 {
-    width: 100%;
+    width: auto;
+    padding: 0 30px;
     height: 100%;
     display: flex;
-}
-.Logo-Header
-{
-    width: 40%;
-    height: 100%;
-}
-.image-Logo-Header
-{
-    width: 100px;
-    height: 100px;
-}
-.Text-Header
-{
-    width: 60%;
-    height: 100%;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+
+    .Logo-Header
+    {
+        height: 100%;
+        display: flex;
+        padding: 6px 0;
+
+        .image-Logo-Header
+        {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .Text-Header
+    {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .nav-menu{
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+    }
 }
 
