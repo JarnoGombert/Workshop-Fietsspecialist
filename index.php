@@ -2,7 +2,6 @@
 require "cms/login/config.php";
 session_start(); 
 ob_start(); 
-
 // voorwaarde startpagina ophalen
 // ==============================
 if (!$_GET["page"] && !$_GET["title"]) {
@@ -21,6 +20,7 @@ if (!$_GET["page"] && !$_GET["title"]) {
 $sql->execute();
 $result = $sql->get_result();
 $row = $result->fetch_assoc();
+print_r($row);
 ?>
 
 <!DOCTYPE html>
