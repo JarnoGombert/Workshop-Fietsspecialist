@@ -2,12 +2,19 @@
 // vul hier alle databasegegevens in
 // =================================
 
-define("HOST", "localhost"); // host
-define("USER", "jgombert_digifixx"); // gebruikersnaam database
-define("PASSWORD", "5.H+AmgFH_Ge"); // wachtwoord database
-define("DATABASE", "jgombert_digifixx"); // naam database 
+// define("HOST", "localhost"); // host
+// define("USER", "jgombert_digifixx"); // gebruikersnaam database
+// define("PASSWORD", "5.H+AmgFH_Ge"); // wachtwoord database
+// define("DATABASE", "jgombert_digifixx"); // naam database 
 
-$mysqli = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+// $mysqli = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+
+define("HOST", "localhost"); // host
+define("USER", "root"); // gebruikersnaam database
+define("PASSWORD", ""); // wachtwoord database
+define("DATABASE", "jgombert_digifixx"); // naam database  
+
+$mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
 
 // instellingen uit cms ophalen
 // ============================
