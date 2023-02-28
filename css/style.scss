@@ -11,11 +11,15 @@
 }
 
 $primary-color: #DDD;
+$logo-color: #414850;
+$white: #fff;
+$font: 'Rosario', sans-serif;
 
 body
 {
     margin: 0 auto;
     scroll-behavior: smooth;
+    font-family: $font;
 }
 #header-main{
     background-color: $primary-color;
