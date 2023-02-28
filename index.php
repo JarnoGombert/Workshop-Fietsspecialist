@@ -21,7 +21,7 @@ ob_start();
 // $sql->execute();
 // $result = $sql->get_result();
 // $row = $result->fetch_assoc();
-$row['id'] == 1;
+$row['id'] = 1;
 ?>
 
 <!DOCTYPE html>
