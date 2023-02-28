@@ -6,3 +6,6 @@
         <?php include 'php/menu.php';?>
     </div>
 </div>
+<div id="hero">
+    <?php include 'php/slider.php';?>
+</div>

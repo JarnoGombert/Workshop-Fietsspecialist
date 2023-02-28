@@ -29,9 +29,20 @@ $row = $result->fetch_assoc();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/slick/slick.css">
+    <link rel="stylesheet" href="/slick/slick-theme.css">
+
+
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+    <!-- jquery files -->
+    <script type="text/javascript" src="<?php echo $url; ?>/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo $url; ?>/jquery/digifixx.js"></script>
+    <script src="/slick/slick.js"></script>
+
+
     <title><?php echo $row['item1'];?></title>
 </head>
 <body>
