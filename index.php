@@ -4,23 +4,23 @@ session_start();
 ob_start(); 
 // voorwaarde startpagina ophalen
 // ==============================
-if (!$_GET["page"] && !$_GET["title"]) {
+//if (!$_GET["page"] && !$_GET["title"]) {
     $sql = $mysqli->prepare(
         "SELECT * FROM digifixxcms WHERE id = ? AND status = 'actief'"
     ) or die($mysqli->error . __LINE__);
     $voorwaarde = 1;
     $sql->bind_param("i", $voorwaarde);
-} else {
-    $sql = $mysqli->prepare(
-        "SELECT * FROM digifixxcms WHERE paginaurl = ? AND status = 'actief'"
-    ) or die($mysqli->error . __LINE__);
-    $voorwaarde = $_GET["title"];
-    $sql->bind_param("s", $voorwaarde);
-}
+// } else {
+//     $sql = $mysqli->prepare(
+//         "SELECT * FROM digifixxcms WHERE paginaurl = ? AND status = 'actief'"
+//     ) or die($mysqli->error . __LINE__);
+//     $voorwaarde = $_GET["title"];
+//     $sql->bind_param("s", $voorwaarde);
+// }
 $sql->execute();
 $result = $sql->get_result();
 $row = $result->fetch_assoc();
-print_r($row);
+//print_r($row);
 ?>
 
 <!DOCTYPE html>
