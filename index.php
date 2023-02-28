@@ -30,7 +30,8 @@ $row = $result->fetch_assoc();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
     <title><?=$row['item1'];?></title>
 </head>
 <body>
