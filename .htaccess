@@ -1,6 +1,12 @@
+RewriteEngine On
+
+##RewriteRule ^cms/$ https://www.jgombert.gc-webhosting.nl/cms/index.php [R=301]\
 RewriteRule ^([^/]*)/([^/]*)/([^/]*)/$ /index.php?page=$1&title=$2&beginnenbij=$3 [L]
 RewriteRule ^([^/]*)/([^/]*)/$ /index.php?page=$1&title=$2 [L]
 RewriteRule ^([^/]*)/$ /index.php?title=$1 [L]
+
+RewriteCond %{REQUEST_URI} !(/$|\.) 
+RewriteRule (.*) %{REQUEST_URI}/ [R=301,L]
  
 ErrorDocument 400 /400.shtml
 ErrorDocument 401 /401.shtml
