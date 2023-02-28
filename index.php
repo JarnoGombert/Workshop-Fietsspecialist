@@ -5,7 +5,7 @@ ob_start();
 
 // voorwaarde startpagina ophalen
 // ==============================
-if (!isset($_GET["page"]) && !isset($_GET["title"])) {
+if (!$_GET["page"] && !$_GET["title"]) {
     $sql = $mysqli->prepare(
         "SELECT * FROM digifixxcms WHERE id = ? AND status = 'actief'"
     ) or die($mysqli->error . __LINE__);
