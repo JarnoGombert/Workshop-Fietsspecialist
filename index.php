@@ -32,7 +32,7 @@ $row = $result->fetch_assoc();
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
-    <title><?=$row['item1'];?></title>
+    <title><?php echo $row['item1'];?></title>
 </head>
 <body>
     <header><?php include('header.php'); ?></header>
