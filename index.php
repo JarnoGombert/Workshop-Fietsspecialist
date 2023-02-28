@@ -31,9 +31,13 @@ $row['id'] = 1;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+<<<<<<< HEAD
+    <title>Document</title>
+=======
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
     <title><?=$row['item1'];?></title>
+>>>>>>> 94f92e6356a7c1825c50c803f3113d49872dae7c
 </head>
 <body>
     <header><?php include('header.php'); ?></header>
