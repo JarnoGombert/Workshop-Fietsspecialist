@@ -22,7 +22,6 @@ header {
   header {
     background-color: #DDD;
   }
-<<<<<<< HEAD
 }
 
 .Header-Bar {
@@ -44,9 +43,6 @@ header {
 .Text-Header {
   width: 60%;
   height: 100%;
-  text-align: center;
   align-items: center;
-  justify-content: space-between;
-=======
->>>>>>> 94f92e6356a7c1825c50c803f3113d49872dae7c
+  justify-content: space-around;
 }/*# sourceMappingURL=style.css.map */

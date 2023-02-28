@@ -3,9 +3,9 @@
         <img src="Images/Fietsspeciaal-Bakker-Logo.png" class="image-Logo-Header" />
     </div>
     <div class="Text-Header">
-        <span>Home</span>
-        <span>Producten</span>
-        <span>Over ons</span>
-        <span>Contact</span>
+        <a>Home</span>
+        <a>Producten</span>
+        <a>Over ons</span>
+        <a>Contact</span>
     </div>
 </div>
