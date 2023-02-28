@@ -1,7 +1,7 @@
 RewriteRule ^([^/]*)/([^/]*)/([^/]*)/$ /index.php?page=$1&title=$2&beginnenbij=$3 [L]
 RewriteRule ^([^/]*)/([^/]*)/$ /index.php?page=$1&title=$2 [L]
 RewriteRule ^([^/]*)/$ /index.php?title=$1 [L]
-
+ 
 ErrorDocument 400 /400.shtml
 ErrorDocument 401 /401.shtml
 ErrorDocument 403 /403.shtml
