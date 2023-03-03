@@ -28,10 +28,10 @@ $row = $result->fetch_assoc();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="cms/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/slick/slick.css">
-    <link rel="stylesheet" href="/slick/slick-theme.css">
+    <link rel="stylesheet" href="<?=$url;?>css/style.css">
+    <link rel="stylesheet" href="<?=$url;?>cms/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?=$url;?>slick/slick.css">
+    <link rel="stylesheet" href="<?=$url;?>slick/slick-theme.css">
 
 
     <link rel="shortcut icon" href="favicon.ico" />
@@ -41,9 +41,9 @@ $row = $result->fetch_assoc();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <!-- jquery files -->
-    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="jquery/digifixx.js"></script>
-    <script src="/slick/slick.js"></script>
+    <script type="text/javascript" src="<?=$url;?>jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="<?=$url;?>jquery/digifixx.js"></script>
+    <script src="<?=$url;?>slick/slick.js"></script>
 
 
     <title><?php echo $row['item1'];?></title>
