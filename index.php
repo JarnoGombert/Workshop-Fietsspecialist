@@ -8,7 +8,7 @@ ob_start();
     $sql = $mysqli->prepare(
         "SELECT * FROM digifixxcms WHERE id = ? AND status = 'actief'") or die($mysqli->error . __LINE__);
     $voorwaarde = 1;
-    $sql->bind_param("i", $voorwaarde);
+    $sql->bind_param("i", $voorwaarde);sq
 // } else {
 //     $sql = $mysqli->prepare(
 //         "SELECT * FROM digifixxcms WHERE paginaurl = ? AND status = 'actief'"
@@ -44,7 +44,6 @@ $row = $result->fetch_assoc();
     <script type="text/javascript" src="<?=$url;?>jquery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="<?=$url;?>jquery/digifixx.js"></script>
     <script src="<?=$url;?>slick/slick.js"></script>
-
 
     <title><?php echo $row['item1'];?></title>
 </head>
