@@ -30,5 +30,5 @@
                 </a>
             </li>";
         } ?>
-        <i class="fa fa-shopping-cart"></i>    
+        <a href="<?=$url;?>winkelwagen"><i class="fa fa-shopping-cart"></i></a>    
 </ul>
