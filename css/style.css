@@ -46,4 +46,9 @@ body {
   text-decoration: none;
   color: black;
   font-weight: normal;
-}/*# sourceMappingURL=style.css.map */
+}
+
+#slider-main .hero .basis-slider .swiper {
+  width: 600px;
+  height: 300px;
+}
