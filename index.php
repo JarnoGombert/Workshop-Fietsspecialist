@@ -33,6 +33,10 @@ $row = $result->fetch_assoc();
     <link rel="stylesheet" href="<?=$url;?>slick/slick.css">
     <link rel="stylesheet" href="<?=$url;?>slick/slick-theme.css">
 
+    <!-- Slider -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9.1.0/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiper@9.1.0/swiper-bundle.min.css" rel="stylesheet">
+
 
     <link rel="shortcut icon" href="<?=$url;?>favicon.ico" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />

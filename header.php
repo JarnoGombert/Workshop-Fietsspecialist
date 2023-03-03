@@ -13,7 +13,7 @@
 
 <section id="slider-main" class="<?php if($row['id'] != "1"){echo "slider-vervolg";};?>">
     <div id="hero">
-
+        <?php include 'php/slider.php';?>
     </div>
 </section>
 
