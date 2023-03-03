@@ -48,7 +48,21 @@ body {
   font-weight: normal;
 }
 
-#slider-main .hero .basis-slider .swiper {
-  width: 600px;
-  height: 300px;
-}/*# sourceMappingURL=style.css.map */
+#slider-main #hero .basis-slider .swiper {
+  height: 70vh;
+  width: 100%;
+}
+#slider-main #hero .basis-slider .swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#slider-main #hero .basis-slider .swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
