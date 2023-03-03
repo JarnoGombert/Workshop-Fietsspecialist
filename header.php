@@ -1,7 +1,7 @@
 <section id="header-main">
     <div class="Header-Bar">
         <div class="Logo-Header">
-            <img src="Images/Fietsspeciaal-Bakker-Logo.png" class="image-Logo-Header" />
+            <img src="<?=$url;?>/Images/Fietsspeciaal-Bakker-Logo.png" class="image-Logo-Header" />
         </div>
         <div class="Text-Header">
             <?php include 'php/menu.php';?>
