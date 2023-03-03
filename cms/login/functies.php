@@ -1,6 +1,8 @@
 <?php
 function login($email, $password, $mysqli) {
    $user_id = "";
+   $username = "";
+   $db_password = "";
     // Using prepared Statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT id, username, password FROM digifixxcms_gebruikers WHERE email = ? LIMIT 1")) { 
        $stmt->bind_param('s', $email); // Bind "$email" to parameter.
@@ -38,7 +40,7 @@ function login_check($mysqli) {
         $stmt->bind_param('i', $user_id); // Bind "$user_id" to parameter.
         $stmt->execute(); // Execute the prepared query.
         $stmt->store_result();
- 
+         $password = "";
         if($stmt->num_rows == 1) { // If the user exists
            $stmt->bind_result($password); // get variables from result.
            $stmt->fetch();
