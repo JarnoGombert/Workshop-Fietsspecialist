@@ -14,7 +14,7 @@ body {
   padding: 0 30px;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #header-main .Header-Bar .Logo-Header {
   height: 100%;
@@ -33,15 +33,16 @@ body {
 #header-main .Header-Bar .Text-Header .nav-menu {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 65px;
 }
 #header-main .Header-Bar .Text-Header .nav-menu .li {
   text-align: center;
   list-style-type: none;
   font-size: 14px;
   margin: 50px;
+  text-decoration: none;
 }
-#header-main .Header-Bar .Text-Header .nav-menu .li a {
+#header-main .Header-Bar .Text-Header .nav-menu .li .a {
   text-decoration: none;
   color: black;
   font-weight: normal;
