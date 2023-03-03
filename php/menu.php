@@ -30,4 +30,5 @@
                 </a>
             </li>";
         } ?>
+        <i class="far fa-shopping-cart"></i>    
 </ul>
