@@ -25,7 +25,7 @@
             
         echo "
             <li class=\"{$active} menu-item\"> 
-                <a href=\"{$link}\">
+                <a href=\"{$link}\" >
                     {$item1Menu}
                 </a>
             </li>";
