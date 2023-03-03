@@ -65,8 +65,12 @@ body {
   height: 100%;
   object-fit: cover;
 }
-#slider-main #hero .basis-slider .swiper .swiper-pagination {
-  color: #DDD !important;
+#slider-main #hero .basis-slider .swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background: #fff !important;
+}
+#slider-main #hero .basis-slider .swiper .swiper-pagination .swiper-pagination-bullet {
+  height: 15px !important;
+  width: 15px !important;
 }
 #slider-main #hero .basis-slider .swiper .swiper-button-prev, #slider-main #hero .basis-slider .swiper .swiper-button-next {
   color: #DDD !important;

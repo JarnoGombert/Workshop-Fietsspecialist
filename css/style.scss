@@ -96,8 +96,14 @@ body
                     }
                 }
                 .swiper-pagination{
-                    color: $primary-color !important;
-                }
+                        .swiper-pagination-bullet-active{
+                            background: $white !important;
+                        }
+                        .swiper-pagination-bullet {
+                            height: 15px !important;
+                            width: 15px !important;
+                        }
+                    }
                 .swiper-button-prev, .swiper-button-next{
                     color: $primary-color !important;
                 }
