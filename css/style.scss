@@ -56,6 +56,19 @@ body
                 display: flex;
                 list-style: none;
                 gap: 30px;
+
+                .li{
+                    text-align: center;
+                    list-style-type: none;
+                    font-size: 14px;
+                    margin: 50px;
+                    a{ 
+                        text-decoration: none;
+                        color: black;
+                        font-weight: normal;
+                    
+                    }
+                }
             }
         }
     }
