@@ -48,7 +48,7 @@ body {
   font-weight: normal;
 }
 
-#slider-main .hero .basis-slider .swiper {
-  width: 600px;
-  height: 300px;
+#slider-main #hero .basis-slider .swiper {
+  height: 70vh;
+  width: 100%;
 }
