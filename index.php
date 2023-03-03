@@ -34,9 +34,7 @@ $row = $result->fetch_assoc();
     <link rel="stylesheet" href="<?=$url;?>slick/slick-theme.css">
 
     <!-- Slider -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9.1.0/swiper-bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/swiper@9.1.0/swiper-bundle.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
     <link rel="shortcut icon" href="<?=$url;?>favicon.ico" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
@@ -62,5 +60,18 @@ $row = $result->fetch_assoc();
         } ?>
     </main>
     <footer><?php include('footer.php'); ?></footer>
+
+     <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        },
+    });
+    </script>
 </body>
 </html>
