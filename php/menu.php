@@ -30,5 +30,5 @@
                 </a>
             </li>";
         } ?>
-        <i class="far fa-shopping-cart"></i>    
+        <i class="fa fa-shopping-cart"></i>    
 </ul>
