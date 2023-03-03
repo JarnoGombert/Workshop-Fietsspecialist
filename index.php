@@ -6,8 +6,7 @@ ob_start();
 // ==============================
 //if (!$_GET["page"] && !$_GET["title"]) {
     $sql = $mysqli->prepare(
-        "SELECT * FROM digifixxcms WHERE id = ? AND status = 'actief'"
-    ) or die($mysqli->error . __LINE__);
+        "SELECT * FROM digifixxcms WHERE id = ? AND status = 'actief'") or die($mysqli->error . __LINE__);
     $voorwaarde = 1;
     $sql->bind_param("i", $voorwaarde);
 // } else {
@@ -20,7 +19,6 @@ ob_start();
 $sql->execute();
 $result = $sql->get_result();
 $row = $result->fetch_assoc();
-//print_r($row);
 ?>
 
 <!DOCTYPE html>
