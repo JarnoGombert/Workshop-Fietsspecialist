@@ -1,0 +1,92 @@
+@mixin mq($media) {
+    @media only screen and (max-width: $media) { @content; }
+}
+
+@mixin mm($media) {
+    @media only screen and (min-width: $media) { @content; }
+}
+
+@mixin mm-mx($min, $max) {
+    @media only screen and (min-width: $min) and (max-width: $max) { @content; }
+}
+
+$primary-color: #DDD;
+$logo-color: #414850;
+$white: #fff;
+$error: #a71b1b;
+$font: 'Rosario', sans-serif;
+
+body
+{
+    margin: 0 auto;
+    scroll-behavior: smooth;
+    font-family: $font;
+}
+#login-main{
+    height: 100%;
+    width: 100%;
+    #logincontainer{
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        #login_form{
+            .logologin{
+                border-radius: 1rem;
+            }
+            .inlogkop{
+                text-align: center;
+                letter-spacing: 2px;
+                color: $white;
+            }
+            .foutlogin{
+                text-align: center;
+                padding-bottom: 12px;
+                color: $error;
+            }
+            .inlog-inner{
+                display: flex;
+                gap: 4px;
+                .logindiv{
+                    background: $logo-color;
+                    padding: 12px;
+                    position: relative;
+                    display: flex;
+                    gap: 10px;
+                    border-radius: 5px;
+
+                    .fa{
+                        color: $white;
+
+                        &.fa-eye{
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            width: 20%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                        }
+                    }
+                    input{
+                        background: transparent;
+                        color: $white;
+                        outline: none;
+                        border: none;
+                    }
+                }
+                button[type="submit"]{
+                    border-radius: 5px;
+                    padding: 0px 15px;
+                    font-size: 18px;
+                    border: none;
+                    color: $white;
+                    background: $logo-color;
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,21 @@
-RewriteRule ^([^/]*)/([^/]*)/([^/]*)/$ /index.php?page=$1&title=$2&beginnenbij=$3 [L]
-RewriteRule ^([^/]*)/([^/]*)/$ /index.php?page=$1&title=$2 [L]
-RewriteRule ^([^/]*)/$ /index.php?title=$1 [L]
+RewriteEngine On
 
+RewriteRule ^(.[^/]*)/(.[^/]*)/(.[^/]*)/$ index.php?page=$1&title=$2&beginnenbij=$3 [L,QSA]
+RewriteRule ^(.[^/]*)/(.[^/]*)/$ index.php?page=$1&title=$2 [L,QSA]
+RewriteRule ^(.[^/]*)/$ index.php?title=$1 [L,QSA]
+
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^([^/]*)([^/]*)(.*)$ index.php?page=$1&title=$2&beginnenbij=$3
+# RewriteRule ^([^/]*)(.*)$ index.php?page=$1&title=$2
+# RewriteRule ^(.*)$ index.php?page=$1
+# RewriteRule ^/?(.*?)/?$ index.php?page=$1&title=$2&beginnenbij=$3 [L,QSA]
+# RewriteRule ^/?(.*?)/?$ index.php?page=$1&title=$2 [L,QSA]
+# RewriteRule ^/?(.*?)/?$ index.php?page=$1 [L,QSA]
+
+RewriteCond %{REQUEST_URI} !(/$|\.) 
+RewriteRule (.*) %{REQUEST_URI}/ [R=301,L]
+ 
 ErrorDocument 400 /400.shtml
 ErrorDocument 401 /401.shtml
 ErrorDocument 403 /403.shtml
