@@ -1,3 +1,14 @@
+<?php
+include 'login/functies.php';
+include 'login/config.php';
+// bijbehorende gebruiker ophalen om niveau te bepalen
+// ===================================================
+$sqluser = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = '1' ") or die($mysqli->error.__LINE__);
+$rowuser = $sqluser->fetch_assoc();
+
+$urlCMS = $url.'/cms';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +22,7 @@
 </head>
 <body>
     <main>
-        
+        <?php include ('php/menu.php'); ?>
     </main>
 </body>
 </html>

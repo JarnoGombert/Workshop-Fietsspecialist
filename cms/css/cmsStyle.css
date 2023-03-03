@@ -1,1 +1,69 @@
-/*# sourceMappingURL=cmsStyle.css.map */
+body {
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  font-family: "Rosario", sans-serif;
+}
+
+#login-main {
+  height: 100%;
+  width: 100%;
+}
+#login-main #logincontainer {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#login-main #logincontainer #login_form .logologin {
+  border-radius: 1rem;
+}
+#login-main #logincontainer #login_form .inlogkop {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #fff;
+}
+#login-main #logincontainer #login_form .foutlogin {
+  text-align: center;
+  padding-bottom: 12px;
+  color: #a71b1b;
+}
+#login-main #logincontainer #login_form .inlog-inner {
+  display: flex;
+  gap: 4px;
+}
+#login-main #logincontainer #login_form .inlog-inner .logindiv {
+  background: #414850;
+  padding: 12px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  border-radius: 5px;
+}
+#login-main #logincontainer #login_form .inlog-inner .logindiv .fa {
+  color: #fff;
+}
+#login-main #logincontainer #login_form .inlog-inner .logindiv .fa.fa-eye {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#login-main #logincontainer #login_form .inlog-inner .logindiv input {
+  background: transparent;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+#login-main #logincontainer #login_form .inlog-inner button[type=submit] {
+  border-radius: 5px;
+  padding: 0px 15px;
+  font-size: 18px;
+  border: none;
+  color: #fff;
+  background: #414850;
+}/*# sourceMappingURL=cmsStyle.css.map */

@@ -1,12 +1,16 @@
+<section id="header-main">
+    <div class="Header-Bar">
+        <div class="Logo-Header">
+            <img src="<?=$url;?>/images/Fietsspeciaal-Bakker-Logo.png" class="image-Logo-Header" />
+        </div>
+        <div class="Text-Header">
+            <?php include 'php/menu.php';?>
+        </div>
+    </div>
+</section>
 
-<div class="Header-Bar">
-    <div class="Logo-Header">
-        <img src="Images/Fietsspeciaal-Bakker-Logo.png" class="image-Logo-Header" />
+<section id="slider-main" class="<?php if($row['id'] != "1"){echo "slider-vervolg";};?>">
+    <div id="hero">
     </div>
-    <div class="container1">
-        <li class="li links"><a class="a">Home</a></li>
-        <li class="li"><a class="a">Producten</a></li>
-        <li class="li"><a class="a">Over mij</a></li>
-        <li class="li"><a class="a">Contact</a></li>
-    </div>
-</div>
+</section>
+

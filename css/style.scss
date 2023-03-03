@@ -11,65 +11,52 @@
 }
 
 $primary-color: #DDD;
+$logo-color: #414850;
+$white: #fff;
+$font: 'Rosario', sans-serif;
 
 body
 {
     margin: 0 auto;
     scroll-behavior: smooth;
+    font-family: $font;
 }
-header
-{
+#header-main{
+    background-color: $primary-color;
     width: 100%;
-    height: 159px;
-    border-bottom: 2px solid 333;
+    height: 125px;
 
-    @include mq(1400px){
-        background-color: green;
+    .Header-Bar
+    {
+        width: auto;
+        padding: 0 30px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .Logo-Header
+        {
+            height: 100%;
+            display: flex;
+            padding: 6px 0;
+
+            .image-Logo-Header
+            {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        .Text-Header
+        {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            .nav-menu{
+                display: flex;
+                list-style: none;
+                gap: 30px;
+            }
+        }
     }
-    @include mm-mx(1400px, 1440px){
-        background-color: red;
-    }
-    @include mm(1440px){
-        background-color: $primary-color;
-    }
-}
-.Header-Bar
-{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.Logo-Header
-{
-    width: 40%;
-    height: 100%;
-}
-.image-Logo-Header
-{
-    width: 100px;
-    height: 100px;
-}
-.Text-Header
-{
-    width: 60%;
-    height: 100%;
-    align-items: center;
-    justify-content: space-around;
-}
-.container1
-{
-    display: flex;
-}
-.li{
-    text-align: center;
-    list-style-type: none;
-    font-size: 14px;
-    margin: 50px;
-}
-a{ 
-    text-decoration: none;
-    color: black;
-    font-weight: normal;
 }

@@ -12,7 +12,7 @@
 define("HOST", "localhost"); // host
 define("USER", "root"); // gebruikersnaam database
 define("PASSWORD", ""); // wachtwoord database
-define("DATABASE", "jgombert_digifixx"); // naam database  
+define("DATABASE", "digifixx"); // naam database  
 
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
 
