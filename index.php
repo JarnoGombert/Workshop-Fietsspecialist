@@ -29,6 +29,7 @@ $row = $result->fetch_assoc();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="cms/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/slick/slick.css">
     <link rel="stylesheet" href="/slick/slick-theme.css">
 

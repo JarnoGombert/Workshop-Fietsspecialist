@@ -1,5 +1,3 @@
-require("../slick/slick.min.js");
-
 $(document).ready(function() {
     $('#slick').slick({
         dots: true,
