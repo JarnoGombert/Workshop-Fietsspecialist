@@ -5,8 +5,6 @@ include 'login/config.php';
 // ===================================================
 $sqluser = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = '1' ") or die($mysqli->error.__LINE__);
 $rowuser = $sqluser->fetch_assoc();
-
-$urlCMS = $url.'/cms';
 ?>
 
 <!DOCTYPE html>

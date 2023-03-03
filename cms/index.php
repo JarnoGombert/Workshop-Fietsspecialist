@@ -19,8 +19,6 @@ if(isset($_POST['email'], $_POST['password'])) {
      header('Location: ./index.php?error=1');
     }
  }
-
-$urlCMS = $url."/cms";
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +45,7 @@ $urlCMS = $url."/cms";
         <div id="logincontainer">  
             <?php if(isset($_GET['error'])) { $error = 'Foutieve of onbekende inlogcombinatie!'; } ?>
             <form id="login_form" action="index.php" method="post" name="login_form" autocomplete="off">
-                <img src="<?=$urlCMS?>/images/logo.JPG" class="logologin" width="500px">
+                <img src="images/logo.JPG" class="logologin" width="500px">
                 <h2 class="inlogkop">Inloggen CMS</h2> <?php if(isset($_GET['error'])) { echo "<div class=\"foutlogin\">".$error."</div>"; } ?>
                 <div class="inlog-inner">
                     <div class="logindiv">
