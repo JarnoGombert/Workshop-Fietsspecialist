@@ -1,5 +1,6 @@
 <?php
 function login($email, $password, $mysqli) {
+   $user_id = "";
     // Using prepared Statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT id, username, password FROM digifixxcms_gebruikers WHERE email = ? LIMIT 1")) { 
        $stmt->bind_param('s', $email); // Bind "$email" to parameter.
@@ -33,7 +34,7 @@ function login_check($mysqli) {
      $ip_address = $_SERVER['REMOTE_ADDR']; // Get the IP address of the user. 
      $user_browser = $_SERVER['HTTP_USER_AGENT']; // Get the user-agent string of the user.
  
-     if ($stmt = $mysqli->prepare("SELECT password FROM siteworkcms_gebruikers WHERE id = ? LIMIT 1")) { 
+     if ($stmt = $mysqli->prepare("SELECT password FROM digifixxcms_gebruikers WHERE id = ? LIMIT 1")) { 
         $stmt->bind_param('i', $user_id); // Bind "$user_id" to parameter.
         $stmt->execute(); // Execute the prepared query.
         $stmt->store_result();

@@ -34,7 +34,7 @@ $row = $result->fetch_assoc();
     <link rel="stylesheet" href="<?=$url;?>slick/slick-theme.css">
 
 
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="<?=$url;?>favicon.ico" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
