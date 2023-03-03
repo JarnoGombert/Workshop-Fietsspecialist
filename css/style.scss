@@ -32,7 +32,7 @@ body
         padding: 0 30px;
         height: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
 
         .Logo-Header
         {
@@ -55,17 +55,18 @@ body
             .nav-menu{
                 display: flex;
                 list-style: none;
-                gap: 30px;
+                gap: 65px;
 
                 .li{
                     text-align: center;
                     list-style-type: none;
                     font-size: 14px;
                     margin: 50px;
-                    a{ 
+                    text-decoration: none;
+                    .a{ 
                         text-decoration: none;
                         color: black;
-                        font-weight: normal;
+                        font-weight: normal; 
                     
                     }
                 }
