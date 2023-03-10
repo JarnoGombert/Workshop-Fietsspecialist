@@ -1,6 +1,6 @@
 <div id="topbar">
-    <a href="/cms/index.php" target="_blank">
-    <img id="logo" src="images/logo.JPG" height="40">
+    <a href="<?=$url;?>" target="_blank">
+        <img id="logo" src="images/logo.JPG" height="40">
     </a>
     <button class="c-hamburger c-hamburger--htx">
             <span></span>

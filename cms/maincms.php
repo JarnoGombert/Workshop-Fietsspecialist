@@ -19,10 +19,12 @@ $urlCMS = $url."cms";
     <link rel="shortcut icon" href="<?=$url;?>favicon.ico" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
     <title>Digifixx CMS</title>
+    <style>body{background: #41485085;}</style>
 </head>
 <body>
+    <header><?php include ('php/menu.php'); ?></header>
     <main>
-        <?php include ('php/menu.php'); ?>
+        
     </main>
 </body>
 </html>
