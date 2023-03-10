@@ -97,7 +97,8 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #slider-main #hero .basis-slider .swiper .swiper-pagination .swiper-pagination-bullet-active {
   background: #fff !important;
@@ -133,7 +134,45 @@ body {
 .Rectagnle-main .card .TxtCard {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: auto;
   bottom: 0px;
   left: 0px;
+  font-size: 25px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
 }
+
+.Product-main {
+  width: 100%;
+  height: 500px;
+}
+.Product-main .ProductTxt {
+  font-size: 35px;
+  text-align: center;
+}
+.Product-main .ProductCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.Product-main .ProductCard .card {
+  width: 250px;
+  height: 300px;
+  background-color: white;
+  margin: 20px;
+  position: relative;
+  box-shadow: 0 0 10px 1px #111;
+}
+.Product-main .ProductCard .card .ImgCard {
+  width: 90%;
+  height: 150px;
+  margin: 10px;
+}
+.Product-main .ProductCard .card .TxtCard {
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}/*# sourceMappingURL=style.css.map */
