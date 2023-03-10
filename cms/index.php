@@ -19,7 +19,6 @@ if(isset($_POST['email'], $_POST['password'])) {
      header('Location: ./index.php?error=1');
     }
  }
-
  $urlCMS = $url."cms";
 ?>
 
