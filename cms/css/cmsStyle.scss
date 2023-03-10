@@ -12,6 +12,7 @@
 
 $primary-color: #DDD;
 $logo-color: #414850;
+$secondary-color: $logo-color;
 $white: #fff;
 $error: #a71b1b;
 $font: 'Rosario', sans-serif;
@@ -110,42 +111,53 @@ header {
             gap: 30px;
             margin: 0 40px;
 
-            #nieuw{
+            #nieuw, #gebruiker{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                .nieuw_opties{
+                cursor: pointer;
+                .nieuw_opties, .gebruiker_opties {
                     transition: all 0.3s;
                     opacity: 0;
                     display: flex;
                     flex-direction: column;
-                    align-items: center;
-                }
+                    align-items: flex-start;
+                    gap: 5px;
+                    margin-top: 8px;
 
-                &:hover{
-                    .nieuw_opties {
-                        opacity: 1;
+                    a{
+                        padding: 5px 10px;
+                        background: $primary-color;
+                        width: 100%;
+                        text-align: center;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        color: $secondary-color;
+                        transition: all 0.3s;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
                     }
                 }
-            }
-            #gebruiker{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                .gebruiker_opties{
-                    transition: all 0.3s;
-                    opacity: 0;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
 
                 &:hover{
-                    .gebruiker_opties {
+                    .nieuw_opties, .gebruiker_opties {
                         opacity: 1;
                     }
                 }
             }
         }
+    }
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    
+    aside {
+
+    }
+    article {
+        grid-column: span 4 / span 4;
     }
 }

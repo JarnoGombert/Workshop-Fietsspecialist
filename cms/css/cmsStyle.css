@@ -87,33 +87,42 @@ header #topbar .right {
   gap: 30px;
   margin: 0 40px;
 }
-header #topbar .right #nieuw {
+header #topbar .right #nieuw, header #topbar .right #gebruiker {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
-header #topbar .right #nieuw .nieuw_opties {
+header #topbar .right #nieuw .nieuw_opties, header #topbar .right #nieuw .gebruiker_opties, header #topbar .right #gebruiker .nieuw_opties, header #topbar .right #gebruiker .gebruiker_opties {
   transition: all 0.3s;
   opacity: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: 8px;
 }
-header #topbar .right #nieuw:hover .nieuw_opties {
-  opacity: 1;
-}
-header #topbar .right #gebruiker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-header #topbar .right #gebruiker .gebruiker_opties {
+header #topbar .right #nieuw .nieuw_opties a, header #topbar .right #nieuw .gebruiker_opties a, header #topbar .right #gebruiker .nieuw_opties a, header #topbar .right #gebruiker .gebruiker_opties a {
+  padding: 5px 10px;
+  background: #DDD;
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #414850;
   transition: all 0.3s;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-header #topbar .right #gebruiker:hover .gebruiker_opties {
+header #topbar .right #nieuw .nieuw_opties a:hover, header #topbar .right #nieuw .gebruiker_opties a:hover, header #topbar .right #gebruiker .nieuw_opties a:hover, header #topbar .right #gebruiker .gebruiker_opties a:hover {
+  transform: scale(1.1);
+}
+header #topbar .right #nieuw:hover .nieuw_opties, header #topbar .right #nieuw:hover .gebruiker_opties, header #topbar .right #gebruiker:hover .nieuw_opties, header #topbar .right #gebruiker:hover .gebruiker_opties {
   opacity: 1;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+main article {
+  grid-column: span 4/span 4;
 }
