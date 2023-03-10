@@ -7,7 +7,7 @@ ob_start();
 
 $pagina = $_SERVER['REQUEST_URI'];
 $path = parse_url($pagina, PHP_URL_PATH);
-print_r(basename($path));
+//print_r(basename($path));
 
 if (!basename($path)) {
     $sql = $mysqli->prepare(
@@ -24,8 +24,6 @@ if (!basename($path)) {
 $sql->execute();
 $result = $sql->get_result();
 $row = $result->fetch_assoc();
-
-$row['id'] = 1;
 ?>
 
 <!DOCTYPE html>
