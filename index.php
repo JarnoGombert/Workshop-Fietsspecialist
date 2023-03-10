@@ -9,7 +9,7 @@ $pagina = $_SERVER['REQUEST_URI'];
 $path = parse_url($pagina, PHP_URL_PATH);
 //print_r(basename($path));
 
-if (!basename($path)) {
+if (!basename($path) || basename($path) == "Workshop-Fietsspecialist") {
     $sql = $mysqli->prepare(
         "SELECT * FROM digifixxcms WHERE id = ? AND status = 'actief'") or die($mysqli->error . __LINE__);
     $voorwaarde = 1;
