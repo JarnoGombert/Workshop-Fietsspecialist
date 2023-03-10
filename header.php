@@ -1,5 +1,5 @@
 <section id="header-main">
-    <div class="Header-Bar">
+    <div class="container mx-auto Header-Bar">
         <div class="Logo-Header">
             <a href="<?=$url;?>">
                 <img src="<?=$url;?>/Images/Fietsspeciaal-Bakker-Logo.png" class="image-Logo-Header" />
