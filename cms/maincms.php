@@ -7,10 +7,8 @@ include 'login/config.php';
 $sqluser = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = '1' ") or die($mysqli->error.__LINE__);
 $rowuser = $sqluser->fetch_assoc();
 
-// if(!$mysqli) { header ('Location:../'); }
-// if(login_check($mysqli) <> true) { header ('Location:../'); }
-
-if(login_check($mysqli) == true) {
+if(!$mysqli) { header ('Location:../'); }
+if(login_check($mysqli) <> true) { header ('Location:../'); }
 
 $urlCMS = $url."cms";
 ?>
@@ -34,12 +32,3 @@ $urlCMS = $url."cms";
     </main>
 </body>
 </html>
-
-<? 	//niet ingelogd? dan uitloggen.
-	} else {
-   echo 'U bent niet bevoegd deze pagina te bekijken. U dient eerst in te loggen <br/>';
-   //redirecten naar inlogpagina
-   header ('Location:index.php');
-   ob_flush();
-} 
-?>
