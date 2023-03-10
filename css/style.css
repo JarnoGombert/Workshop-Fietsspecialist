@@ -97,7 +97,8 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #slider-main #hero .basis-slider .swiper .swiper-pagination .swiper-pagination-bullet-active {
   background: #fff !important;
@@ -109,3 +110,9 @@ body {
 #slider-main #hero .basis-slider .swiper .swiper-button-prev, #slider-main #hero .basis-slider .swiper .swiper-button-next {
   color: #DDD !important;
 }
+
+#Rectagnle-main {
+  height: 300px;
+  width: 100%;
+  background-color: yellow;
+}/*# sourceMappingURL=style.css.map */
