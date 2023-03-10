@@ -163,6 +163,7 @@ body {
   margin: 20px;
   position: relative;
   box-shadow: 0 0 10px 1px #111;
+  margin-top: 50px;
 }
 .Product-main .ProductCard .card .ImgCard {
   width: 90%;
@@ -175,4 +176,24 @@ body {
   font-size: 20px;
   text-align: center;
   margin-top: 20px;
+}
+
+.Merk-main {
+  width: 100%;
+  height: 400px;
+}
+.Merk-main .MerkTxt {
+  font-size: 35px;
+  text-align: center;
+}
+.Merk-main .Row {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.Merk-main .Row .RowImg {
+  height: 100px;
+  width: 400px;
 }/*# sourceMappingURL=style.css.map */
