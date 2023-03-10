@@ -155,4 +155,16 @@ body
     height: 300px;
     width: 100%;
     background-color: yellow;
+    display: flex;
+    justify-content: center;
+
+    .card{
+        width: 250px;
+        height: 250px;
+        background-color: white;
+        margin: 20px;
+        position: relative;
+        top: -200;
+        z-index: 1;
+    }
 }
