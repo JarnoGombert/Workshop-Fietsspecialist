@@ -164,6 +164,7 @@ body {
   position: relative;
   box-shadow: 0 0 10px 1px #111;
   margin-top: 50px;
+  transition: all 0.3s;
 }
 .Product-main .ProductCard .card .ImgCard {
   width: 90%;
@@ -176,6 +177,9 @@ body {
   font-size: 20px;
   text-align: center;
   margin-top: 20px;
+}
+.Product-main .ProductCard .card:hover {
+  transform: scale(1.1);
 }
 
 .Merk-main {
