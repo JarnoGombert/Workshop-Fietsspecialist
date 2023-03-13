@@ -31,7 +31,7 @@ $urlCMS = $url."cms";
 <body>
     <header><?php include ('php/menu.php'); ?></header>
     <main>
-        <aside></aside>
+        <aside><?php include ('php/hoofdmenu.php'); ?></aside>
         <article></article>
     </main>
 </body>
