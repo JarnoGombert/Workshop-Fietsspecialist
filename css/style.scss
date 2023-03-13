@@ -173,7 +173,9 @@ body
         .TxtCard{
             position: absolute;
             width: 100%;
-            height: auto;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
             bottom: 0px;
             left: 0px;
             font-size: 25px;

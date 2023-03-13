@@ -72,6 +72,10 @@ body {
   background: #414850;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+}
 header #topbar {
   display: flex;
   padding: 1rem;
@@ -123,6 +127,51 @@ main {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
+main aside {
+  position: fixed;
+  background-color: #414850;
+  height: 100%;
+  width: 20%;
+  margin-top: 130px;
+  border-radius: 0 12px 0 0;
+}
+main aside #hoofdmenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+main aside #hoofdmenu #title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+  font-size: 22px;
+  color: #fff;
+}
+main aside #hoofdmenu li {
+  background-color: #58616c;
+  border-top: solid 1px #fff;
+}
+main aside #hoofdmenu li:last-of-type {
+  border-bottom: solid 1px #fff;
+}
+main aside #hoofdmenu li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 10px;
+  font-size: 16px;
+  width: 87%;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+main aside #hoofdmenu li a:hover {
+  box-shadow: 0px 0px 9px 0px #DDD;
+}
 main article {
   grid-column: span 4/span 4;
+  grid-column-start: 2;
+  height: 70vh;
+  margin-top: 160px;
 }/*# sourceMappingURL=cmsStyle.css.map */
