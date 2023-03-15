@@ -23,6 +23,30 @@ body
     scroll-behavior: smooth;
     font-family: $font;
 }
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar {
+    background-color: $primary-color;
+    color: $primary-color;
+}
+::-webkit-scrollbar-thumb {
+    background-image: initial;
+    background-color: $secondary-color;
+}
+.btn {
+    padding: 8px 18px;
+    background-color: $secondary-color;
+    color: $white;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 17px;
+    text-decoration: none;
+}
 .open_menu {
     display: block !important;
 }
@@ -96,11 +120,13 @@ body
 }
 header {
     position: fixed;
+    z-index: 100;
     width: 100%;
     #topbar {
         display: flex;
         padding: 1rem;
-        height: 100px;
+        height: 98px;
+        background-color: #41485085;
         align-items: center;
         justify-content: space-between;
 
@@ -118,6 +144,22 @@ header {
                 flex-direction: column;
                 align-items: center;
                 cursor: pointer;
+                .nieuw_menu, .gebruiker_menu {
+                    position: relative;
+                    padding-bottom: 3px;
+                    
+                    &::after {
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        content: "";
+                        height: 2px;
+                        width: 0;
+                        background-color: $logo-color;
+                        transition: width 0.3s;
+                    }
+                }
                 .nieuw_opties, .gebruiker_opties {
                     transition: all 0.3s;
                     opacity: 0;
@@ -144,6 +186,11 @@ header {
                 }
 
                 &:hover{
+                    .nieuw_menu, .gebruiker_menu {
+                        &::after {
+                            width: 110%;
+                        }
+                    }
                     .nieuw_opties, .gebruiker_opties {
                         opacity: 1;
                     }
@@ -193,11 +240,11 @@ main {
                     display: inline-flex;
                     gap: 10px;
                     font-size: 16px;
-                    width: 87%;
+                    width: 84%;
                     padding: 1.5rem;
                     transition: all 0.3s;
 
-                    &:hover {
+                    &:hover{
                         box-shadow: 0px 0px 9px 0px $primary-color;
                     }
                 }               
@@ -207,7 +254,156 @@ main {
     article {
         grid-column: span 4 / span 4;
         grid-column-start: 2;
-        height: 70vh;
-        margin-top: 160px;
+        margin-top: 130px;
+        padding: 0 2rem 1rem 2rem;
+        position: relative;
+
+        .TerugBtn {
+            padding: 8px 18px;
+            background-color: $secondary-color;
+            color: $white;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+        }
+
+        section {
+            &#paginaBewerken {
+                display: grid;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+
+                .left {
+                    grid-column: span 3 / span 3;
+                }
+                .right {
+                    grid-column: span 2 / span 2;
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        padding: 2rem 2rem 1rem 2rem;
+
+                        input[type="file"] {
+                            position: relative;
+                            height: 25px;
+                            display: flex;
+                            font-size: 18px;
+                            padding: 10px;
+                            &::-webkit-file-upload-button {
+                                visibility: hidden;
+                            }
+                            
+                            &::before {
+                                content: "selecteren";
+                                display: block;
+                                background: $secondary-color;
+                                color: $white;
+                                font-size: 14px;
+                                width: auto;
+                                padding: 13px 25px 0px 25px;
+                                border-radius: 0px 5px 5px 0px;
+                                text-decoration: none;
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                height: 100%;
+                                box-sizing: border-box;
+                                border: 0;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .image-wrapper {
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        grid-gap: 10px;
+                        max-height: 300px;
+                        overflow: scroll;
+                        padding: 1rem 2rem 2rem 2rem;
+
+                        .img {
+                            height: 150px;
+                            width: 190px;
+
+                            img {
+                                object-fit: cover;
+                                border-radius: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#webpaginas {
+                #webpaginas-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;  
+
+                    .webpagina {
+                        display: grid;
+                        grid-template-columns: repeat(8, minmax(0, 1fr));
+                        grid-gap: 30px;
+                        align-items: center;
+                        justify-items: center;
+        
+                        &:first-of-type {
+                            >div {
+                                font-size: 18px;
+                                font-weight: 600;
+                            }
+                            .pageIMG{
+                                height: auto;
+                                width: auto;
+                            }
+                        }
+        
+                        .page{
+                            &IMG{
+                                height: 110px;
+                                width: 110px;
+        
+                                img{
+                                    object-fit: cover;
+                                    border-radius: 12px;
+                                }
+                            }
+                            &CAT{
+                                grid-column-start: 5;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .title {
+                font-size: 26px;
+                font-weight: 500;
+                padding-bottom: 0.5rem;
+                margin-bottom: 1rem;
+                border-bottom: 2px solid $secondary-color;
+            }
+        }
+    }
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    margin: 15px 0px;
+    label{
+        width: 25%;
+        padding: 10px 0px 10px 10px;
+        background: #58616c;
+        color: $white;
+        border-radius: 12px 0px 0px 12px;
+    }
+    input,textarea,select {
+        width: 75%;
+        padding: 5px 10px;
     }
 }

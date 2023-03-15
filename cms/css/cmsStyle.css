@@ -4,6 +4,34 @@ body {
   font-family: "Rosario", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  background-color: #DDD;
+  color: #DDD;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: initial;
+  background-color: #414850;
+}
+
+.btn {
+  padding: 8px 18px;
+  background-color: #414850;
+  color: #fff;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 17px;
+  text-decoration: none;
+}
+
 .open_menu {
   display: block !important;
 }
@@ -74,12 +102,14 @@ body {
 
 header {
   position: fixed;
+  z-index: 100;
   width: 100%;
 }
 header #topbar {
   display: flex;
   padding: 1rem;
-  height: 100px;
+  height: 98px;
+  background-color: rgba(65, 72, 80, 0.5215686275);
   align-items: center;
   justify-content: space-between;
 }
@@ -96,6 +126,21 @@ header #topbar .right #nieuw, header #topbar .right #gebruiker {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+}
+header #topbar .right #nieuw .nieuw_menu, header #topbar .right #nieuw .gebruiker_menu, header #topbar .right #gebruiker .nieuw_menu, header #topbar .right #gebruiker .gebruiker_menu {
+  position: relative;
+  padding-bottom: 3px;
+}
+header #topbar .right #nieuw .nieuw_menu::after, header #topbar .right #nieuw .gebruiker_menu::after, header #topbar .right #gebruiker .nieuw_menu::after, header #topbar .right #gebruiker .gebruiker_menu::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: #414850;
+  transition: width 0.3s;
 }
 header #topbar .right #nieuw .nieuw_opties, header #topbar .right #nieuw .gebruiker_opties, header #topbar .right #gebruiker .nieuw_opties, header #topbar .right #gebruiker .gebruiker_opties {
   transition: all 0.3s;
@@ -118,6 +163,9 @@ header #topbar .right #nieuw .nieuw_opties a, header #topbar .right #nieuw .gebr
 }
 header #topbar .right #nieuw .nieuw_opties a:hover, header #topbar .right #nieuw .gebruiker_opties a:hover, header #topbar .right #gebruiker .nieuw_opties a:hover, header #topbar .right #gebruiker .gebruiker_opties a:hover {
   transform: scale(1.1);
+}
+header #topbar .right #nieuw:hover .nieuw_menu::after, header #topbar .right #nieuw:hover .gebruiker_menu::after, header #topbar .right #gebruiker:hover .nieuw_menu::after, header #topbar .right #gebruiker:hover .gebruiker_menu::after {
+  width: 110%;
 }
 header #topbar .right #nieuw:hover .nieuw_opties, header #topbar .right #nieuw:hover .gebruiker_opties, header #topbar .right #gebruiker:hover .nieuw_opties, header #topbar .right #gebruiker:hover .gebruiker_opties {
   opacity: 1;
@@ -162,7 +210,7 @@ main aside #hoofdmenu li a {
   display: inline-flex;
   gap: 10px;
   font-size: 16px;
-  width: 87%;
+  width: 84%;
   padding: 1.5rem;
   transition: all 0.3s;
 }
@@ -172,6 +220,133 @@ main aside #hoofdmenu li a:hover {
 main article {
   grid-column: span 4/span 4;
   grid-column-start: 2;
-  height: 70vh;
-  margin-top: 160px;
-}/*# sourceMappingURL=cmsStyle.css.map */
+  margin-top: 130px;
+  padding: 0 2rem 1rem 2rem;
+  position: relative;
+}
+main article .TerugBtn {
+  padding: 8px 18px;
+  background-color: #414850;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+}
+main article section#paginaBewerken {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+main article section#paginaBewerken .left {
+  grid-column: span 3/span 3;
+}
+main article section#paginaBewerken .right {
+  grid-column: span 2/span 2;
+}
+main article section#paginaBewerken .right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2rem 2rem 1rem 2rem;
+}
+main article section#paginaBewerken .right form input[type=file] {
+  position: relative;
+  height: 25px;
+  display: flex;
+  font-size: 18px;
+  padding: 10px;
+}
+main article section#paginaBewerken .right form input[type=file]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+main article section#paginaBewerken .right form input[type=file]::before {
+  content: "selecteren";
+  display: block;
+  background: #414850;
+  color: #fff;
+  font-size: 14px;
+  width: auto;
+  padding: 13px 25px 0px 25px;
+  border-radius: 0px 5px 5px 0px;
+  text-decoration: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0;
+  cursor: pointer;
+}
+main article section#paginaBewerken .right .image-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 10px;
+  max-height: 300px;
+  overflow: scroll;
+  padding: 1rem 2rem 2rem 2rem;
+}
+main article section#paginaBewerken .right .image-wrapper .img {
+  height: 150px;
+  width: 190px;
+}
+main article section#paginaBewerken .right .image-wrapper .img img {
+  object-fit: cover;
+  border-radius: 12px;
+}
+main article section#webpaginas #webpaginas-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main article section#webpaginas #webpaginas-wrapper .webpagina {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+main article section#webpaginas #webpaginas-wrapper .webpagina:first-of-type > div {
+  font-size: 18px;
+  font-weight: 600;
+}
+main article section#webpaginas #webpaginas-wrapper .webpagina:first-of-type .pageIMG {
+  height: auto;
+  width: auto;
+}
+main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG {
+  height: 110px;
+  width: 110px;
+}
+main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG img {
+  object-fit: cover;
+  border-radius: 12px;
+}
+main article section#webpaginas #webpaginas-wrapper .webpagina .pageCAT {
+  grid-column-start: 5;
+}
+main article section .title {
+  font-size: 26px;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #414850;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  margin: 15px 0px;
+}
+.form-group label {
+  width: 25%;
+  padding: 10px 0px 10px 10px;
+  background: #58616c;
+  color: #fff;
+  border-radius: 12px 0px 0px 12px;
+}
+.form-group input, .form-group textarea, .form-group select {
+  width: 75%;
+  padding: 5px 10px;
+}
