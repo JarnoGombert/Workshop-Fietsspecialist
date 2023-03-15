@@ -217,12 +217,62 @@ body {
 }
 .Merk-main .Row {
   width: 100%;
-  height: 100px;
+  height: 50px;
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .Merk-main .Row .RowImg {
   height: 100px;
   width: 400px;
+<<<<<<< HEAD
 }
+=======
+}
+
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: #95AEAB;
+  display: flex;
+  justify-content: space-around;
+}
+footer .row1 {
+  width: 300px;
+  height: auto;
+  text-align: center;
+  align-items: center;
+  margin: 30px;
+}
+footer .row1 .ImgFooter {
+  padding-bottom: 20px;
+}
+footer .row1 .contactGegevens {
+  padding: 10px;
+}
+footer .row1 .contactGegevens .Contact {
+  color: blue;
+}
+footer .rowHeader {
+  width: 300px;
+  height: auto;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.footerEnd {
+  width: 100%;
+  height: 50px;
+  background-color: #DDD;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerEnd .FooterEndContactLeft {
+  margin-left: 10px;
+}
+.footerEnd .FooterEndContactRight {
+  margin-right: 10px;
+}/*# sourceMappingURL=style.css.map */
+>>>>>>> 09a3caa9787e0f8f4621205166038dc0e38e1e65
