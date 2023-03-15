@@ -225,9 +225,22 @@ body {
 .Merk-main .Row .RowImg {
   height: 100px;
   width: 400px;
-<<<<<<< HEAD
 }
-=======
+
+#contentVervolgMain .title {
+  font-size: 26px;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #414850;
+}
+
+#contentWinkelwagen .title {
+  font-size: 26px;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #414850;
 }
 
 footer {
@@ -274,5 +287,4 @@ footer .rowHeader {
 }
 .footerEnd .FooterEndContactRight {
   margin-right: 10px;
-}/*# sourceMappingURL=style.css.map */
->>>>>>> 09a3caa9787e0f8f4621205166038dc0e38e1e65
+}

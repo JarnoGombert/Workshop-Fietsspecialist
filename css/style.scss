@@ -12,6 +12,7 @@
 
 $primary-color: #DDD;
 $logo-color: #414850;
+$secondary-color: $logo-color;
 $white: #fff;
 $font: 'Rosario', sans-serif;
 
@@ -283,7 +284,6 @@ body
         }
     }
 }
-<<<<<<< HEAD
 #contentVervolgMain {
     .title {
         font-size: 26px;
@@ -302,7 +302,6 @@ body
         border-bottom: 2px solid $secondary-color;
     }
 }
-=======
 footer{
     width: 100%;
     height: 300px;
@@ -355,4 +354,3 @@ footer{
         margin-right: 10px;
     }
 }
->>>>>>> 09a3caa9787e0f8f4621205166038dc0e38e1e65
