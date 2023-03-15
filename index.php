@@ -64,7 +64,7 @@ $row = $result->fetch_assoc();
             include('vervolgpagina.php');
         } ?>
     </main>
-    <footer><?php include('footer.php'); ?></footer>
+    <?php include('footer.php'); ?>
 
      <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
