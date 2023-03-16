@@ -60,6 +60,8 @@ $row = $result->fetch_assoc();
         <?php 
         if ($row['id'] == "1") {
             include('startpagina.php');
+        } else if($row['id'] == "5") {
+            include('winkelwagen.php');
         } else {
             include('vervolgpagina.php');
         } ?>
