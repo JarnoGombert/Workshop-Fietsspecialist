@@ -81,4 +81,24 @@
         <img src="<?=$url;?>Images/stella.png" class="RowImg">
     </div>
 </div>
+<div class="Main-categorieen">
+    <div class="MerkTxt">
+        Onze categorieen
+    </div>
+    <div class="Row">
+        <a>Stadfietsen</a>
+        <a>Kinderfietsen</a>
+        <a>Elektrische fietsen</a>
+    </div>
+    <div class="Row">
+        <a>Toerfietsen</a>
+        <a>Mountianbike</a>
+        <a>all-rouonder</a>
+    </div>
+    <div class="Row">
+        <a>Fitness fietsen</a>
+        <a>Racefietsen</a>
+        <a>Gravel fietsen</a>
+    </div>
+</div>
 </section>
