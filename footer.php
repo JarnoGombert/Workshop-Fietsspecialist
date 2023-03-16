@@ -52,11 +52,11 @@
     </div>
     <div class="rowCategorieen">
          <h2>Populaire categorieen:</h2>
-        <a>fiets1</a>
-        <a>fiets1</a>
-        <a>fiets1</a>
-        <a>fiets1</a>
-        <a>fiets1</a>
+        <a>Stadfietsen</a>
+        <a>Elektrische fietsen</a>
+        <a>Kinderfietsen</a>
+        <a>Mountianbikes</a>
+        <a>Race fietsen</a>
     </div>
 
 </footer>
