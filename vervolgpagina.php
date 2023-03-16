@@ -1,9 +1,11 @@
 <section class="contentVervolgMain">
-    <div><?=$row['item1'];?></div>
+    <div class="container mx-auto">
+       <div><?=$row['item1'];?></div>
 
-    <?php
-        if($row['id'] == '4') {
-            include 'php/contact.php';
-        }
-    ?>
+        <?php
+            if($row['id'] == '4') {
+                include 'php/contact.php';
+            }
+        ?> 
+    </div>
 </section>
