@@ -316,7 +316,7 @@ body
         }
     }
 }
-#contentVervolgMain {
+.contentVervolgMain, .contentWinkelwagen {
     .title {
         font-size: 26px;
         font-weight: 500;
@@ -324,14 +324,17 @@ body
         margin-bottom: 1rem;
         border-bottom: 2px solid $secondary-color;
     }
-}
-#contentWinkelwagen {
-    .title {
-        font-size: 26px;
-        font-weight: 500;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid $secondary-color;
+    #breadcrumbs {
+        ul {
+            list-style: none;
+            display: flex;
+
+            li:first-of-type {
+                &::after {
+                    
+                }
+            }
+        }
     }
 }
 footer{

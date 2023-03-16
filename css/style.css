@@ -255,22 +255,17 @@ body {
   text-decoration: none;
 }
 
-#contentVervolgMain .title {
+.contentVervolgMain .title, .contentWinkelwagen .title {
   font-size: 26px;
   font-weight: 500;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid #414850;
 }
-
-#contentWinkelwagen .title {
-  font-size: 26px;
-  font-weight: 500;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #414850;
+.contentVervolgMain #breadcrumbs ul, .contentWinkelwagen #breadcrumbs ul {
+  list-style: none;
+  display: flex;
 }
-
 footer {
   width: 100%;
   height: 300px;
