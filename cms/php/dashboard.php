@@ -7,5 +7,5 @@ $sqlDashboard->bind_result($idDashboard, $titelDashboard, $catDashboard, $urlDas
 ?>
 
 <section id="dashboard">
-    <div class="title"><?=ucfirst($_GET['page']);?></div>
+    <div class="title">Dashboard</div>
 </section>
