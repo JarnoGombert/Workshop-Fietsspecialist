@@ -255,6 +255,9 @@ body {
   text-decoration: none;
 }
 
+.contentVervolgMain, .contentWinkelwagen {
+  padding-bottom: 30px;
+}
 .contentVervolgMain .title, .contentWinkelwagen .title {
   font-size: 26px;
   font-weight: 500;

@@ -200,6 +200,11 @@ main aside #hoofdmenu #title {
 main aside #hoofdmenu li {
   background-color: #58616c;
   border-top: solid 1px #fff;
+  width: 100%;
+  overflow: hidden;
+}
+main aside #hoofdmenu li:hover {
+  box-shadow: 0px 0px 9px 0px #DDD;
 }
 main aside #hoofdmenu li:last-of-type {
   border-bottom: solid 1px #fff;
@@ -211,12 +216,9 @@ main aside #hoofdmenu li a {
   display: inline-flex;
   gap: 10px;
   font-size: 16px;
-  width: 84%;
+  width: 100%;
   padding: 1.5rem;
   transition: all 0.3s;
-}
-main aside #hoofdmenu li a:hover {
-  box-shadow: 0px 0px 9px 0px #DDD;
 }
 main article {
   grid-column: span 4/span 4;
@@ -235,6 +237,15 @@ main article .TerugBtn {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
+}
+main article .alert-success {
+  position: absolute;
+  right: 3rem;
+  top: 2rem;
+  background: green;
+  padding: 0.75rem;
+  border-radius: 5px;
+  color: #DDD;
 }
 main article section#paginaBewerken {
   display: grid;
@@ -352,4 +363,6 @@ main article section .title {
 .form-group input, .form-group textarea, .form-group select {
   width: 75%;
   padding: 5px 10px;
+  font-family: "Rosario", sans-serif;
+  resize: none;
 }/*# sourceMappingURL=cmsStyle.css.map */

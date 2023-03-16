@@ -59,7 +59,7 @@ if (isset($_GET['opslaan']) == "ja") {
             </div>
             <div class="form-group">
                 <label for="tekst">Pagina Tekst</label>
-                <textarea value="<?=$tekstPaginaB;?>" name="tekst" id="tekst" rows="7"></textarea>
+                <textarea name="tekst" id="tekst" rows="7"><?=$tekstPaginaB;?></textarea>
             </div>
             <div class="form-group">
                 <label for="">Pagina url Voorbeeld</label>
