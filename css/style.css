@@ -76,6 +76,9 @@ body {
   margin: 30px;
   text-decoration: none;
 }
+#header-main .Header-Bar .Text-Header .nav-menu li.active a::after {
+  width: 80%;
+}
 #header-main .Header-Bar .Text-Header .nav-menu li a {
   position: relative;
   text-decoration: none;

@@ -45,7 +45,7 @@
                 $active = '';
             }
 
-            $link = $url.'/'.$paginaurlMenu;
+            $link = $url.$paginaurlMenu;
             
         echo "
                 <a href=\"{$link}\" >

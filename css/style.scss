@@ -105,6 +105,12 @@ body
                     margin: 30px;
                     text-decoration: none;
 
+                    &.active {
+                        a::after {
+                            width: 80%;
+                        }
+                    }
+
                     a{ 
                         position: relative;
                         text-decoration: none;
