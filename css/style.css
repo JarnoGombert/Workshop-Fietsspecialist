@@ -265,7 +265,21 @@ body {
 .contentVervolgMain #breadcrumbs ul, .contentWinkelwagen #breadcrumbs ul {
   list-style: none;
   display: flex;
+  padding: 0;
 }
+.contentVervolgMain #breadcrumbs ul li:first-of-type::after, .contentWinkelwagen #breadcrumbs ul li:first-of-type::after {
+  content: "\f054";
+  padding: 0 8px;
+  display: inline-block;
+  font: normal normal normal 13px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.contentVervolgMain #breadcrumbs ul li:first-of-type a, .contentWinkelwagen #breadcrumbs ul li:first-of-type a {
+  color: #414850;
+  text-decoration: none;
+}
+
 footer {
   width: 100%;
   height: 300px;

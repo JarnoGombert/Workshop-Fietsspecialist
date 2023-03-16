@@ -222,7 +222,7 @@ main article {
   grid-column: span 4/span 4;
   grid-column-start: 2;
   margin-top: 130px;
-  padding: 0 2rem 1rem 2rem;
+  padding: 1rem 2rem 1rem 2rem;
   position: relative;
 }
 main article .TerugBtn {

@@ -328,10 +328,21 @@ body
         ul {
             list-style: none;
             display: flex;
+            padding: 0;
 
             li:first-of-type {
                 &::after {
-                    
+                    content: "\f054";
+                    padding: 0 8px;
+                    display: inline-block;
+                    font: normal normal normal 13px/1 FontAwesome;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                }
+
+                a{
+                    color: $secondary-color;
+                    text-decoration: none;
                 }
             }
         }

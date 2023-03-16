@@ -2,7 +2,8 @@
         <div class="swiper mySwiper">
         <div class="swiper-wrapper">
                 <?php for($i = 1; $i <= 4; $i++){ 
-                       echo '<div class="swiper-slide"><img src="'.$url.'Images/foto_'.$i.'.png" alt=""></div>';   
+                        $photoNumber = rand(0, 4) + 1;
+                       echo '<div class="swiper-slide"><img src="'.$url.'Images/foto_'.$photoNumber.'.png" alt=""></div>';   
                 } ?>
         </div>
         <div class="swiper-button-next"></div>
