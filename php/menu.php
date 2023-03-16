@@ -21,7 +21,7 @@
                 $active = '';
             }
 
-            $link = $url.'/'.$paginaurlMenu;
+            $link = $url.$paginaurlMenu;
             
         echo "
             <li class=\"{$active} menu-item\"> 

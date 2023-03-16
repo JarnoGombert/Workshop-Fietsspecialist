@@ -6,6 +6,13 @@
     $sqlMenu -> execute();
     $sqlMenu -> store_result();
 	$sqlMenu -> bind_result($idMenu, $item1Menu, $paginaurlMenu);
+
+    //Product Categorie items ophalen
+    $sqlPCategorie = $mysqli -> prepare("SELECT id, catNaam FROM digifixx_product_cat WHERE catPopulair = 'ja'") OR DIE ($mysqli->error.__LINE__);
+    $sqlPCategorie -> execute();
+    $sqlPCategorie -> store_result();
+	$sqlPCategorie -> bind_result($idPCategorie, $namePCategorie);
+
 ?>
 <footer>    
     <div class="row1">
@@ -45,18 +52,20 @@
                     {$item1Menu}
                 </a>";
         } ?>
-        <!-- <span href="startpagina.php">Home</span><br/><br/>
-        <span href=".php">Producten</span><br/><br/>
-        <span>Over ons</span><br/><br/>
-        <span>Contact</span><br/><br/> -->
     </div>
     <div class="rowCategorieen">
-         <h2>Populaire categorieen:</h2>
-        <a>Stadfietsen</a>
-        <a>Elektrische fietsen</a>
-        <a>Kinderfietsen</a>
-        <a>Mountianbikes</a>
-        <a>Race fietsen</a>
+        <h2>Populaire categorieen:</h2>
+        <?php
+            while($sqlPCategorie->fetch()) { 
+                if(str_contains($namePCategorie, ' ')){
+                    $startsplode = explode(" ", $namePCategorie);
+                    $catProduct = strtolower($startsplode[0] . "_" . $startsplode[1]);
+                } else {
+                    $catProduct = strtolower($namePCategorie);
+                }
+            ?>
+                <a href="<?=$url;?>producten?categorie=<?=$catProduct;?>"><?=$namePCategorie;?></a>
+        <?php } ?>
     </div>
 
 </footer>
