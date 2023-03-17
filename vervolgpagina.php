@@ -2,13 +2,16 @@
     <div class="container mx-auto">
         <?php include 'php/breadcrumbs.php'; ?>
         <div class="title"><?=$row['item1'];?></div>
-        <div><?=$row['tekst'];?></div>
+        <div class="content">
+            <aside><?php include 'afbeeldingen-zijkant.php'; ?></aside>
+            <article><?=$row['tekst'];?></article>
+        </div>
         <?php
             if($row['id'] == '4') {
                 include 'php/contact.php';
             }
             if($row['id'] == '2') {
-                include 'php/Producten.php';
+                include 'php/producten.php';
             }
         ?> 
     </div>

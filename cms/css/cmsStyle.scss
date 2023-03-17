@@ -228,6 +228,12 @@ main {
             li {
                 background-color: lighten($secondary-color, 10%);
                 border-top: solid 1px $white;
+                width: 100%;
+                overflow: hidden;
+
+                &:hover{
+                    box-shadow: 0px 0px 9px 0px $primary-color;
+                }
 
                 &:last-of-type {
                     border-bottom: solid 1px $white;
@@ -240,13 +246,9 @@ main {
                     display: inline-flex;
                     gap: 10px;
                     font-size: 16px;
-                    width: 84%;
+                    width: 100%;
                     padding: 1.5rem;
                     transition: all 0.3s;
-
-                    &:hover{
-                        box-shadow: 0px 0px 9px 0px $primary-color;
-                    }
                 }               
             }
         }
@@ -268,6 +270,16 @@ main {
             position: fixed;
             right: 1rem;
             bottom: 1rem;
+        }
+
+        .alert-success {
+            position: absolute;
+            right: 3rem;
+            top: 2rem;
+            background: green;
+            padding: 0.75rem;
+            border-radius: 5px;
+            color: $primary-color;
         }
 
         section {
@@ -405,5 +417,7 @@ main {
     input,textarea,select {
         width: 75%;
         padding: 5px 10px;
+        font-family: $font;
+        resize: none;
     }
 }

@@ -1,15 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 16 mrt 2023 om 16:14
+-- Gegenereerd op: 16 mrt 2023 om 18:34
 -- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.4
+-- PHP-versie: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `digifixx`
@@ -42,7 +48,7 @@ CREATE TABLE `digifixxcms` (
 INSERT INTO `digifixxcms` (`id`, `item1`, `item2`, `item3`, `item4`, `item5`, `tekst`, `keuze`, `paginaurl`, `status`, `datum`) VALUES
 (1, 'Home', '', '', '', '', '', 'hoofdmenu', 'home', 'actief', '0000-00-00'),
 (2, 'Producten', '', '', '', '', '', 'hoofdmenu', 'producten', 'actief', '0000-00-00'),
-(3, 'Over ons', '', '', '', '', '', 'hoofdmenu', 'over-ons', 'actief', '0000-00-00'),
+(3, 'Over ons', '', '', '', '', 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.', 'hoofdmenu', 'over-ons', 'actief', '0000-00-00'),
 (4, 'Contact', '', '', '', '', '', 'hoofdmenu', 'contact', 'actief', '0000-00-00'),
 (5, 'Winkelwagen', '', '', '', '', '', 'hoofdmenu', 'winkelwagen', 'actief', '0000-00-00');
 
@@ -122,6 +128,33 @@ CREATE TABLE `digifixx_producten` (
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `digifixx_product_cat`
+--
+
+CREATE TABLE `digifixx_product_cat` (
+  `id` int(11) NOT NULL,
+  `catNaam` varchar(255) NOT NULL,
+  `catPopulair` varchar(255) NOT NULL DEFAULT 'nee'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `digifixx_product_cat`
+--
+
+INSERT INTO `digifixx_product_cat` (`id`, `catNaam`, `catPopulair`) VALUES
+(1, 'Stadfietsen', 'ja'),
+(2, 'Toerfietsen', 'nee'),
+(3, 'Fitness fietsen\r\n', 'nee'),
+(4, 'Kinderfietsen', 'ja'),
+(5, 'Mountianbike', 'ja'),
+(6, 'Racefietsen', 'ja'),
+(7, 'Elektrische fietsen\r\n', 'ja'),
+(8, 'Allrounder\n', 'nee'),
+(9, 'Gravel fietsen\r\n', 'nee');
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `digifixx_reviews`
 --
 
@@ -183,6 +216,12 @@ ALTER TABLE `digifixx_producten`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexen voor tabel `digifixx_product_cat`
+--
+ALTER TABLE `digifixx_product_cat`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexen voor tabel `digifixx_reviews`
 --
 ALTER TABLE `digifixx_reviews`
@@ -223,6 +262,12 @@ ALTER TABLE `digifixx_producten`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT voor een tabel `digifixx_product_cat`
+--
+ALTER TABLE `digifixx_product_cat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT voor een tabel `digifixx_reviews`
 --
 ALTER TABLE `digifixx_reviews`
@@ -234,3 +279,7 @@ ALTER TABLE `digifixx_reviews`
 ALTER TABLE `digifixx_settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
