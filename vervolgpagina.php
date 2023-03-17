@@ -4,7 +4,7 @@
         <div class="title"><?=$row['item1'];?></div>
         <div class="content">
             <aside><?php include 'php/afbeeldingen-zijkant.php'; ?></aside>
-            <article><?=$row['tekst'];?></article>
+            <article><?php echo $row['tekst'];?></article>
         </div>
         <?php
             if($row['id'] == '4') {
