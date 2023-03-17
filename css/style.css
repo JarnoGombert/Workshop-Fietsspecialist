@@ -278,8 +278,7 @@ body {
   width: 290px;
 }
 .contentVervolgMain .content aside .image-wrapper .img img, .contentWinkelwagen .content aside .image-wrapper .img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 .contentVervolgMain .content article, .contentWinkelwagen .content article {
@@ -495,8 +494,7 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
   padding: 10px;
 }
 .Review .ReviewRow1 .ReviewCard .ImageWrapper img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100%;
   width: 100%;
   border-radius: 100%;
