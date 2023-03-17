@@ -14,7 +14,7 @@
                 <div class="winkelwagenTXT">
                     1        
                 </div>
-                <div class="Delete">
+                <div class="winkelwagenTXT">
                     <a >
                         <i class="fa fa-trash-o"></i>
                     </a>
