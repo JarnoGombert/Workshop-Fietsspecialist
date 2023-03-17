@@ -531,6 +531,41 @@ footer{
        
 }
 
+//styling Winkelwagen
+.winkelwagen-Main
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    .showProducts
+    {
+        width: 70%;
+        height: auto;
+        box-shadow: 0 0 5px 1px #111;
+        display: flex;
+        align-items: center;
+        .ImgWinkelwagen
+        {
+            width: 180px;
+            height: 120px;
+            padding: 10px;
+        }
+        .winkelwagenTXT
+        {
+            margin: 40px;
+            font-size: 20px;
+        }
+    }
+    .winkelwagenBetalen
+    {
+        width: 25%;
+        height: auto;
+        box-shadow: 0 0 5px 1px #111;
+    }
+
+}
+
 .footerEnd
 {
     width: 100%;
