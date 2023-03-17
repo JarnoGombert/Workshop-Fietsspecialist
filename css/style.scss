@@ -325,6 +325,17 @@ body
         margin-bottom: 1rem;
         border-bottom: 2px solid $secondary-color;
     }
+    .content {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        aside {
+            
+        }
+        article {
+            grid-column: span 2 / span 2;
+        }
+    }
     #breadcrumbs {
         ul {
             list-style: none;

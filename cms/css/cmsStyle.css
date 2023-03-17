@@ -27,7 +27,6 @@ body {
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 17px;
   text-decoration: none;
@@ -304,8 +303,7 @@ main article section#paginaBewerken .right .image-wrapper .img {
   width: 190px;
 }
 main article section#paginaBewerken .right .image-wrapper .img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#webpaginas #webpaginas-wrapper {
@@ -333,8 +331,7 @@ main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG {
   width: 110px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageCAT {
@@ -365,4 +362,4 @@ main article section .title {
   padding: 5px 10px;
   font-family: "Rosario", sans-serif;
   resize: none;
-}/*# sourceMappingURL=cmsStyle.css.map */
+}
