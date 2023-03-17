@@ -3,7 +3,7 @@
         <?php include 'php/breadcrumbs.php'; ?>
         <div class="title"><?=$row['item1'];?></div>
         <div class="content">
-            <aside><?php include 'afbeeldingen-zijkant.php'; ?></aside>
+            <aside><?php include 'php/afbeeldingen-zijkant.php'; ?></aside>
             <article><?=$row['tekst'];?></article>
         </div>
         <?php
