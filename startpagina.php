@@ -8,24 +8,24 @@
 
 <section class="contentHomeMain">
     <div class="Rectagnle-main">
-        <div class="card">
+        <a class="card" href="<?=$url;?>/producten">
             <img src="<?=$url;?>Images/FietsImage1.png" class="ImgCard"/>
             <div class="TxtCard">
                 <p style="margin-left: 10px;">Bekijk nu </br> onze producten</p>
             </div>
-        </div>
-        <div class="card">
+        </a>
+        <a class="card"  href="<?=$url;?>/over-ons">
         <img src="<?=$url;?>Images/FietsImage2.png" class="ImgCard"/>
         <div class="TxtCard">
                 <p style="margin-left: 10px;">Lees meer over </br> Fietsspeciaal Bakker</p>
             </div>
-        </div>
-        <div class="card">
+        </a>
+        <a class="card"  href="<?=$url;?>/contact">
         <img src="<?=$url;?>Images/FietsImage3.png" class="ImgCard"/>
             <div class="TxtCard">
                     <p style="margin-left: 10px;">Kom kijken of </br> maak een afspraak</p>
             </div>
-        </div>
+        </a>
     </div>
     <div class="Product-main">
         <div class="container mx-auto">
