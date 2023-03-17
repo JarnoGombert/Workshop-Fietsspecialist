@@ -103,6 +103,7 @@ if (isset($_GET['opslaan']) == "ja") {
             ?>
             <div class="img">
                 <img src="<?php echo $imageURL; ?>" height="100%" width="100%" alt="" />
+                <a class="btn-delete" href="?page=delete&id=<?php echo $_GET['id'];?>"><i class="fa fa-trash-o"></i></a>
             </div>
             <?php } ?>
         </div>

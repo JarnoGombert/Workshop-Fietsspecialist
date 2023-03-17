@@ -260,6 +260,18 @@ main {
         padding: 1rem 2rem 1rem 2rem;
         position: relative;
 
+        .deleteIMG {
+            height: 400px;
+            width: 100%;
+
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                border-radius: 12px; 
+            }
+        }
+
         .TerugBtn {
             padding: 8px 18px;
             background-color: $secondary-color;
@@ -338,12 +350,24 @@ main {
                         padding: 1rem 2rem 2rem 2rem;
 
                         .img {
+                            position: relative;
                             height: 150px;
                             width: 190px;
 
                             img {
                                 object-fit: cover;
                                 border-radius: 12px;
+                            }
+
+                            .btn-delete {
+                                position: absolute;
+                                border-radius: 0 10px 0 10px;
+                                top: 0%;
+                                right: 0%;
+                                background: $secondary-color;
+                                color: $white;
+                                padding: 6px;
+                                font-size: 22px;
                             }
                         }
                     }
