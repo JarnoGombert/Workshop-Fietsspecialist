@@ -269,6 +269,19 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.contentVervolgMain .content aside .image-wrapper, .contentWinkelwagen .content aside .image-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  padding: 1rem 2rem 2rem 2rem;
+}
+.contentVervolgMain .content aside .image-wrapper .img, .contentWinkelwagen .content aside .image-wrapper .img {
+  height: 100%;
+  width: 290px;
+}
+.contentVervolgMain .content aside .image-wrapper .img img, .contentWinkelwagen .content aside .image-wrapper .img img {
+  object-fit: cover;
+  border-radius: 12px;
+}
 .contentVervolgMain .content article, .contentWinkelwagen .content article {
   grid-column: span 2/span 2;
 }

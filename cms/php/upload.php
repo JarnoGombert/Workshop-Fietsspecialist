@@ -22,5 +22,5 @@ if (is_uploaded_file($file['tmp_name'])) {
     $file_size = $file['size'];
     $insert = $mysqli->query("INSERT into digifixx_images (cms_id, file_name, uploaded_on) VALUES (".$_GET['id'].",'".$file_name."', NOW())");
     // Execute the query
-    header("?page=pagina_bewerken&id=".$_GET['id']);
+    header($urlCMS . "maincms.php?page=pagina_bewerken&id=".$_GET['id']);
 }
