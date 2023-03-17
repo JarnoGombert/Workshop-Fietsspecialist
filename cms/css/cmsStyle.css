@@ -27,7 +27,6 @@ body {
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 17px;
   text-decoration: none;
@@ -227,6 +226,16 @@ main article {
   padding: 1rem 2rem 1rem 2rem;
   position: relative;
 }
+main article .deleteIMG {
+  height: 400px;
+  width: 100%;
+}
+main article .deleteIMG img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+}
 main article .TerugBtn {
   padding: 8px 18px;
   background-color: #414850;
@@ -300,13 +309,23 @@ main article section#paginaBewerken .right .image-wrapper {
   padding: 1rem 2rem 2rem 2rem;
 }
 main article section#paginaBewerken .right .image-wrapper .img {
+  position: relative;
   height: 150px;
   width: 190px;
 }
 main article section#paginaBewerken .right .image-wrapper .img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
+}
+main article section#paginaBewerken .right .image-wrapper .img .btn-delete {
+  position: absolute;
+  border-radius: 0 10px 0 10px;
+  top: 0%;
+  right: 0%;
+  background: #414850;
+  color: #fff;
+  padding: 6px;
+  font-size: 22px;
 }
 main article section#webpaginas #webpaginas-wrapper {
   display: flex;
@@ -333,8 +352,7 @@ main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG {
   width: 110px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageCAT {
@@ -365,4 +383,4 @@ main article section .title {
   padding: 5px 10px;
   font-family: "Rosario", sans-serif;
   resize: none;
-}/*# sourceMappingURL=cmsStyle.css.map */
+}

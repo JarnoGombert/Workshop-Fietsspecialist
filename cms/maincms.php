@@ -11,7 +11,7 @@ $urlCMS = $url."cms";
 
 // bijbehorende gebruiker ophalen om niveau te bepalen
 // ===================================================
-$sqluser = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = '1' ") or die($mysqli->error.__LINE__);
+$sqluser = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = '2' ") or die($mysqli->error.__LINE__);
 $rowuser = $sqluser->fetch_assoc();
 
 if(!$mysqli) { header ($urlCMS.'/index.php'); }
