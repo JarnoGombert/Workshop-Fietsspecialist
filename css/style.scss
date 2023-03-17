@@ -330,7 +330,23 @@ body
         grid-template-columns: repeat(3, minmax(0, 1fr));
 
         aside {
-            
+            .image-wrapper {
+                display: grid;
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                padding: 1rem 2rem 2rem 2rem;
+
+                .img {
+                    height: 100%;
+                    width: 290px;
+
+                    img {
+                        object-fit: cover;
+                        border-radius: 12px;
+                    }
+
+                    
+                }
+            }
         }
         article {
             grid-column: span 2 / span 2;
