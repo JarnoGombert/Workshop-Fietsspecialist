@@ -121,7 +121,8 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #slider-main #hero .basis-slider .swiper .swiper-pagination .swiper-pagination-bullet-active {
   background: #fff !important;
@@ -343,6 +344,7 @@ footer .rowHeader a, footer .rowCategorieen a {
   color: black;
   text-decoration: none;
   margin-top: 10px;
+  width: -moz-fit-content;
   width: fit-content;
   padding-bottom: 5px;
 }
@@ -454,7 +456,7 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
 }
 .winkelwagen-Main .showProducts {
   width: 70%;
-  height: auto;
+  height: 140px;
   box-shadow: 0 0 5px 1px #111;
   display: flex;
   align-items: center;
@@ -472,6 +474,40 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
   width: 25%;
   height: auto;
   box-shadow: 0 0 5px 1px #111;
+  display: flex;
+  flex-direction: column;
+}
+.winkelwagen-Main .winkelwagenBetalen hr {
+  width: 95%;
+}
+.winkelwagen-Main .winkelwagenBetalen .Row1 {
+  display: flex;
+  justify-content: space-between;
+}
+.winkelwagen-Main .winkelwagenBetalen .Row1 .winkelwagenTXT {
+  padding: 10px;
+  font-size: 20px;
+}
+.winkelwagen-Main .winkelwagenBetalen .divInput {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+}
+.winkelwagen-Main .winkelwagenBetalen .divInput .winkelwagenInput {
+  width: 125px;
+  height: 50px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+.winkelwagen-Main .winkelwagenBetalen .divInput .winkelwagenInput:hover {
+  background-color: #3e8e41;
 }
 
 .Review {
@@ -519,4 +555,4 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
 }
 .footerEnd .FooterEndContactRight {
   margin-right: 10px;
-}
+}/*# sourceMappingURL=style.css.map */
