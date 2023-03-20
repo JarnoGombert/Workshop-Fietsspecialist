@@ -1,5 +1,5 @@
 <?php
-ob_start();
+session_start();
 include 'login/functies.php';
 include 'login/config.php';
 
@@ -11,8 +11,19 @@ $urlCMS = $url."cms";
 
 // bijbehorende gebruiker ophalen om niveau te bepalen
 // ===================================================
-$sqluser = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = '2' ") or die($mysqli->error.__LINE__);
-$rowuser = $sqluser->fetch_assoc();
+if(isset($_SESSION['id'])) {
+    $userId = $_SESSION['id'];
+}
+
+$sqlUser = $mysqli -> prepare("SELECT id FROM digifixxcms_gebruikers WHERE id = ?") or die ($mysqli->error.__LINE__);
+$sqlUser->bind_param('i',$userId);
+$sqlUser->execute();
+$sqlUser->store_result();
+$sqlUser->bind_result($idUser);
+$sqlUser->fetch();
+// $sqluser = $mysqli -> query($sql);
+// $rowUser = $sqluser -> fetch_assoc();
+print_r($rowUser['username']);
 
 if(!$mysqli) { header ($urlCMS.'/index.php'); }
 if(login_check($mysqli) <> true) { header ($urlCMS.'/index.php'); }

@@ -7,9 +7,18 @@ ob_start();
 if(isset($_POST['email'], $_POST['password'])) { 
     $email = $_POST['email'];
     $password = $_POST['password']; // hashed password.
+
+    $sqlUser = $mysqli -> prepare("SELECT id FROM digifixxcms_gebruikers WHERE username = ? AND password = ?") or die ($mysqli->error.__LINE__);
+    $sqlUser->bind_param('ss',$email, $password);
+    $sqlUser->execute();
+    $sqlUser->store_result();
+    $sqlUser->bind_result($idUser);
+    $sqlUser->fetch();
+
     if(login($email, $password, $mysqli) == true) {
      // na inloggen doorsturen naar dashboard
      //======================================
+        $_SESSION['id'] = $idUser;
        header('Location: maincms.php');
        exit;
     } 
@@ -36,7 +45,7 @@ if(isset($_POST['email'], $_POST['password'])) {
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" daimywashier rel="stylesheet">
 
     <title>Digifixx CMS</title>
     <style>body{background: #41485085;}</style>
