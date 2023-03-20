@@ -21,7 +21,34 @@
                 </div>
             </div> 
             <div class="winkelwagenBetalen">
-
+            <div class="Row1">
+                <a class="winkelwagenTXT">
+                    Artikelen(1)
+                </a>
+                <a class="winkelwagenTXT">
+                    €3.749,00
+                </a>
+            </div>
+            <div class="Row1">
+                <a class="winkelwagenTXT">
+                    Verzendkosten
+                </a>
+                <a class="winkelwagenTXT">
+                    €0,00
+                </a>
+            </div>
+            <hr/>
+            <div class="Row1">
+                <div class="winkelwagenTXT">
+                    Totaal:
+                </div>
+                <div class="winkelwagenTXT">
+                €3.749,00
+                </div>
+            </div>
+            <div class="divInput">
+                <input type="submit" value="Betalen" class="winkelwagenInput mx-auto">
+            </div>
             </div>
         </div>
         
