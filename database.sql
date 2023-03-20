@@ -1,21 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 16 mrt 2023 om 18:34
+-- Gegenereerd op: 20 mrt 2023 om 17:27
 -- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.6
+-- PHP-versie: 8.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `digifixx`
@@ -61,7 +55,7 @@ INSERT INTO `digifixxcms` (`id`, `item1`, `item2`, `item3`, `item4`, `item5`, `t
 CREATE TABLE `digifixxcms_gebruikers` (
   `id` int(11) NOT NULL,
   `username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `niveau` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `niveau` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'gebruiker',
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `password` char(128) COLLATE utf8_unicode_ci NOT NULL,
   `titel` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -75,7 +69,7 @@ CREATE TABLE `digifixxcms_gebruikers` (
   `telefoon` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
   `mobiel` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `actief` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
-  `datum_invoer` date NOT NULL,
+  `datum_invoer` datetime NOT NULL,
   `ipadres` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -84,7 +78,23 @@ CREATE TABLE `digifixxcms_gebruikers` (
 --
 
 INSERT INTO `digifixxcms_gebruikers` (`id`, `username`, `niveau`, `email`, `password`, `titel`, `geslacht`, `voorletters`, `tussenvoegsel`, `achternaam`, `adres`, `postcode`, `plaats`, `telefoon`, `mobiel`, `actief`, `datum_invoer`, `ipadres`) VALUES
-(1, 'digifixx', 'admin', 'info@digifixx.nl', 'Digifixx2000!', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '');
+(1, 'digifixx', 'admin', 'info@digifixx.nl', 'Digifixx2000!', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', ''),
+(2, 'user', 'gebruiker', 'info@user.nl', 'user', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `digifixxcms_product_reviews`
+--
+
+CREATE TABLE `digifixxcms_product_reviews` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `titel` varchar(200) NOT NULL,
+  `tekst` longtext NOT NULL,
+  `auteur` varchar(200) NOT NULL,
+  `status` varchar(200) NOT NULL DEFAULT 'actief'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -105,7 +115,7 @@ CREATE TABLE `digifixx_images` (
 --
 
 INSERT INTO `digifixx_images` (`id`, `cms_id`, `file_name`, `uploaded_on`, `status`) VALUES
-(1, 4, 'foto_1.png', '2023-03-15 11:30:32', '1');
+(2, 3, 'FietsImage1.png', '2023-03-17 09:58:43', '1');
 
 -- --------------------------------------------------------
 
@@ -163,7 +173,6 @@ CREATE TABLE `digifixx_reviews` (
   `titel` varchar(200) NOT NULL,
   `tekst` longtext NOT NULL,
   `auteur` varchar(200) NOT NULL,
-  `paginaurl` varchar(200) NOT NULL,
   `status` varchar(200) NOT NULL DEFAULT 'niet actief'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -202,6 +211,12 @@ ALTER TABLE `digifixxcms`
 ALTER TABLE `digifixxcms_gebruikers`
   ADD PRIMARY KEY (`id`),
   ADD KEY `username` (`username`);
+
+--
+-- Indexen voor tabel `digifixxcms_product_reviews`
+--
+ALTER TABLE `digifixxcms_product_reviews`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexen voor tabel `digifixx_images`
@@ -247,13 +262,19 @@ ALTER TABLE `digifixxcms`
 -- AUTO_INCREMENT voor een tabel `digifixxcms_gebruikers`
 --
 ALTER TABLE `digifixxcms_gebruikers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT voor een tabel `digifixxcms_product_reviews`
+--
+ALTER TABLE `digifixxcms_product_reviews`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixx_images`
 --
 ALTER TABLE `digifixx_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixx_producten`
@@ -279,7 +300,3 @@ ALTER TABLE `digifixx_reviews`
 ALTER TABLE `digifixx_settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
