@@ -8,18 +8,10 @@ if(isset($_POST['email'], $_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password']; // hashed password.
 
-    $sqlUser = $mysqli -> prepare("SELECT id FROM digifixxcms_gebruikers WHERE username = ? AND password = ?") or die ($mysqli->error.__LINE__);
-    $sqlUser->bind_param('ss',$email, $password);
-    $sqlUser->execute();
-    $sqlUser->store_result();
-    $sqlUser->bind_result($idUser);
-    $sqlUser->fetch();
-
     if(login($email, $password, $mysqli) == true) {
      // na inloggen doorsturen naar dashboard
      //======================================
-        $_SESSION['id'] = $idUser;
-       header('Location: maincms.php');
+       header('Location: maincms.php?user='.$email.'');
        exit;
     } 
     else {

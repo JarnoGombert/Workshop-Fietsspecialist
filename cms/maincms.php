@@ -11,19 +11,22 @@ $urlCMS = $url."cms";
 
 // bijbehorende gebruiker ophalen om niveau te bepalen
 // ===================================================
-if(isset($_SESSION['id'])) {
-    $userId = $_SESSION['id'];
+if(isset($_GET['user'])){
+    $GETemail = $_GET['user'];
 }
 
-$sqlUser = $mysqli -> prepare("SELECT id FROM digifixxcms_gebruikers WHERE id = ?") or die ($mysqli->error.__LINE__);
-$sqlUser->bind_param('i',$userId);
-$sqlUser->execute();
-$sqlUser->store_result();
-$sqlUser->bind_result($idUser);
-$sqlUser->fetch();
+// $sqlUser = $mysqli -> prepare("SELECT id, username FROM digifixxcms_gebruikers WHERE id = ?") or die ($mysqli->error.__LINE__);
+// $sqlUser->bind_param('i',$userId);
+// $sqlUser->execute();
+// $sqlUser->store_result();
+// $sqlUser->bind_result($idUser, $username);
+// $sqlUser->fetch();
+// $sql = ("SELECT id FROM digifixxcms_gebruikers WHERE id = ?") or die ($mysqli->error.__LINE__);
 // $sqluser = $mysqli -> query($sql);
 // $rowUser = $sqluser -> fetch_assoc();
-print_r($rowUser['username']);
+//print_r($userId);
+$sqluser = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = '1'") or die($mysqli->error.__LINE__);
+$rowuser = $sqluser->fetch_assoc();
 
 if(!$mysqli) { header ($urlCMS.'/index.php'); }
 if(login_check($mysqli) <> true) { header ($urlCMS.'/index.php'); }
