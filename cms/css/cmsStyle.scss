@@ -138,6 +138,8 @@ header {
             display: flex;
             gap: 30px;
             margin: 0 40px;
+            position: relative;
+            top: 40px;
 
             #nieuw, #gebruiker{
                 display: flex;
@@ -383,6 +385,48 @@ main {
                     .webpagina {
                         display: grid;
                         grid-template-columns: repeat(8, minmax(0, 1fr));
+                        grid-gap: 30px;
+                        align-items: center;
+                        justify-items: center;
+        
+                        &:first-of-type {
+                            >div {
+                                font-size: 18px;
+                                font-weight: 600;
+                            }
+                            .pageIMG{
+                                height: auto;
+                                width: auto;
+                            }
+                        }
+        
+                        .page{
+                            &IMG{
+                                height: 110px;
+                                width: 110px;
+        
+                                img{
+                                    object-fit: cover;
+                                    border-radius: 12px;
+                                }
+                            }
+                            &CAT{
+                                grid-column-start: 5;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#producten {
+                #producten-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;  
+
+                    .product {
+                        display: grid;
+                        grid-template-columns: repeat(9, minmax(0, 1fr));
                         grid-gap: 30px;
                         align-items: center;
                         justify-items: center;

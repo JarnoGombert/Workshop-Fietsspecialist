@@ -120,6 +120,8 @@ header #topbar .right {
   display: flex;
   gap: 30px;
   margin: 0 40px;
+  position: relative;
+  top: 40px;
 }
 header #topbar .right #nieuw, header #topbar .right #gebruiker {
   display: flex;
@@ -356,6 +358,37 @@ main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG img {
   border-radius: 12px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageCAT {
+  grid-column-start: 5;
+}
+main article section#producten #producten-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main article section#producten #producten-wrapper .product {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+main article section#producten #producten-wrapper .product:first-of-type > div {
+  font-size: 18px;
+  font-weight: 600;
+}
+main article section#producten #producten-wrapper .product:first-of-type .pageIMG {
+  height: auto;
+  width: auto;
+}
+main article section#producten #producten-wrapper .product .pageIMG {
+  height: 110px;
+  width: 110px;
+}
+main article section#producten #producten-wrapper .product .pageIMG img {
+  object-fit: cover;
+  border-radius: 12px;
+}
+main article section#producten #producten-wrapper .product .pageCAT {
   grid-column-start: 5;
 }
 main article section .title {

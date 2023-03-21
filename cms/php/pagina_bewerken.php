@@ -12,7 +12,8 @@ if(isset($_GET['opslaan']) == "ja") {
     paginaurl   = '" . strtolower($_POST['paginaurl']) . "' WHERE id = '" . $_GET['id'] . "' ") or die($mysqli->error . __LINE__);
 
     //pagina redirecten om deze te kunnen bewerken
-    //header('Location: ?page=pagina_bewerken&id=' . $_GET['id'] . '');
+    header('Location: ?page=pagina_bewerken&id=' . $_GET['id'] . '');
+    exit;
 }
 
 $sqlPaginaB = $mysqli -> prepare("SELECT id, item1, item2, item3, item4, item5, tekst, keuze, paginaurl, status FROM digifixxcms WHERE id = ? ORDER BY datum") or die ($mysqli->error.__LINE__);

@@ -8,10 +8,7 @@ $imageURL = '/img/'.$fileDelete;
 if(isset($_POST['verwijderen']) == "ja"){
     $insert = $mysqli->query("DELETE FROM digifixx_images WHERE cms_id = ".$_GET['id']."");
     // Execute the query
-    header($urlCMS . "/maincms.php?page=pagina_bewerken&id=".$_GET['id']);
-    exit;
-} else {
-    header($urlCMS . "/maincms.php?page=pagina_bewerken&id=".$_GET['id']);
+    header("location:javascript://history.go(-1)");
     exit;
 }
 ?>
