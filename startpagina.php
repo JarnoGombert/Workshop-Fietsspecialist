@@ -76,19 +76,37 @@
             Onze Merken
             </div>
             <div class="Row">
-                <img src="<?=$url;?>Images/gazelle-logo.png" class="RowImg">
-                <img src="<?=$url;?>Images/batavus-logo.png" class="RowImg">
-                <img src="<?=$url;?>Images/Sparta.png" class="RowImg">
+                <div class="MerkImages">
+                    <img src="<?=$url;?>Images/gazelle-logo.png" class="RowImg">
+                </div>
+                <div class="MerkImages">
+                    <img src="<?=$url;?>Images/batavus-logo.png" class="RowImg">
+                </div>
+                <div class="MerkImages">
+                    <img src="<?=$url;?>Images/Sparta.png" class="RowImg">
+                </div>
             </div>
             <div class="Row">
-                <img src="<?=$url;?>Images/Koga.png" class="RowImg">
-                <img src="<?=$url;?>Images/Rih.png" class="RowImg">
-                <img src="<?=$url;?>Images/Cortina.png" class="RowImg">
+                <div class="MerkImages">
+                    <img src="<?=$url;?>Images/Koga.png" class="RowImg">
+                </div>
+                <div class="MerkImages">
+                    <img src="<?=$url;?>Images/Rih.png" class="RowImg">                
+                </div>
+                <div class="MerkImages">
+                    <img src="<?=$url;?>Images/Cortina.png" class="RowImg">
+                </div>
             </div>
             <div class="Row">
-                <img src="<?=$url;?>Images/cervelo.png" class="RowImg">
+                <div class="MerkImages">
+                    <img src="<?=$url;?>Images/cervelo.png" class="RowImg">
+                </div>
+                <div class="MerkImages">
                 <img src="<?=$url;?>Images/Giant.png" class="RowImg">
-                <img src="<?=$url;?>Images/stella.png" class="RowImg">
+                    </div>
+                <div class="MerkImages">
+                    <img src="<?=$url;?>Images/stella.png" class="RowImg">
+                </div>
             </div>
         </div>
         

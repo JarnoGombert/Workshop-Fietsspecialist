@@ -288,6 +288,12 @@ body
         text-align: center;
         .RowImg
         {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+        .MerkImages
+        {
             height: 100px;
             width: 400px;
         }
@@ -602,8 +608,8 @@ footer{
         display: flex;
         align-items: center;
         .winkelwagenInput {
-            width: 125px;
-            height: 50px;
+            width: 100px;
+            height: 35px;
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
@@ -611,7 +617,11 @@ footer{
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            display: flex;
             font-family: Arial, sans-serif;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
         }
     
         .winkelwagenInput:hover {

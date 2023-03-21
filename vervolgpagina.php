@@ -68,6 +68,9 @@
             if($row['id'] == '2') {
                 include 'php/producten.php';
             }
+            if($row['id'] == '6') {
+                include 'php/betalingsmethode.php';
+            }
         ?> 
     </div>
 </section>
