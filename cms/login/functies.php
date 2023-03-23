@@ -65,4 +65,14 @@ function login_check($mysqli) {
      return false;
    }
 }
+
+function getCategorie($mysqli) {
+   mysqli_set_charset($mysqli, 'utf8');
+   $sqlcat = $mysqli->query("SELECT * FROM digifixx_product_cat") or die($mysqli->error.__LINE__);
+
+   while($rowcat = $sqlcat->fetch_assoc()){
+       $categorien[] = $rowcat;
+   }
+   return $categorien;
+}
 ?>

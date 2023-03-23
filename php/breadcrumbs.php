@@ -9,7 +9,7 @@
             </li>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <a itemprop="item">        
-                    <span itemprop="name"><?=$row['item1'];?></span>
+                    <span itemprop="name"><?php if(isset($row['item1'])){echo $row['item1'];}else{echo $row['merk'] . " " . $row['model'] . " " . $row['naam'];}?></span>
                     <meta itemprop="position" content="2" />
                 </a>
             </li>

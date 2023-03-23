@@ -208,6 +208,22 @@ body {
   text-align: center;
   margin-top: 20px;
 }
+.Product-main .ProductCard .card .TxtCard .color-wrapper {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.Product-main .ProductCard .card .TxtCard .color-wrapper input[type=color] {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .Product-main .ProductCard .card:hover {
   transform: scale(1.1);
 }
@@ -261,43 +277,43 @@ body {
   text-decoration: none;
 }
 
-.contentVervolgMain, .contentWinkelwagen {
+.contentVervolgMain, .contentWinkelwagen, .contentProductMain {
   padding-bottom: 30px;
 }
-.contentVervolgMain .title, .contentWinkelwagen .title {
+.contentVervolgMain .title, .contentWinkelwagen .title, .contentProductMain .title {
   font-size: 26px;
   font-weight: 500;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid #414850;
 }
-.contentVervolgMain .content, .contentWinkelwagen .content {
+.contentVervolgMain .content, .contentWinkelwagen .content, .contentProductMain .content {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.contentVervolgMain .content aside .image-wrapper, .contentWinkelwagen .content aside .image-wrapper {
+.contentVervolgMain .content aside .image-wrapper, .contentWinkelwagen .content aside .image-wrapper, .contentProductMain .content aside .image-wrapper {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   padding: 1rem 2rem 2rem 2rem;
 }
-.contentVervolgMain .content aside .image-wrapper .img, .contentWinkelwagen .content aside .image-wrapper .img {
+.contentVervolgMain .content aside .image-wrapper .img, .contentWinkelwagen .content aside .image-wrapper .img, .contentProductMain .content aside .image-wrapper .img {
   height: 100%;
   width: 290px;
 }
-.contentVervolgMain .content aside .image-wrapper .img img, .contentWinkelwagen .content aside .image-wrapper .img img {
+.contentVervolgMain .content aside .image-wrapper .img img, .contentWinkelwagen .content aside .image-wrapper .img img, .contentProductMain .content aside .image-wrapper .img img {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 12px;
 }
-.contentVervolgMain .content article, .contentWinkelwagen .content article {
+.contentVervolgMain .content article, .contentWinkelwagen .content article, .contentProductMain .content article {
   grid-column: span 2/span 2;
 }
-.contentVervolgMain #breadcrumbs ul, .contentWinkelwagen #breadcrumbs ul {
+.contentVervolgMain #breadcrumbs ul, .contentWinkelwagen #breadcrumbs ul, .contentProductMain #breadcrumbs ul {
   list-style: none;
   display: flex;
   padding: 0;
 }
-.contentVervolgMain #breadcrumbs ul li:first-of-type::after, .contentWinkelwagen #breadcrumbs ul li:first-of-type::after {
+.contentVervolgMain #breadcrumbs ul li:first-of-type::after, .contentWinkelwagen #breadcrumbs ul li:first-of-type::after, .contentProductMain #breadcrumbs ul li:first-of-type::after {
   content: "\f054";
   padding: 0 8px;
   display: inline-block;
@@ -305,7 +321,7 @@ body {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
-.contentVervolgMain #breadcrumbs ul li:first-of-type a, .contentWinkelwagen #breadcrumbs ul li:first-of-type a {
+.contentVervolgMain #breadcrumbs ul li:first-of-type a, .contentWinkelwagen #breadcrumbs ul li:first-of-type a, .contentProductMain #breadcrumbs ul li:first-of-type a {
   color: #414850;
   text-decoration: none;
 }

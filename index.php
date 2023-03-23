@@ -8,18 +8,31 @@ ob_start();
 $pagina = $_SERVER['REQUEST_URI'];
 $path = parse_url($pagina, PHP_URL_PATH);
 //print_r(basename($path));
+$split = explode("/", $pagina);
+$count = count($split);
+if($count > 1){
+    $productenUrlPage = $split[$count - 3];
+}
 
-if (!basename($path) || basename($path) == "Workshop-Fietsspecialist") {
+if($productenUrlPage == "product"){
     $sql = $mysqli->prepare(
-        "SELECT * FROM digifixxcms WHERE id = ? AND status = 'actief'") or die($mysqli->error . __LINE__);
-    $voorwaarde = 1;
-    $sql->bind_param("i", $voorwaarde);
-} else {
-    $sql = $mysqli->prepare(
-        "SELECT * FROM digifixxcms WHERE paginaurl = ? AND status = 'actief'"
+        "SELECT * FROM digifixx_producten WHERE paginaurl = ? AND status = 'actief'"
     ) or die($mysqli->error . __LINE__);
-    $voorwaarde = basename($path);
+    $voorwaarde = "product/" . basename($path);
     $sql->bind_param("s", $voorwaarde);
+} else {
+    if (!basename($path) || basename($path) == "Workshop-Fietsspecialist") {
+        $sql = $mysqli->prepare(
+            "SELECT * FROM digifixxcms WHERE id = ? AND status = 'actief'") or die($mysqli->error . __LINE__);
+        $voorwaarde = 1;
+        $sql->bind_param("i", $voorwaarde);
+    } else {
+        $sql = $mysqli->prepare(
+            "SELECT * FROM digifixxcms WHERE paginaurl = ? AND status = 'actief'"
+        ) or die($mysqli->error . __LINE__);
+        $voorwaarde = basename($path);
+        $sql->bind_param("s", $voorwaarde);
+    }
 }
 $sql->execute();
 $result = $sql->get_result();
@@ -52,13 +65,15 @@ $row = $result->fetch_assoc();
     <script type="text/javascript" src="<?=$url;?>jquery/digifixx.js"></script>
     <script src="<?=$url;?>slick/slick.js"></script>
 
-    <title><?php echo $row['item1'];?></title>
+    <title><?php if(isset($row['item1'])){echo $row['item1'];}else{echo $row['merk'] . " " . $row['model'] . " " . $row['naam'];}?></title>
 </head>
 <body>
     <header><?php include('header.php'); ?></header>
     <main>
         <?php 
-        if ($row['id'] == "1") {
+        if ($row['id'] == "1" && $productenUrlPage == "product") {
+            include('productDetail.php');
+        } else if($row['id'] == "1") {
             include('startpagina.php');
         } else if($row['id'] == "5") {
             include('winkelwagen.php');

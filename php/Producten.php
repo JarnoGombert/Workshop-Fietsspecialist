@@ -1,42 +1,38 @@
+<?php
+    //Producten items ophalen
+    $sqlProduct = $mysqli -> prepare("SELECT id, naam, model, merk, categorie, prijs, prijs_korting, kleur, frameMaat, extras, paginaurl, status FROM digifixx_producten") or die ($mysqli->error.__LINE__);
+    // $productId = $_GET['id'];
+    // $sqlProduct->bind_param('i',$productId);
+    $sqlProduct->execute();
+    $sqlProduct->store_result();
+    $sqlProduct->bind_result($idProduct, $titelProduct, $modelProduct, $merkProduct, $CatProduct, $prijsProduct, $prijsKProduct, $kleurProduct, $frameMaatProduct, $extraProduct, $urlProduct, $statusProduct);
+?>
+
 <div class="Product-main">
         <div class="container mx-auto">
             <div class="ProductCard">
-                <div class="card">
-                    <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
-                    <div class="TxtCard">
-                        Premio EVO 5 Lite Comfort
-                    </div>
-                    <div class="TxtCard">
-                        €3.749,00
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
-                    <div class="TxtCard">
-                        Premio EVO 5 Lite Comfort
-                    </div>
-                    <div class="TxtCard">
-                        €3.749,00
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
-                    <div class="TxtCard">
-                        Premio EVO 5 Lite Comfort
-                    </div>
-                    <div class="TxtCard">
-                        €3.749,00
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
-                    <div class="TxtCard">
-                        Premio EVO 5 Lite Comfort
-                    </div>
-                    <div class="TxtCard">
-                        €3.749,00
-                    </div>
-                </div>
+                <?php
+                    while($sqlProduct->fetch()) {?>
+                        <a class="card" href="<?=$url;?><?=$urlProduct;?>">
+                            <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
+                            <div class="TxtCard">
+                               <?=$merkProduct;?><?=$modelProduct;?><?=$titelProduct;?>
+                            </div>
+                            <div class="TxtCard">
+                                <div class="color-wrapper">
+                                    <input type="color" value="<?=$kleurProduct;?>" name="color" id="color">
+                                </div>
+                            </div>
+                            <div class="TxtCard">
+                                <?php if($prijsKProduct != "0.00"){?>
+                                    <span>€ <?=$prijsProduct;?></span>
+                                    <span>€ <?=$prijsKProduct;?></span>
+                                <?php } else { ?>
+                                    <span>€ <?=$prijsProduct;?></span>
+                                <?php } ?>
+                            </div>
+                        </a>
+                <?php } ?>
             </div>
         </div>
     </div>

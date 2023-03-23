@@ -223,8 +223,6 @@ body
             font-size: 25px;
             color: #fff;
             background: rgba(0, 0, 0, 0.3);
-
-
         }
     }    
 }
@@ -264,6 +262,23 @@ body
                 font-size: 20px; 
                 text-align: center;
                 margin-top: 20px;
+
+                .color-wrapper {
+                    border-radius: 100%;
+                    width: 50px;
+                    height: 50px;
+                    position: relative;
+                    margin: 0 auto;
+                    overflow: hidden;
+                    input[type="color"] {
+                        width: 100px;
+                        height: 100px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
             }
         }
         .card:hover {
@@ -322,7 +337,7 @@ body
         }
     }
 }
-.contentVervolgMain, .contentWinkelwagen {
+.contentVervolgMain, .contentWinkelwagen, .contentProductMain{
     padding-bottom: 30px;
     .title {
         font-size: 26px;

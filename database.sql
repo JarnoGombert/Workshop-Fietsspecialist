@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 23 mrt 2023 om 19:23
+-- Gegenereerd op: 23 mrt 2023 om 20:42
 -- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.4
+-- PHP-versie: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -130,14 +130,21 @@ CREATE TABLE `digifixx_producten` (
   `model` varchar(200) NOT NULL,
   `merk` varchar(200) NOT NULL,
   `categorie` varchar(200) NOT NULL,
-  `prijs` decimal(10,2) NOT NULL,
-  `prijs_korting` decimal(10,2) NOT NULL,
+  `prijs` varchar(11) NOT NULL,
+  `prijs_korting` varchar(11) NOT NULL,
   `kleur` varchar(200) NOT NULL,
   `frameMaat` varchar(200) NOT NULL,
   `extras` varchar(200) NOT NULL,
   `paginaurl` varchar(200) NOT NULL,
   `status` varchar(200) NOT NULL DEFAULT 'actief'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `digifixx_producten`
+--
+
+INSERT INTO `digifixx_producten` (`id`, `naam`, `model`, `merk`, `categorie`, `prijs`, `prijs_korting`, `kleur`, `frameMaat`, `extras`, `paginaurl`, `status`) VALUES
+(1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '3.749,00', '0', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', 'actief');
 
 -- --------------------------------------------------------
 
@@ -284,7 +291,7 @@ ALTER TABLE `digifixx_images`
 -- AUTO_INCREMENT voor een tabel `digifixx_producten`
 --
 ALTER TABLE `digifixx_producten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixx_product_cat`
