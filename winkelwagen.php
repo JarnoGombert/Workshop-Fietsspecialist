@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="divInput">
-                <input type="submit" value="Betalen" class="winkelwagenInput mx-auto">
+                <a  href="<?=$url;?>php/betaling-methode" class="winkelwagenInput mx-auto">Betalen</a>
             </div>
             </div>
         </div>

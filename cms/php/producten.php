@@ -1,9 +1,9 @@
 <?php
-$sqlProducten = $mysqli -> prepare("SELECT id, naam, model, merk, paginaurl, status FROM digifixx_producten ORDER BY id DESC") or die ($mysqli->error.__LINE__);
+$sqlProducten = $mysqli -> prepare("SELECT id, naam, model, merk, prijs, prijs_korting, kleur, frameMaat, extras, paginaurl, status FROM digifixx_producten ORDER BY id DESC") or die ($mysqli->error.__LINE__);
 //$sqlProducten -> bind_param('i',$footerId);
 $sqlProducten->execute();
 $sqlProducten->store_result();
-$sqlProducten->bind_result($idProducten, $titelProducten, $modelProducten, $merkProducten, $urlProducten, $statusProducten);
+$sqlProducten->bind_result($idProducten, $titelProducten, $modelProducten, $merkProducten, $prijsProducten, $prijsKProducten, $kleurProducten, $frameMaatProducten, $extraProducten, $urlProducten, $statusProducten);
 ?>
 
 <section id="producten">
@@ -39,7 +39,7 @@ $sqlProducten->bind_result($idProducten, $titelProducten, $modelProducten, $merk
                     <div class="pageMERK"><?=$merkProducten;?></div>
                     <div class="pageURL"><?=$urlProducten;?></div>
                     <div class="pageSTATUS"><?=$statusProducten;?></div>
-                    <div class="pageEDIT"><a href="?page=pagina_bewerken&id=<?=$idProducten;?>"><i class="fa fa-edit"></i></a></div>
+                    <div class="pageEDIT"><a href="?page=product_bewerken&id=<?=$idProducten;?>"><i class="fa fa-edit"></i></a></div>
                 </div>
                 
         <?php } ?>
