@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 20 mrt 2023 om 17:27
+-- Gegenereerd op: 23 mrt 2023 om 19:23
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.4
 
@@ -44,7 +44,8 @@ INSERT INTO `digifixxcms` (`id`, `item1`, `item2`, `item3`, `item4`, `item5`, `t
 (2, 'Producten', '', '', '', '', '', 'hoofdmenu', 'producten', 'actief', '0000-00-00'),
 (3, 'Over ons', '', '', '', '', 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.', 'hoofdmenu', 'over-ons', 'actief', '0000-00-00'),
 (4, 'Contact', '', '', '', '', '', 'hoofdmenu', 'contact', 'actief', '0000-00-00'),
-(5, 'Winkelwagen', '', '', '', '', '', 'hoofdmenu', 'winkelwagen', 'actief', '0000-00-00');
+(5, 'Winkelwagen', '', '', '', '', '', 'hoofdmenu', 'winkelwagen', 'actief', '0000-00-00'),
+(6, 'Betalings Methode', '', '', '', '', '', 'overige', 'betalings-methode', 'actief', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -115,7 +116,7 @@ CREATE TABLE `digifixx_images` (
 --
 
 INSERT INTO `digifixx_images` (`id`, `cms_id`, `file_name`, `uploaded_on`, `status`) VALUES
-(2, 3, 'FietsImage1.png', '2023-03-17 09:58:43', '1');
+(5, 3, 'FietsImage1.png', '2023-03-21 09:13:00', '1');
 
 -- --------------------------------------------------------
 
@@ -128,11 +129,14 @@ CREATE TABLE `digifixx_producten` (
   `naam` varchar(200) NOT NULL,
   `model` varchar(200) NOT NULL,
   `merk` varchar(200) NOT NULL,
+  `categorie` varchar(200) NOT NULL,
+  `prijs` decimal(10,2) NOT NULL,
+  `prijs_korting` decimal(10,2) NOT NULL,
   `kleur` varchar(200) NOT NULL,
   `frameMaat` varchar(200) NOT NULL,
   `extras` varchar(200) NOT NULL,
   `paginaurl` varchar(200) NOT NULL,
-  `status` varchar(200) NOT NULL DEFAULT 'niet actief'
+  `status` varchar(200) NOT NULL DEFAULT 'actief'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -256,7 +260,7 @@ ALTER TABLE `digifixx_settings`
 -- AUTO_INCREMENT voor een tabel `digifixxcms`
 --
 ALTER TABLE `digifixxcms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixxcms_gebruikers`
@@ -274,7 +278,7 @@ ALTER TABLE `digifixxcms_product_reviews`
 -- AUTO_INCREMENT voor een tabel `digifixx_images`
 --
 ALTER TABLE `digifixx_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixx_producten`
