@@ -1,28 +1,4 @@
 <?php
-// if(isset($_GET['opslaan']) == "ja") {
-
-//     $paginaurl = strtolower($_POST['merk']) . "-" . strtolower($_POST['model']) . "-" . strtolower($_POST['naam']);
-//     $paginaUrlCheck = $mysqli->query(" SELECT * FROM digifixx_producten WHERE paginaurl = '".$paginaurl."'") or die ($mysqli->error.__LINE__);
-// 	$rowpaginaurl = $paginaUrlCheck->num_rows; 
-//     if ($rowpaginaurl > 0) {
-//         $error2 = "Deze menu titel bestaat al. Voer een unieke menu titel in.";
-//         $error_item1_2 = 'ja';
-//         $paginaurlerror = true;
-//     }
-    
-//     if($paginaurlerror == false) {
-//         $sql_insert = $mysqli->query("INSERT digifixx_producten SET naam 	= '".$mysqli->real_escape_string($_POST['naam'])."',
-//                                                                 model	= '".$mysqli->real_escape_string($_POST['model'])."',
-//                                                                 merk	= '".$mysqli->real_escape_string($_POST['merk'])."',
-//                                                                 categorie	= '".$mysqli->real_escape_string($_POST['categorie'])."',
-//                                                                 paginaurl = '".$paginaurl."") or die($mysqli->error.__LINE__);											
-//         $rowid = $mysqli->insert_id;
-                
-//         // pagina redirecten om deze te kunnen bewerken
-//         // ============================================
-//         header('Location: ?page=product_bewerken&id='.$rowid.'');
-//     }
-// }
 if(!$mysqli) { header ('Location:../'); }
 
 if(isset($_POST['opslaan'])) {
