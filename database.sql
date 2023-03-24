@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 23 mrt 2023 om 20:42
--- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.6
+-- Gegenereerd op: 24 mrt 2023 om 14:48
+-- Serverversie: 10.4.20-MariaDB
+-- PHP-versie: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -106,6 +106,7 @@ CREATE TABLE `digifixxcms_product_reviews` (
 CREATE TABLE `digifixx_images` (
   `id` int(11) NOT NULL,
   `cms_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL DEFAULT 0,
   `file_name` varchar(255) NOT NULL,
   `uploaded_on` datetime NOT NULL,
   `status` enum('1','0') NOT NULL DEFAULT '1'
@@ -115,8 +116,13 @@ CREATE TABLE `digifixx_images` (
 -- Gegevens worden geëxporteerd voor tabel `digifixx_images`
 --
 
-INSERT INTO `digifixx_images` (`id`, `cms_id`, `file_name`, `uploaded_on`, `status`) VALUES
-(5, 3, 'FietsImage1.png', '2023-03-21 09:13:00', '1');
+INSERT INTO `digifixx_images` (`id`, `cms_id`, `product_id`, `file_name`, `uploaded_on`, `status`) VALUES
+(5, 3, 0, 'FietsImage1.png', '2023-03-21 09:13:00', '1'),
+(6, 0, 1, 'FietsImage1.png', '2023-03-24 13:12:07', '1'),
+(8, 0, 2, 'FietsCard.png', '2023-03-24 14:10:32', '1'),
+(9, 0, 3, '03500493_de848293ab__1__0eee.jpg', '2023-03-24 14:15:22', '1'),
+(10, 0, 4, 'fff8515cbcba278caa0f6790a511.png', '2023-03-24 14:37:02', '1'),
+(11, 0, 5, 'Giant-attend-rs2-heren-blue-ashes.progressive.png', '2023-03-24 14:39:52', '1');
 
 -- --------------------------------------------------------
 
@@ -130,8 +136,8 @@ CREATE TABLE `digifixx_producten` (
   `model` varchar(200) NOT NULL,
   `merk` varchar(200) NOT NULL,
   `categorie` varchar(200) NOT NULL,
-  `prijs` varchar(11) NOT NULL,
-  `prijs_korting` varchar(11) NOT NULL,
+  `prijs` varchar(11) NOT NULL DEFAULT '0',
+  `prijs_korting` varchar(11) NOT NULL DEFAULT '0',
   `kleur` varchar(200) NOT NULL,
   `frameMaat` varchar(200) NOT NULL,
   `extras` varchar(200) NOT NULL,
@@ -144,7 +150,11 @@ CREATE TABLE `digifixx_producten` (
 --
 
 INSERT INTO `digifixx_producten` (`id`, `naam`, `model`, `merk`, `categorie`, `prijs`, `prijs_korting`, `kleur`, `frameMaat`, `extras`, `paginaurl`, `status`) VALUES
-(1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '3.749,00', '0', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', 'actief');
+(1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '3.749,00', '0', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', 'actief'),
+(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen\r\n', '2.899', '0', '#61a8cc', '', '', 'product/gazelle--grenoble-c8-hmb-2023', 'actief'),
+(3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen\r\n', '2.999,99', '2.499,99', '#fbad54', '', '', 'product/sparta--d-rule-energy', 'actief'),
+(4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen\r\n', '1.499,99', '0', '#3d5dbd', '', '', 'product/stella-livorno-easy-mds', 'actief'),
+(5, 'RS 2 2023', 'Attend ', 'Giant', 'Stadfietsen', '699,00', '599,00', '#000000', '', '', 'product/giant-attend--rs-2-2023', 'actief');
 
 -- --------------------------------------------------------
 
@@ -285,13 +295,13 @@ ALTER TABLE `digifixxcms_product_reviews`
 -- AUTO_INCREMENT voor een tabel `digifixx_images`
 --
 ALTER TABLE `digifixx_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixx_producten`
 --
 ALTER TABLE `digifixx_producten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixx_product_cat`
