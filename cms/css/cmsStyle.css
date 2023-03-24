@@ -333,6 +333,8 @@ main article section#webpaginas #webpaginas-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 425px;
+  overflow-y: scroll;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina {
   display: grid;
@@ -341,29 +343,56 @@ main article section#webpaginas #webpaginas-wrapper .webpagina {
   align-items: center;
   justify-items: center;
 }
-main article section#webpaginas #webpaginas-wrapper .webpagina:first-of-type > div {
-  font-size: 18px;
-  font-weight: 600;
-}
-main article section#webpaginas #webpaginas-wrapper .webpagina:first-of-type .pageIMG {
-  height: auto;
-  width: auto;
-}
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG {
-  height: 110px;
-  width: 110px;
+  height: 75px;
+  width: 80px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG img {
   object-fit: cover;
   border-radius: 12px;
 }
+main article section#webpaginas #webpaginas-wrapper .webpagina .pageTITLE {
+  text-align: center;
+}
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageCAT {
+  grid-column-start: 5;
+}
+main article section#webpaginas #webpaginas-wrapper .webpagina .pageEDIT:hover i {
+  transform: scale(1.1);
+}
+main article section#webpaginas #webpaginas-wrapper .webpagina .pageEDIT i {
+  font-size: 30px;
+  color: #fff;
+}
+main article section#webpaginas .webpaginaTitels {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-gap: 30px;
+  align-items: center;
+  justify-items: center;
+  padding-bottom: 20px;
+}
+main article section#webpaginas .webpaginaTitels > div {
+  font-size: 18px;
+  font-weight: 600;
+}
+main article section#webpaginas .webpaginaTitels .pageIMG {
+  height: auto;
+  width: auto;
+}
+main article section#webpaginas .webpaginaTitels .pageIMG img {
+  object-fit: cover;
+  border-radius: 12px;
+}
+main article section#webpaginas .webpaginaTitels .pageCAT {
   grid-column-start: 5;
 }
 main article section#producten #producten-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 425px;
+  overflow-y: scroll;
 }
 main article section#producten #producten-wrapper .product {
   display: grid;
@@ -372,24 +401,58 @@ main article section#producten #producten-wrapper .product {
   align-items: center;
   justify-items: center;
 }
-main article section#producten #producten-wrapper .product:first-of-type > div {
-  font-size: 18px;
-  font-weight: 600;
-}
-main article section#producten #producten-wrapper .product:first-of-type .pageIMG {
-  height: auto;
-  width: auto;
+main article section#producten #producten-wrapper .product .page {
+  transition: all 0.3s;
 }
 main article section#producten #producten-wrapper .product .pageIMG {
-  height: 110px;
-  width: 110px;
+  height: 75px;
+  width: 80px;
 }
 main article section#producten #producten-wrapper .product .pageIMG img {
   object-fit: cover;
   border-radius: 12px;
 }
 main article section#producten #producten-wrapper .product .pageCAT {
-  grid-column-start: 5;
+  grid-column-start: 4;
+}
+main article section#producten #producten-wrapper .product .pageURL {
+  grid-column: span 2/span 2;
+}
+main article section#producten #producten-wrapper .product .pageEDIT:hover i {
+  transform: scale(1.1);
+}
+main article section#producten #producten-wrapper .product .pageEDIT i {
+  font-size: 30px;
+  color: #fff;
+}
+main article section#producten .productTitle {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-gap: 30px;
+  align-items: center;
+  justify-items: center;
+  padding-bottom: 20px;
+}
+main article section#producten .productTitle > div {
+  font-size: 18px;
+  font-weight: 600;
+}
+main article section#producten .productTitle .page {
+  transition: all 0.3s;
+}
+main article section#producten .productTitle .pageIMG {
+  height: auto;
+  width: auto;
+}
+main article section#producten .productTitle .pageIMG img {
+  object-fit: cover;
+  border-radius: 12px;
+}
+main article section#producten .productTitle .pageCAT {
+  grid-column-start: 4;
+}
+main article section#producten .productTitle .pageURL {
+  grid-column: span 2/span 2;
 }
 main article section .title {
   font-size: 26px;

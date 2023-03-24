@@ -10,6 +10,10 @@
 
 <div class="Product-main">
         <div class="container mx-auto">
+            <select name="KortingSelect" id="KortingSelect">
+                <option value="alle-fietsen">Alle fietsen</option>
+                <option value="korting">Korting</option>
+            </select>
             <div class="ProductCard">
                 <?php
                     while($sqlProduct->fetch()) {

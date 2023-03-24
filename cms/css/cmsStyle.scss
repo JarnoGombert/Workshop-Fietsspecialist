@@ -381,6 +381,8 @@ main {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;  
+                    height: 425px;
+                    overflow-y: scroll;
 
                     .webpagina {
                         display: grid;
@@ -389,30 +391,62 @@ main {
                         align-items: center;
                         justify-items: center;
         
-                        &:first-of-type {
-                            >div {
-                                font-size: 18px;
-                                font-weight: 600;
-                            }
-                            .pageIMG{
-                                height: auto;
-                                width: auto;
-                            }
-                        }
-        
                         .page{
                             &IMG{
-                                height: 110px;
-                                width: 110px;
+                                height: 75px;
+                                width: 80px;
         
                                 img{
                                     object-fit: cover;
                                     border-radius: 12px;
                                 }
                             }
+                            &TITLE {
+                                text-align: center;
+                            }
                             &CAT{
                                 grid-column-start: 5;
                             }
+                            &EDIT{
+                                &:hover {
+                                    i {
+                                        transform: scale(1.1);
+                                    }
+                                }
+                                i {
+                                    font-size: 30px;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .webpaginaTitels {
+                    display: grid;
+                    grid-template-columns: repeat(8, minmax(0, 1fr));
+                    grid-gap: 30px;
+                    align-items: center;
+                    justify-items: center;
+                    padding-bottom: 20px;
+    
+                    >div {
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    .page{
+                        &IMG{
+                            height: auto;
+                            width: auto;
+    
+                            img{
+                                object-fit: cover;
+                                border-radius: 12px;
+                            }
+                        }
+                        &CAT{
+                            grid-column-start: 5;
                         }
                     }
                 }
@@ -423,6 +457,8 @@ main {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;  
+                    height: 425px;
+                    overflow-y: scroll;
 
                     .product {
                         display: grid;
@@ -431,21 +467,11 @@ main {
                         align-items: center;
                         justify-items: center;
         
-                        &:first-of-type {
-                            >div {
-                                font-size: 18px;
-                                font-weight: 600;
-                            }
-                            .pageIMG{
-                                height: auto;
-                                width: auto;
-                            }
-                        }
-        
                         .page{
+                            transition: all 0.3s;
                             &IMG{
-                                height: 110px;
-                                width: 110px;
+                                height: 75px;
+                                width: 80px;
         
                                 img{
                                     object-fit: cover;
@@ -453,8 +479,54 @@ main {
                                 }
                             }
                             &CAT{
-                                grid-column-start: 5;
+                                grid-column-start: 4;
                             }
+                            &URL{
+                                grid-column: span 2 / span 2;
+                            }
+                            &EDIT{
+                                &:hover {
+                                    i {
+                                        transform: scale(1.1);
+                                    }
+                                }
+                                i {
+                                    font-size: 30px;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+                .productTitle {
+                    display: grid;
+                    grid-template-columns: repeat(9, minmax(0, 1fr));
+                    grid-gap: 30px;
+                    align-items: center;
+                    justify-items: center;
+                    padding-bottom: 20px;
+    
+                    >div {
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                        
+                    .page{
+                        transition: all 0.3s;
+                        &IMG{
+                            height: auto;
+                            width: auto;
+    
+                            img{
+                                object-fit: cover;
+                                border-radius: 12px;
+                            }
+                        }
+                        &CAT{
+                            grid-column-start: 4;
+                        }
+                        &URL{
+                            grid-column: span 2 / span 2;
                         }
                     }
                 }

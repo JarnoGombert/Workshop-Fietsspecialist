@@ -8,8 +8,7 @@ $sqlProducten->bind_result($idProducten, $titelProducten, $modelProducten, $merk
 
 <section id="producten">
     <div class="title"><?=ucfirst($_GET['page']);?></div>
-    <div id="producten-wrapper">
-        <div class="product">
+    <div class="productTitle">
             <div class="pageIMG">Image</div>
             <div class="pageTITLE">Product</div>
             <div class="pageCAT">Model</div>
@@ -18,6 +17,7 @@ $sqlProducten->bind_result($idProducten, $titelProducten, $modelProducten, $merk
             <div class="pageSTATUS">Status</div>
             <div class="pageEDIT">Edit pagina</div>
         </div>
+    <div id="producten-wrapper">
         <?php
             while($sqlProducten->fetch()){
                 $query = $mysqli->query("SELECT * FROM digifixx_images WHERE product_id = ".$idProducten." LIMIT 1");
