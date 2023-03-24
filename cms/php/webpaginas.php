@@ -8,15 +8,15 @@ $sqlWebpaginas->bind_result($idWebpaginas, $titelWebpaginas, $catWebpaginas, $ur
 
 <section id="webpaginas">
     <div class="title"><?=ucfirst($_GET['page']);?></div>
+    <div class="webpaginaTitels">
+        <div class="pageIMG">Image</div>
+        <div class="pageTITLE">Pagina Titel</div>
+        <div class="pageCAT">Categorie</div>
+        <div class="pageURL">Pagina Link</div>
+        <div class="pageSTATUS">Status</div>
+        <div class="pageEDIT">Edit pagina</div>
+    </div>
     <div id="webpaginas-wrapper">
-        <div class="webpagina">
-            <div class="pageIMG">Image</div>
-            <div class="pageTITLE">Pagina Titel</div>
-            <div class="pageCAT">Categorie</div>
-            <div class="pageURL">Pagina Link</div>
-            <div class="pageSTATUS">Status</div>
-            <div class="pageEDIT">Edit pagina</div>
-        </div>
         <?php
             while($sqlWebpaginas->fetch()){
                 $query = $mysqli->query("SELECT * FROM digifixx_images WHERE cms_id = ".$idWebpaginas." LIMIT 1");

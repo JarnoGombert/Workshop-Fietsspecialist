@@ -51,4 +51,15 @@ $(document).ready(function() {
           },
       
       });
+
+    // Get the select element
+    const selectElement = document.getElementById('KortingSelect');
+    // Add event listener for the change event
+    selectElement.addEventListener('change', (event) => {
+    // Get the selected option
+    const selectedOption = event.target.value;
+
+    // Do something with the selected option
+    console.log(selectedOption);
+    });
 });
