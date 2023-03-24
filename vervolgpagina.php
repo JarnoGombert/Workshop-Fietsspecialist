@@ -64,11 +64,9 @@
         }
             if($row['id'] == '4') {
                 include 'php/contact.php';
-            }
-            if($row['id'] == '2') {
+            } else if($row['id'] == '2') {
                 include 'php/producten.php';
-            }
-            if($row['id'] == '6') {
+            } else if($row['id'] == '6') {
                 include 'php/betalingsmethode.php';
             }
         ?> 

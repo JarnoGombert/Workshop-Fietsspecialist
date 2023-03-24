@@ -20,7 +20,7 @@ $sqlProducten->bind_result($idProducten, $titelProducten, $modelProducten, $merk
         </div>
         <?php
             while($sqlProducten->fetch()){
-                $query = $mysqli->query("SELECT * FROM digifixx_images WHERE cms_id = ".$idProducten." LIMIT 1");
+                $query = $mysqli->query("SELECT * FROM digifixx_images WHERE product_id = ".$idProducten." LIMIT 1");
                 ?>
                 <div class="product">
                     <div class="pageIMG">

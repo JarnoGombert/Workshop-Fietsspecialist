@@ -35,16 +35,6 @@
         <?php 
         while($sqlMenu->fetch()) 
         {					
-            //active status
-            if ( $idMenu == $row['id']) 
-            {
-                $active = 'active';
-            }
-            else 
-            {
-                $active = '';
-            }
-
             $link = $url.$paginaurlMenu;
             
         echo "
