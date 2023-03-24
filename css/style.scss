@@ -228,7 +228,7 @@ body
 }
 .Product-main{
     width: 100%;
-    height: 500px;
+    height: auto;
     .ProductTxt{
         font-size: 35px;
         text-align: center;
@@ -237,12 +237,12 @@ body
     .ProductCard{
         width: 100%;
         height: 100%;
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         .card
         {
             width: 250px;
-            height: 300px;
+            height: auto;
             background-color: white;
             margin: 20px;
             position: relative;
@@ -261,7 +261,7 @@ body
             {
                 width: 100%;
                 height: 100%; 
-                object-fit: cover;
+                object-fit: contain;
             }
             .TxtColor
             {
@@ -274,7 +274,12 @@ body
                 font-size: 20px; 
                 text-align: center;
                 margin-top: 20px;
-
+                .PrijsPproduct
+                {
+                    font-size: 15px;
+                    text-decoration: line-through;
+                    color: #ddd;
+                }
                 .color-wrapper {
                     border-radius: 100%;
                     width: 30px;
@@ -291,6 +296,7 @@ body
                         transform: translate(-50%, -50%);
                     }
                 }
+
             }
         }
         .card:hover {

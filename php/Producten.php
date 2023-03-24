@@ -33,8 +33,8 @@
                             <div class="TxtColor">
                                 <div class="TxtCard">
                                         <?php if($prijsKProduct != "0"){?>
-                                            <span>€ <?=$prijsProduct;?></span>
-                                            <span>€ <?=$prijsKProduct;?></span>
+                                                <span class="PrijsPproduct">€ <?=$prijsProduct;?></span><br/>
+                                                <span>€ <?=$prijsKProduct;?></span>
                                         <?php } else { ?>
                                             <span>€ <?=$prijsProduct;?></span>
                                         <?php } ?>
