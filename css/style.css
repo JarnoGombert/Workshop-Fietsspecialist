@@ -197,11 +197,17 @@ body {
   transition: all 0.3s;
   text-decoration: none;
   color: black;
+  padding: 10px;
+}
+.Product-main .ProductCard .card .ImageProduct {
+  width: 250px;
+  height: 250px;
 }
 .Product-main .ProductCard .card .ImgCard {
-  width: 90%;
-  height: 150px;
-  margin: 10px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .Product-main .ProductCard .card .TxtColor {
   display: flex;

@@ -24,7 +24,9 @@
                         }
                              ?>
                         <a class="card" href="<?=$url;?><?=$urlProduct;?>">
-                            <img src="<?php echo $imageURL; ?>" class="ImgCard"/>
+                            <div class="ImageProduct">
+                                <img src="<?php echo $imageURL; ?>" class="ImgCard"/>
+                            </div>
                             <div class="TxtCard">
                                <?=$merkProduct;?><?=$modelProduct;?><?=$titelProduct;?>
                             </div>

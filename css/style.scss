@@ -251,11 +251,17 @@ body
             transition: all 0.3s;
             text-decoration: none;
             color: black;
+            padding: 10px;
+            .ImageProduct
+            {
+                width: 250px;
+                height: 250px;
+            }
             .ImgCard
             {
-                width: 90%;
-                height: 150px; 
-                margin: 10px;
+                width: 100%;
+                height: 100%; 
+                object-fit: cover;
             }
             .TxtColor
             {
