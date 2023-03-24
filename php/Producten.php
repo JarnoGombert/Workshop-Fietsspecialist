@@ -18,18 +18,20 @@
                             <div class="TxtCard">
                                <?=$merkProduct;?><?=$modelProduct;?><?=$titelProduct;?>
                             </div>
-                            <div class="TxtCard">
-                                <div class="color-wrapper">
-                                    <input type="color" value="<?=$kleurProduct;?>" name="color" id="color">
+                            <div class="TxtColor">
+                                <div class="TxtCard">
+                                        <?php if($prijsKProduct != "0.00"){?>
+                                            <span>€ <?=$prijsProduct;?></span>
+                                            <span>€ <?=$prijsKProduct;?></span>
+                                        <?php } else { ?>
+                                            <span>€ <?=$prijsProduct;?></span>
+                                        <?php } ?>
+                                    </div>
+                                <div class="TxtCard">
+                                    <div class="color-wrapper">
+                                        <input type="color" value="<?=$kleurProduct;?>" name="color" id="color">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="TxtCard">
-                                <?php if($prijsKProduct != "0.00"){?>
-                                    <span>€ <?=$prijsProduct;?></span>
-                                    <span>€ <?=$prijsKProduct;?></span>
-                                <?php } else { ?>
-                                    <span>€ <?=$prijsProduct;?></span>
-                                <?php } ?>
                             </div>
                         </a>
                 <?php } ?>

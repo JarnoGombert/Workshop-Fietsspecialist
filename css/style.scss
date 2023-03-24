@@ -249,11 +249,17 @@ body
             box-shadow: 0 0 8px -2px #111;
             margin-top: 50px;
             transition: all 0.3s;
+            text-decoration: none;
+            color: black;
             .ImgCard
             {
                 width: 90%;
                 height: 150px; 
                 margin: 10px;
+            }
+            .TxtColor
+            {
+                display: flex;
             }
             .TxtCard
             {
@@ -265,8 +271,8 @@ body
 
                 .color-wrapper {
                     border-radius: 100%;
-                    width: 35px;
-                    height: 35px;
+                    width: 30px;
+                    height: 30px;
                     position: relative;
                     margin: 0 auto;
                     overflow: hidden;
