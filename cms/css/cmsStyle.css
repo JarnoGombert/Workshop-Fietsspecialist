@@ -258,33 +258,33 @@ main article .alert-success {
   border-radius: 5px;
   color: #DDD;
 }
-main article section#paginaBewerken {
+main article section#paginaBewerken, main article section#Productbewerken {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
-main article section#paginaBewerken .left {
+main article section#paginaBewerken .left, main article section#Productbewerken .left {
   grid-column: span 3/span 3;
 }
-main article section#paginaBewerken .right {
+main article section#paginaBewerken .right, main article section#Productbewerken .right {
   grid-column: span 2/span 2;
 }
-main article section#paginaBewerken .right form {
+main article section#paginaBewerken .right form, main article section#Productbewerken .right form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 2rem 2rem 1rem 2rem;
 }
-main article section#paginaBewerken .right form input[type=file] {
+main article section#paginaBewerken .right form input[type=file], main article section#Productbewerken .right form input[type=file] {
   position: relative;
   height: 25px;
   display: flex;
   font-size: 18px;
   padding: 10px;
 }
-main article section#paginaBewerken .right form input[type=file]::-webkit-file-upload-button {
+main article section#paginaBewerken .right form input[type=file]::-webkit-file-upload-button, main article section#Productbewerken .right form input[type=file]::-webkit-file-upload-button {
   visibility: hidden;
 }
-main article section#paginaBewerken .right form input[type=file]::before {
+main article section#paginaBewerken .right form input[type=file]::before, main article section#Productbewerken .right form input[type=file]::before {
   content: "selecteren";
   display: block;
   background: #414850;
@@ -302,7 +302,7 @@ main article section#paginaBewerken .right form input[type=file]::before {
   border: 0;
   cursor: pointer;
 }
-main article section#paginaBewerken .right .image-wrapper {
+main article section#paginaBewerken .right .image-wrapper, main article section#Productbewerken .right .image-wrapper {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 10px;
@@ -310,16 +310,16 @@ main article section#paginaBewerken .right .image-wrapper {
   overflow: scroll;
   padding: 1rem 2rem 2rem 2rem;
 }
-main article section#paginaBewerken .right .image-wrapper .img {
+main article section#paginaBewerken .right .image-wrapper .img, main article section#Productbewerken .right .image-wrapper .img {
   position: relative;
   height: 150px;
   width: 190px;
 }
-main article section#paginaBewerken .right .image-wrapper .img img {
+main article section#paginaBewerken .right .image-wrapper .img img, main article section#Productbewerken .right .image-wrapper .img img {
   object-fit: cover;
   border-radius: 12px;
 }
-main article section#paginaBewerken .right .image-wrapper .img .btn-delete {
+main article section#paginaBewerken .right .image-wrapper .img .btn-delete, main article section#Productbewerken .right .image-wrapper .img .btn-delete {
   position: absolute;
   border-radius: 0 10px 0 10px;
   top: 0%;

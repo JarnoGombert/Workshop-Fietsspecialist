@@ -12,7 +12,10 @@
         <div class="container mx-auto">
             <div class="ProductCard">
                 <?php
-                    while($sqlProduct->fetch()) {?>
+                    while($sqlProduct->fetch()) {
+                        
+                        
+                        ?>
                         <a class="card" href="<?=$url;?><?=$urlProduct;?>">
                             <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
                             <div class="TxtCard">
@@ -20,7 +23,7 @@
                             </div>
                             <div class="TxtColor">
                                 <div class="TxtCard">
-                                        <?php if($prijsKProduct != "0.00"){?>
+                                        <?php if($prijsKProduct != "0"){?>
                                             <span>€ <?=$prijsProduct;?></span>
                                             <span>€ <?=$prijsKProduct;?></span>
                                         <?php } else { ?>

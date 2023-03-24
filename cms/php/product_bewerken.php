@@ -36,7 +36,7 @@ if (isset($_GET['opslaan']) == "ja") {
 };
 ?>
 
-<section id="Productewerken">
+<section id="Productbewerken">
     <div class="left">
         <div class="title">Product bewerken</div>
         <form action="?page=product_bewerken&id=<?=$_GET['id'];?>&opslaan=ja" method="POST">
@@ -112,20 +112,20 @@ if (isset($_GET['opslaan']) == "ja") {
         </form>
     </div>
     <div class="right">
-        <form action="?page=upload&id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data">
+        <form action="?page=product_upload&id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data">
             <p>Upload bestanden</p>
             <input type="file" multiple="multiple" name="file">
             <input type="submit" name="submit" class="btn" value="Upload">
         </form>
         <div class="image-wrapper">
         <?php
-        $query = $mysqli->query("SELECT * FROM digifixx_images WHERE cms_id = ".$productId."");
+        $query = $mysqli->query("SELECT * FROM digifixx_images WHERE product_id = ".$productId."");
             while($row = $query->fetch_assoc()){
                 $imageURL = '../img/'.$row["file_name"];
             ?>
             <div class="img">
                 <img src="<?php echo $imageURL; ?>" height="100%" width="100%" alt="" />
-                <a class="btn-delete" href="?page=delete&id=<?php echo $_GET['id'];?>"><i class="fa fa-trash-o"></i></a>
+                <a class="btn-delete" href="?page=product_delete&id=<?php echo $_GET['id'];?>"><i class="fa fa-trash-o"></i></a>
             </div>
             <?php } ?>
         </div>
