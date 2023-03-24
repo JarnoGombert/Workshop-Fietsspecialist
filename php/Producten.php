@@ -13,11 +13,18 @@
             <div class="ProductCard">
                 <?php
                     while($sqlProduct->fetch()) {
-                        
-                        
-                        ?>
+                           $query = $mysqli->query("SELECT * FROM digifixx_images WHERE product_id = ".$idProduct."");
+                        $row = $query->fetch_assoc();
+                        if($query->num_rows > 0)
+                        {
+                            $imageURL = '../img/'.$row["file_name"];
+                        }else
+                        {
+                            $imageURL = '../img/noimg.jpg';
+                        }
+                             ?>
                         <a class="card" href="<?=$url;?><?=$urlProduct;?>">
-                            <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
+                            <img src="<?php echo $imageURL; ?>" class="ImgCard"/>
                             <div class="TxtCard">
                                <?=$merkProduct;?><?=$modelProduct;?><?=$titelProduct;?>
                             </div>
