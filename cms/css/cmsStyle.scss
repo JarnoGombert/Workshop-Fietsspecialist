@@ -381,7 +381,7 @@ main {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;  
-                    height: 425px;
+                    height: 450px;
                     overflow-y: scroll;
 
                     .webpagina {
@@ -524,6 +524,68 @@ main {
                         }
                         &CAT{
                             grid-column-start: 4;
+                        }
+                        &URL{
+                            grid-column: span 2 / span 2;
+                        }
+                    }
+                }
+            }
+
+            &#reviews {
+                #reviews-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;  
+                    height: 425px;
+                    overflow-y: scroll;
+
+                    .review {
+                        display: grid;
+                        grid-template-columns: repeat(9, minmax(0, 1fr));
+                        grid-gap: 30px;
+                        align-items: center;
+                        justify-items: center;
+        
+                        .page{
+                            transition: all 0.3s;
+                            &CAT{
+                                grid-column-start: 5;
+                            }
+                            &URL{
+                                grid-column: span 2 / span 2;
+                            }
+                            &EDIT{
+                                &:hover {
+                                    i {
+                                        transform: scale(1.1);
+                                    }
+                                }
+                                i {
+                                    font-size: 30px;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+                .reviewTitels {
+                    display: grid;
+                    grid-template-columns: repeat(9, minmax(0, 1fr));
+                    grid-gap: 30px;
+                    align-items: center;
+                    justify-items: center;
+                    padding-bottom: 20px;
+    
+                    >div {
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                        
+                    .page{
+                        transition: all 0.3s;
+                        &CAT{
+                            grid-column-start: 5;
                         }
                         &URL{
                             grid-column: span 2 / span 2;

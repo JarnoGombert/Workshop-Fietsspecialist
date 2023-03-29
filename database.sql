@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 24 mrt 2023 om 14:48
--- Serverversie: 10.4.20-MariaDB
--- PHP-versie: 8.0.9
+-- Gegenereerd op: 29 mrt 2023 om 22:14
+-- Serverversie: 10.4.24-MariaDB
+-- PHP-versie: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -194,8 +194,16 @@ CREATE TABLE `digifixx_reviews` (
   `titel` varchar(200) NOT NULL,
   `tekst` longtext NOT NULL,
   `auteur` varchar(200) NOT NULL,
+  `paginaurl` varchar(200) NOT NULL,
   `status` varchar(200) NOT NULL DEFAULT 'niet actief'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `digifixx_reviews`
+--
+
+INSERT INTO `digifixx_reviews` (`id`, `titel`, `tekst`, `auteur`, `paginaurl`, `status`) VALUES
+(1, 'Dit is een test', 'Dit is een test review, dus niet echt.', 'John doe', 'test-review', 'actief');
 
 -- --------------------------------------------------------
 
@@ -313,7 +321,7 @@ ALTER TABLE `digifixx_product_cat`
 -- AUTO_INCREMENT voor een tabel `digifixx_reviews`
 --
 ALTER TABLE `digifixx_reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixx_settings`
