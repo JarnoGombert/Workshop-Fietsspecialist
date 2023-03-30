@@ -8,6 +8,7 @@
             <div class="nieuw_opties">            
                 <a href="?page=nieuwe_pagina"><span class="menu-icon ti-files"></span>nieuwe pagina</a>
                 <a href="?page=nieuw_product"><span class="menu-icon ti-files"></span>nieuw product</a>
+                <a href="?page=nieuw_review"><span class="menu-icon ti-files"></span>nieuwe review</a>
                 <?php if($rowuser['id'] == '1') { ?>
                     <a href="?page=nieuwe_gebruiker"><span class="menu-icon ti-user"></span>nieuwe gebruiker</a>
                 <?php } ?>

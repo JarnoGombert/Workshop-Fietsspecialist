@@ -1,6 +1,6 @@
 <?php
     //Producten items ophalen
-    $sqlProduct = $mysqli -> prepare("SELECT id, naam, model, merk, categorie, prijs, prijs_korting, kleur, frameMaat, extras, paginaurl, status FROM digifixx_producten") or die ($mysqli->error.__LINE__);
+    $sqlProduct = $mysqli -> prepare("SELECT id, naam, model, merk, categorie, prijs, prijs_korting, kleur, frameMaat, extras, paginaurl, status FROM digifixx_producten WHERE status = 'actief'") or die ($mysqli->error.__LINE__);
     // $productId = $_GET['id'];
     // $sqlProduct->bind_param('i',$productId);
     $sqlProduct->execute();

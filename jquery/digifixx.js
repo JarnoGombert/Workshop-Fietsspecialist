@@ -38,6 +38,9 @@ $(document).ready(function() {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
+        autoplay: {
+            delay: 3000,
+        },
         
         pagination: {
           el: ".swiper-pagination",
@@ -51,6 +54,40 @@ $(document).ready(function() {
           },
       
       });
+    
+    const swiperReviews = new Swiper('#reviews', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 10,
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 500px
+            500: {
+            slidesPerView: 1,
+            spaceBetween: 30
+            },
+            // when window width is >= 976px
+            976: {
+            slidesPerView: 2,
+            spaceBetween: 10
+            }
+        },
+        
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
+        
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 
     // Get the select element
     const selectElement = document.getElementById('KortingSelect');

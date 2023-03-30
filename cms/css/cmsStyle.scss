@@ -50,6 +50,27 @@ body
 .open_menu {
     display: block !important;
 }
+
+.alert{
+    padding: 10px;
+    border-radius: 12px;
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-50%);
+    z-index: 100;
+
+    &.alert-error{
+        background: red;
+        color: #fff;
+    }
+
+    &.alert-success {
+        background: green;
+        color: #fff;
+    }
+}
+
 #login-main{
     height: 100%;
     width: 100%;

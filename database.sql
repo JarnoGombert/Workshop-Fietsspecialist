@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 29 mrt 2023 om 22:14
+-- Gegenereerd op: 30 mrt 2023 om 23:30
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -194,6 +194,7 @@ CREATE TABLE `digifixx_reviews` (
   `titel` varchar(200) NOT NULL,
   `tekst` longtext NOT NULL,
   `auteur` varchar(200) NOT NULL,
+  `aantal_sterren` int(11) DEFAULT NULL,
   `paginaurl` varchar(200) NOT NULL,
   `status` varchar(200) NOT NULL DEFAULT 'niet actief'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -202,8 +203,11 @@ CREATE TABLE `digifixx_reviews` (
 -- Gegevens worden geëxporteerd voor tabel `digifixx_reviews`
 --
 
-INSERT INTO `digifixx_reviews` (`id`, `titel`, `tekst`, `auteur`, `paginaurl`, `status`) VALUES
-(1, 'Dit is een test', 'Dit is een test review, dus niet echt.', 'John doe', 'test-review', 'actief');
+INSERT INTO `digifixx_reviews` (`id`, `titel`, `tekst`, `auteur`, `aantal_sterren`, `paginaurl`, `status`) VALUES
+(1, 'Dit is een test', 'Dit is een test review, dus niet echt.', 'John Doe', 4, 'review/test-review', 'actief'),
+(2, 'Dit is nog een test review', 'test', 'John Doe', 2, 'review/dit-is-nog-een-test-review', 'actief'),
+(3, 'Dit is nog een test review', 'Dit is een test tekst.', 'John Doe', 2, 'review/dit-is-nog-een-test-review', 'actief'),
+(4, 'review', '', 'John Doe', 4, 'review/review', 'actief');
 
 -- --------------------------------------------------------
 
@@ -321,7 +325,7 @@ ALTER TABLE `digifixx_product_cat`
 -- AUTO_INCREMENT voor een tabel `digifixx_reviews`
 --
 ALTER TABLE `digifixx_reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixx_settings`

@@ -63,6 +63,8 @@ $row = $result->fetch_assoc();
     <!-- jquery files -->
     <script type="text/javascript" src="<?=$url;?>jquery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="<?=$url;?>jquery/digifixx.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="<?=$url;?>slick/slick.js"></script>
 
     <title><?php if(isset($row['item1'])){echo $row['item1'];}else{echo $row['merk'] . " " . $row['model'] . " " . $row['naam'];}?></title>
@@ -85,15 +87,5 @@ $row = $result->fetch_assoc();
 
      <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-    var swiper = new Swiper(".mySwiper", {
-        navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-        },
-    });
-    </script>
 </body>
 </html>
