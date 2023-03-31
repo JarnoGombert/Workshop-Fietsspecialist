@@ -81,7 +81,7 @@
             <div class="MerkTxt">
             Onze Merken
             </div>
-            <div class="Row">
+            <div class="merk-wrapper">
                 <div class="MerkImages">
                     <img src="<?=$url;?>Images/gazelle-logo.png" class="RowImg">
                 </div>
@@ -91,8 +91,6 @@
                 <div class="MerkImages">
                     <img src="<?=$url;?>Images/Sparta.png" class="RowImg">
                 </div>
-            </div>
-            <div class="Row">
                 <div class="MerkImages">
                     <img src="<?=$url;?>Images/Koga.png" class="RowImg">
                 </div>
@@ -102,8 +100,6 @@
                 <div class="MerkImages">
                     <img src="<?=$url;?>Images/Cortina.png" class="RowImg">
                 </div>
-            </div>
-            <div class="Row">
                 <div class="MerkImages">
                     <img src="<?=$url;?>Images/cervelo.png" class="RowImg">
                 </div>
