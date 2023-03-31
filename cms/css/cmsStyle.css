@@ -481,7 +481,7 @@ main article section#reviews #reviews-wrapper {
 }
 main article section#reviews #reviews-wrapper .review {
   display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-template-columns: repeat(10, minmax(0, 1fr));
   grid-gap: 30px;
   align-items: center;
   justify-items: center;
@@ -489,11 +489,14 @@ main article section#reviews #reviews-wrapper .review {
 main article section#reviews #reviews-wrapper .review .page {
   transition: all 0.3s;
 }
+main article section#reviews #reviews-wrapper .review .pageTITLE {
+  grid-column: span 2/span 2;
+}
 main article section#reviews #reviews-wrapper .review .pageCAT {
   grid-column-start: 5;
 }
 main article section#reviews #reviews-wrapper .review .pageURL {
-  grid-column: span 2/span 2;
+  grid-column: span 3/span 3;
 }
 main article section#reviews #reviews-wrapper .review .pageEDIT:hover i {
   transform: scale(1.1);
@@ -504,7 +507,7 @@ main article section#reviews #reviews-wrapper .review .pageEDIT i {
 }
 main article section#reviews .reviewTitels {
   display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-template-columns: repeat(10, minmax(0, 1fr));
   grid-gap: 30px;
   align-items: center;
   justify-items: center;
@@ -517,11 +520,14 @@ main article section#reviews .reviewTitels > div {
 main article section#reviews .reviewTitels .page {
   transition: all 0.3s;
 }
+main article section#reviews .reviewTitels .pageTITLE {
+  grid-column: span 2/span 2;
+}
 main article section#reviews .reviewTitels .pageCAT {
   grid-column-start: 5;
 }
 main article section#reviews .reviewTitels .pageURL {
-  grid-column: span 2/span 2;
+  grid-column: span 3/span 3;
 }
 main article section .title {
   font-size: 26px;
