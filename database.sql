@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 31 mrt 2023 om 14:29
+-- Gegenereerd op: 31 mrt 2023 om 22:25
 -- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.4
+-- PHP-versie: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -153,9 +153,9 @@ CREATE TABLE `digifixx_producten` (
 
 INSERT INTO `digifixx_producten` (`id`, `naam`, `model`, `merk`, `categorie`, `prijs`, `prijs_korting`, `kleur`, `frameMaat`, `extras`, `paginaurl`, `datum`, `status`) VALUES
 (1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '3.749,00', '0', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', '2023-03-08 12:02:45', 'actief'),
-(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen\r\n', '2.899', '0', '#61a8cc', '', '', 'product/gazelle-grenoble-c8-hmb-2023', '2023-03-31 11:02:45', 'actief'),
-(3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen\r\n', '2.999,99', '2.499,99', '#fbad54', '', '', 'product/sparta--d-rule-energy', '2023-03-31 11:02:45', 'actief'),
-(4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen\r\n', '1.499,99', '0', '#3d5dbd', '', '', 'product/stella-livorno-easy-mds', '2023-03-31 11:02:45', 'actief'),
+(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen', '2.899', '0', '#61a8cc', '', '', 'product/gazelle-grenoble-c8-hmb-2023', '2023-03-31 11:02:45', 'actief'),
+(3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen', '2.999,99', '2.499,99', '#fbad54', '', '', 'product/sparta--d-rule-energy', '2023-03-31 11:02:45', 'actief'),
+(4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen', '1.499,99', '0', '#3d5dbd', '', '', 'product/stella-livorno-easy-mds', '2023-03-31 11:02:45', 'actief'),
 (5, 'RS 2 2023', 'Attend ', 'Giant', 'Stadfietsen', '699,00', '599,00', '#000000', '', '', 'product/giant-attend-rs-2-2023', '2023-03-31 11:02:45', 'actief');
 
 -- --------------------------------------------------------
@@ -177,13 +177,13 @@ CREATE TABLE `digifixx_product_cat` (
 INSERT INTO `digifixx_product_cat` (`id`, `catNaam`, `catPopulair`) VALUES
 (1, 'Stadfietsen', 'ja'),
 (2, 'Toerfietsen', 'nee'),
-(3, 'Fitness fietsen\r\n', 'nee'),
+(3, 'Fitness fietsen', 'nee'),
 (4, 'Kinderfietsen', 'ja'),
 (5, 'Mountianbike', 'ja'),
 (6, 'Racefietsen', 'ja'),
-(7, 'Elektrische fietsen\r\n', 'ja'),
-(8, 'Allrounder\n', 'nee'),
-(9, 'Gravel fietsen\r\n', 'nee');
+(7, 'Elektrische fietsen', 'ja'),
+(8, 'Allrounder', 'nee'),
+(9, 'Gravel fietsen', 'nee');
 
 -- --------------------------------------------------------
 
