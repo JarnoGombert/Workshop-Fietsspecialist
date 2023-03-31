@@ -46,6 +46,7 @@ $row = $result->fetch_assoc();
 
     <link rel="stylesheet" href="<?=$url;?>css/style.css">
     <link rel="stylesheet" href="<?=$url;?>cms/font-awesome/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?=$url;?>slick/slick.css">
     <link rel="stylesheet" href="<?=$url;?>slick/slick-theme.css">
 

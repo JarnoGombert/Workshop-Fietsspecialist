@@ -2,9 +2,9 @@
     <label for="payment-method">Selecteer betaalmethode:</label>
     <select id="payment-method" name="payment-method">
         <option value="">Selecteer</option>
-        <option value="creditcard">Credit Card</option>
-        <option value="bitcoin"><i class="fab fa-bitcoin"></i>Bitcoin</option>
-        <option value="ideal">iDeal</option>
+        <option value="creditcard"><span>&#xf09d;</span> Credit Card</option>
+        <option value="bitcoin"><span>&#xf15a;</span> Bitcoin</option>
+        <option value="ideal"><span>&#xf0d6;</span> iDeal</option>
     </select>
 
     <div id="creditcard-form">
