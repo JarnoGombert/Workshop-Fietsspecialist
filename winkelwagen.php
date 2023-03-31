@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="divInput">
-                <a  href="<?=$url;?>betalingsmethode" class="winkelwagenInput mx-auto">Betalen</a>
+                <a  href="<?=$url;?>betalings-methode" class="winkelwagenInput mx-auto">Betalen</a>
             </div>
             </div>
         </div>

@@ -9,25 +9,25 @@
 
     <form id="creditcard-form" action="<?=$url;?>betaling-voltooid" method="post">
         <!-- Credit card form fields -->
-        <input type="text" name="card-number" placeholder="kaart nummer" required>
+        <input type="text" name="card-number" placeholder="kaart nummer" verplicht>
         <input type="text" name="card-holder-name" placeholder="kaart houder naam" required>
         <input type="text" name="expiry-date" placeholder="afloop datum" required>
         <input type="text" name="cvv" placeholder="CVV">
-        <input class="divInput" type="submit" value="betalen" href="<?=$url;?>betaling-voltooid">
+        <input class="divInput" type="submit" value="betalen">
     </form>
 
     <form id="bitcoin-form" style="display:none;" action="<?=$url;?>betaling-voltooid" method="post">
         <!-- Bitcoin form fields -->
         <input type="text" name="btc-address" placeholder="Bitcoin adres" required>
-        <input type="submit"  href="<?=$url;?>betaling-voltooid" class="winkelwagenInput mx-auto">Betalen</a>
-        <input class="divInput" type="submit" value="betalen" href="<?=$url;?>betaling-voltooid">
+        <input class="divInput" type="submit" value="betalen">
+
     </form>
 
     <form id="ideal-form" style="display:none;" action="<?=$url;?>betaling-voltooid" method="post">
         <!-- iDeal form fields -->
         <input type="text" name="bank-name" placeholder="Bank naam" required>
         <input type="text" name="account-number" placeholder="Acount nummer" required>
-        <input class="divInput" type="submit" value="betalen" href="<?=$url;?>betaling-voltooid">
+        <input class="divInput" type="submit" value="betalen">
     </form>
 </div>
 
