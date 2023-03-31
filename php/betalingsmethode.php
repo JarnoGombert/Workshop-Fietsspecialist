@@ -1,16 +1,52 @@
-  <div class="Creditcard-main">
-    <h1>Creditcard:</h1>
-    <label for="card-number">kaart nummer:</label>
-    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required><br/>
+<div class="betaalmethode-main">
+    <label for="payment-method">Selecteer betaalmethode:</label>
+    <select id="payment-method" name="payment-method">
+        <option value="">Selecteer</option>
+        <option value="creditcard">Credit Card</option>
+        <option value="bitcoin"><i class="fab fa-bitcoin"></i>Bitcoin</option>
+        <option value="ideal">iDeal</option>
+    </select>
 
-    <label for="card-holder-name">kaart houder naam:</label>
-    <input type="text" id="card-holder-name" name="card-holder-name" placeholder="John Doe" required><br/>
+    <div id="creditcard-form">
+        <!-- Credit card form fields -->
+        <input type="text" name="card-number" placeholder="kaart nummer">
+        <input type="text" name="card-holder-name" placeholder="kaart houder naam">
+        <input type="text" name="expiry-date" placeholder="afloop datum">
+        <input type="text" name="cvv" placeholder="CVV">
+    </div>
 
-    <label for="expiry-date">afloop datum:</label>
-    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required><br/>
+    <div id="bitcoin-form" style="display:none;">
+        <!-- Bitcoin form fields -->
+        <input type="text" name="btc-address" placeholder="Bitcoin adres">
+    </div>
 
-    <label for="cvv">CVV:</label>
-    <input type="text" id="cvv" name="cvv" placeholder="123" required><br/>
+    <div id="ideal-form" style="display:none;">
+        <!-- iDeal form fields -->
+        <input type="text" name="bank-name" placeholder="Bank naam">
+        <input type="text" name="account-number" placeholder="Acount nummer">
+    </div>
+</div>
 
-    <input type="submit" value="Betaal">
-  </div>
+<script>
+    const paymentMethod = document.getElementById("payment-method");
+    const creditcardForm = document.getElementById("creditcard-form");
+    const bitcoinForm = document.getElementById("bitcoin-form");
+    const idealForm = document.getElementById("ideal-form");
+
+    paymentMethod.addEventListener("change", function() {
+        // Hide all forms
+        creditcardForm.style.display = "none";
+        bitcoinForm.style.display = "none";
+        idealForm.style.display = "none";
+
+        // Show the selected form
+        const selectedValue = paymentMethod.value;
+        if (selectedValue === "creditcard") {
+            creditcardForm.style.display = "block";
+        } else if (selectedValue === "bitcoin") {
+            bitcoinForm.style.display = "block";
+        } else if (selectedValue === "ideal") {
+            idealForm.style.display = "block";
+        }
+    });
+</script>
