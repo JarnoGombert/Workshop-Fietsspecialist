@@ -43,6 +43,8 @@
         }
             if($row['id'] == '4') {
                 include 'php/contact.php';
+            } else if($row['id'] == '2') {
+                include 'php/Producten.php';
             } else if($row['id'] == '6') {
                 include 'php/betalingsmethode.php';
             }
