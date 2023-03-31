@@ -27,7 +27,6 @@ body {
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 17px;
   text-decoration: none;
@@ -252,8 +251,7 @@ main article .deleteIMG {
   width: 100%;
 }
 main article .deleteIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100%;
   width: 100%;
   border-radius: 12px;
@@ -336,8 +334,7 @@ main article section#paginaBewerken .right .image-wrapper .img, main article sec
   width: 190px;
 }
 main article section#paginaBewerken .right .image-wrapper .img img, main article section#Productbewerken .right .image-wrapper .img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#paginaBewerken .right .image-wrapper .img .btn-delete, main article section#Productbewerken .right .image-wrapper .img .btn-delete {
@@ -369,8 +366,7 @@ main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG {
   width: 80px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageTITLE {
@@ -403,8 +399,7 @@ main article section#webpaginas .webpaginaTitels .pageIMG {
   width: auto;
 }
 main article section#webpaginas .webpaginaTitels .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#webpaginas .webpaginaTitels .pageCAT {
@@ -432,8 +427,7 @@ main article section#producten #producten-wrapper .product .pageIMG {
   width: 80px;
 }
 main article section#producten #producten-wrapper .product .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#producten #producten-wrapper .product .pageCAT {
@@ -469,8 +463,7 @@ main article section#producten .productTitle .pageIMG {
   width: auto;
 }
 main article section#producten .productTitle .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#producten .productTitle .pageCAT {
@@ -555,4 +548,4 @@ main article section .title {
   padding: 5px 10px;
   font-family: "Rosario", sans-serif;
   resize: none;
-}/*# sourceMappingURL=cmsStyle.css.map */
+}

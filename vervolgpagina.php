@@ -15,7 +15,7 @@
             $sqlReview->bind_result($idReview, $titelReview, $TekstReview, $sterrenReview, $auteurReview, $urlReview, $statusReview);
             ?>
         <div class="Review">
-            <h1 style="text-align: center; margin-bottom: 50px; font-size: 40px">Reviews:</h1>
+            <h2 style="text-align: center; margin-bottom: 50px; font-size: 40px">Reviews</h2>
             <div id="reviews" class="ReviewRow1 swiper">
                 <div class="swiper-wrapper">
                     <?php while($sqlReview->fetch()){ ?>

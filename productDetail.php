@@ -13,5 +13,6 @@
     <div class="container mx-auto">
         <?php include 'php/breadcrumbs.php'; ?>
         <div class="title"><?=$rowFiets['merk'];?> <?=$rowFiets['model'];?> <?=$rowFiets['naam'];?></div>
+        
     </div>
 </section>

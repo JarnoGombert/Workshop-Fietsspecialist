@@ -15,9 +15,7 @@ if($count > 1){
 }
 
 if($productenUrlPage == "product"){
-    $sql = $mysqli->prepare(
-        "SELECT * FROM digifixx_producten WHERE paginaurl = ? AND status = 'actief'"
-    ) or die($mysqli->error . __LINE__);
+    $sql = $mysqli->prepare("SELECT * FROM digifixx_producten WHERE paginaurl = ? AND status = 'actief'") or die($mysqli->error . __LINE__);
     $voorwaarde = "product/" . basename($path);
     $sql->bind_param("s", $voorwaarde);
 } else {
@@ -73,7 +71,7 @@ $row = $result->fetch_assoc();
     <header><?php include('header.php'); ?></header>
     <main>
         <?php 
-        if ($row['id'] == "1" && $productenUrlPage == "product") {
+        if ($productenUrlPage == "product") {
             include('productDetail.php');
         } else if($row['id'] == "1") {
             include('startpagina.php');
