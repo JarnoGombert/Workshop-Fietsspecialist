@@ -9,7 +9,7 @@
         <?php
         if($row['id'] == '3') {
             //Reviewen items ophalen
-            $sqlReview = $mysqli -> prepare("SELECT id, titel, tekst, aantal_sterren, auteur, paginaurl, status FROM digifixx_reviews WHERE status = 'actief'") or die ($mysqli->error.__LINE__);
+            $sqlReview = $mysqli -> prepare("SELECT id, titel, tekst, aantal_sterren, auteur, paginaurl, status FROM digifixx_reviews WHERE status = 'actief' LIMIT 4") or die ($mysqli->error.__LINE__);
             $sqlReview->execute();
             $sqlReview->store_result();
             $sqlReview->bind_result($idReview, $titelReview, $TekstReview, $sterrenReview, $auteurReview, $urlReview, $statusReview);
