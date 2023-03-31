@@ -67,7 +67,7 @@
                                     </div>
                                 <div class="TxtCard">
                                     <div class="color-wrapper">
-                                        <input type="color" value="<?=$kleurProduct;?>" name="color" id="color">
+                                        <input type="color" value="<?=$kleurProduct;?>" name="color" id="color" disabled>
                                     </div>
                                 </div>
                             </div>

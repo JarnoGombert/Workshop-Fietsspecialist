@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 30 mrt 2023 om 23:30
+-- Gegenereerd op: 31 mrt 2023 om 14:29
 -- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.6
+-- PHP-versie: 8.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,8 @@ INSERT INTO `digifixxcms` (`id`, `item1`, `item2`, `item3`, `item4`, `item5`, `t
 (3, 'Over ons', '', '', '', '', 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.', 'hoofdmenu', 'over-ons', 'actief', '0000-00-00'),
 (4, 'Contact', '', '', '', '', '', 'hoofdmenu', 'contact', 'actief', '0000-00-00'),
 (5, 'Winkelwagen', '', '', '', '', '', 'hoofdmenu', 'winkelwagen', 'actief', '0000-00-00'),
-(6, 'Betalings Methode', '', '', '', '', '', 'overige', 'betalings-methode', 'actief', '0000-00-00');
+(6, 'Betalings Methode', '', '', '', '', '', 'overige', 'betalings-methode', 'actief', '0000-00-00'),
+(7, 'Betaling Voltooid', '', '', '', '', '', 'overige', 'betaling-voltooid', 'actief', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -142,6 +143,7 @@ CREATE TABLE `digifixx_producten` (
   `frameMaat` varchar(200) NOT NULL,
   `extras` varchar(200) NOT NULL,
   `paginaurl` varchar(200) NOT NULL,
+  `datum` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` varchar(200) NOT NULL DEFAULT 'actief'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -149,12 +151,12 @@ CREATE TABLE `digifixx_producten` (
 -- Gegevens worden geëxporteerd voor tabel `digifixx_producten`
 --
 
-INSERT INTO `digifixx_producten` (`id`, `naam`, `model`, `merk`, `categorie`, `prijs`, `prijs_korting`, `kleur`, `frameMaat`, `extras`, `paginaurl`, `status`) VALUES
-(1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '3.749,00', '0', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', 'actief'),
-(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen\r\n', '2.899', '0', '#61a8cc', '', '', 'product/gazelle--grenoble-c8-hmb-2023', 'actief'),
-(3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen\r\n', '2.999,99', '2.499,99', '#fbad54', '', '', 'product/sparta--d-rule-energy', 'actief'),
-(4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen\r\n', '1.499,99', '0', '#3d5dbd', '', '', 'product/stella-livorno-easy-mds', 'actief'),
-(5, 'RS 2 2023', 'Attend ', 'Giant', 'Stadfietsen', '699,00', '599,00', '#000000', '', '', 'product/giant-attend--rs-2-2023', 'actief');
+INSERT INTO `digifixx_producten` (`id`, `naam`, `model`, `merk`, `categorie`, `prijs`, `prijs_korting`, `kleur`, `frameMaat`, `extras`, `paginaurl`, `datum`, `status`) VALUES
+(1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '3.749,00', '0', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', '2023-03-08 12:02:45', 'actief'),
+(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen\r\n', '2.899', '0', '#61a8cc', '', '', 'product/gazelle-grenoble-c8-hmb-2023', '2023-03-31 11:02:45', 'actief'),
+(3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen\r\n', '2.999,99', '2.499,99', '#fbad54', '', '', 'product/sparta--d-rule-energy', '2023-03-31 11:02:45', 'actief'),
+(4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen\r\n', '1.499,99', '0', '#3d5dbd', '', '', 'product/stella-livorno-easy-mds', '2023-03-31 11:02:45', 'actief'),
+(5, 'RS 2 2023', 'Attend ', 'Giant', 'Stadfietsen', '699,00', '599,00', '#000000', '', '', 'product/giant-attend-rs-2-2023', '2023-03-31 11:02:45', 'actief');
 
 -- --------------------------------------------------------
 
@@ -289,7 +291,7 @@ ALTER TABLE `digifixx_settings`
 -- AUTO_INCREMENT voor een tabel `digifixxcms`
 --
 ALTER TABLE `digifixxcms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixxcms_gebruikers`
