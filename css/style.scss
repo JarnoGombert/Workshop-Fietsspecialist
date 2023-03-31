@@ -370,6 +370,55 @@ body
         }
     }
 }
+.Creditcard-main
+{
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+      }
+      
+      h1 {
+        margin-top: 0;
+      }
+      
+      label {
+        margin-top: 10px;
+        display: block;
+        font-weight: bold;
+      }
+      
+      input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+}
 .contentVervolgMain, .contentWinkelwagen, .contentProductMain{
     padding-bottom: 30px;
     .title {
