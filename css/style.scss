@@ -16,6 +16,20 @@ $secondary-color: $logo-color;
 $white: #fff;
 $font: 'Rosario', sans-serif;
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar {
+    background-color: $primary-color;
+    color: $primary-color;
+}
+::-webkit-scrollbar-thumb {
+    background-image: initial;
+    background-color: $secondary-color;
+}
+
 .mx-auto{
     margin-left: auto;
     margin-right: auto;
