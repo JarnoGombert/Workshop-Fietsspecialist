@@ -47,6 +47,8 @@
                 include 'php/Producten.php';
             } else if($row['id'] == '6') {
                 include 'php/betalingsmethode.php';
+            }else if($row['id'] == '7') {
+                include 'php/betalingvoltiood.php';
             }
         ?> 
     </div>
