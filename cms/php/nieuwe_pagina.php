@@ -50,11 +50,11 @@ if(isset($_POST['opslaan'])) {
             <div class="form-group">
                 <label for="categorie">Categorie Pagina</label>
                 <select name="categorie" placeholder="Selecteer een categorie" >	
-                <option value="">selecteer een categorie</option>
-                    <?php //categorien ophalen
-                    foreach (getCategorie($mysqli) as $categorien) {
-                    echo '<option value="'.htmlspecialchars($categorien['catNaam']).'" >'.htmlspecialchars($categorien['catNaam']).'</option>';		
-                    } //functie categorien ?>
+                    <option value="">selecteer een categorie</option>
+                        <?php //categorien ophalen
+                        foreach (getCategorie($mysqli) as $categorien) {
+                        echo '<option value="'.htmlspecialchars($categorien['catNaam']).'" >'.htmlspecialchars($categorien['catNaam']).'</option>';		
+                        } //functie categorien ?>
                 </select>
             </div>
             <input class="btn" type="submit" name="opslaan" value="Opslaan">

@@ -1,5 +1,6 @@
 <?php
 require "cms/login/config.php";
+require "cms/login/functies.php";
 session_start(); 
 ob_start(); 
 // voorwaarde startpagina ophalen

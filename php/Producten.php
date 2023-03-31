@@ -15,6 +15,13 @@
                     <option value="alle-fietsen">Alle fietsen</option>
                     <option value="korting">Korting</option>
                 </select>
+                <select name="categorie" placeholder="Selecteer een categorie" >	
+                    <option value="">geen categorie</option>
+                        <?php //categorien ophalen
+                        foreach (getCategorie($mysqli) as $categorien) {
+                        echo '<option value="'.htmlspecialchars($categorien['catNaam']).'" >'.htmlspecialchars($categorien['catNaam']).'</option>';		
+                        } //functie categorien ?>
+                </select>
             </div>
             <div class="ProductCard">
                 <?php
