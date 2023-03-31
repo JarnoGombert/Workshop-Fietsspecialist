@@ -1,9 +1,15 @@
 <?php
     //Product Categorie items ophalen
-    $sqlPCategorie = $mysqli -> prepare("SELECT id, catNaam FROM digifixx_product_cat") OR DIE ($mysqli->error.__LINE__);
-    $sqlPCategorie -> execute();
-    $sqlPCategorie -> store_result();
-	$sqlPCategorie -> bind_result($idPCategorie, $namePCategorie);
+    $sqlPCategorie = $mysqli->prepare("SELECT id, catNaam FROM digifixx_product_cat") OR die ($mysqli->error.__LINE__);
+    $sqlPCategorie->execute();
+    $sqlPCategorie->store_result();
+	$sqlPCategorie->bind_result($idPCategorie, $namePCategorie);
+
+    //Producten items ophalen
+    $sqlProduct = $mysqli->prepare("SELECT id, naam, model, merk, categorie, prijs, prijs_korting, kleur, frameMaat, extras, paginaurl, status FROM digifixx_producten WHERE status = 'actief' ORDER BY datum DESC LIMIT 4") or die ($mysqli->error.__LINE__);
+    $sqlProduct->execute();
+    $sqlProduct->store_result();
+    $sqlProduct->bind_result($idProduct, $titelProduct, $modelProduct, $merkProduct, $CatProduct, $prijsProduct, $prijsKProduct, $kleurProduct, $frameMaatProduct, $extraProduct, $urlProduct, $statusProduct);
 ?>
 
 <section class="contentHomeMain">
@@ -31,42 +37,42 @@
         <div class="container mx-auto">
             <div class="ProductTxt">Producten</div>
             <div class="ProductCard">
-                <div class="card">
-                    <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
-                    <div class="TxtCard">
-                        Premio EVO 5 Lite Comfort
-                    </div>
-                    <div class="TxtCard">
-                        €3.749,00
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
-                    <div class="TxtCard">
-                        Premio EVO 5 Lite Comfort
-                    </div>
-                    <div class="TxtCard">
-                        €3.749,00
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
-                    <div class="TxtCard">
-                        Premio EVO 5 Lite Comfort
-                    </div>
-                    <div class="TxtCard">
-                        €3.749,00
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="<?=$url;?>Images/FietsCard.png" class="ImgCard"/>
-                    <div class="TxtCard">
-                        Premio EVO 5 Lite Comfort
-                    </div>
-                    <div class="TxtCard">
-                        €3.749,00
-                    </div>
-                </div>
+                <?php
+                    while($sqlProduct->fetch()) {
+                           $query = $mysqli->query("SELECT * FROM digifixx_images WHERE product_id = ".$idProduct."");
+                        $row = $query->fetch_assoc();
+                        if($query->num_rows > 0)
+                        {
+                            $imageURL = '../img/'.$row["file_name"];
+                        }else
+                        {
+                            $imageURL = '../img/noimg.jpg';
+                        }
+                             ?>
+                        <a class="card" href="<?=$url;?><?=$urlProduct;?>">
+                            <div class="ImageProduct">
+                                <img src="<?php echo $imageURL; ?>" class="ImgCard"/>
+                            </div>
+                            <div class="TxtCard">
+                               <?=$merkProduct;?><?=$modelProduct;?><?=$titelProduct;?>
+                            </div>
+                            <div class="TxtColor">
+                                <div class="TxtCard">
+                                        <?php if($prijsKProduct != "0"){?>
+                                                <span class="PrijsPproduct">€ <?=$prijsProduct;?></span><br/>
+                                                <span>€ <?=$prijsKProduct;?></span>
+                                        <?php } else { ?>
+                                            <span>€ <?=$prijsProduct;?></span>
+                                        <?php } ?>
+                                    </div>
+                                <div class="TxtCard">
+                                    <div class="color-wrapper">
+                                        <input type="color" value="<?=$kleurProduct;?>" name="color" id="color">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                <?php } ?>
             </div>
         </div>
     </div>
