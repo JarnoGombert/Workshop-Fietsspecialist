@@ -9,25 +9,6 @@ $urlCMS = $url."cms";
 // $pagePath = parse_url($page, PHP_URL_PATH);
 //print_r(basename($pagePath));
 
-// bijbehorende gebruiker ophalen om niveau te bepalen
-// ===================================================
-if(isset($_GET['user'])){
-    $GETemail = $_GET['user'];
-}
-
-// $sqlUser = $mysqli -> prepare("SELECT id, username FROM digifixxcms_gebruikers WHERE id = ?") or die ($mysqli->error.__LINE__);
-// $sqlUser->bind_param('i',$userId);
-// $sqlUser->execute();
-// $sqlUser->store_result();
-// $sqlUser->bind_result($idUser, $username);
-// $sqlUser->fetch();
-// $sql = ("SELECT id FROM digifixxcms_gebruikers WHERE id = ?") or die ($mysqli->error.__LINE__);
-// $sqluser = $mysqli -> query($sql);
-// $rowUser = $sqluser -> fetch_assoc();
-//print_r($userId);
-$sqluser = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = '1'") or die($mysqli->error.__LINE__);
-$rowuser = $sqluser->fetch_assoc();
-
 if(!$mysqli) { header ($urlCMS.'/index.php'); }
 if(login_check($mysqli) <> true) { header ($urlCMS.'/index.php'); }
 
@@ -40,6 +21,22 @@ if (!isset($_GET['page'])) {
 } else { 
     $pageTitle = ucfirst($_GET['page']);
 } 
+
+// bijbehorende gebruiker ophalen om niveau te bepalen
+// ===================================================
+if (!isset($_SESSION['user_id'])) {
+    // Redirect the user to the login page if they're not logged in
+    header("Location: ".$urlCMS."/index.php");
+    exit();
+} else {
+    $user_id = $_SESSION['user_id'];
+    $rowuser = $mysqli -> prepare("SELECT * FROM digifixxcms_gebruikers WHERE id = ?") or die ($mysqli->error.__LINE__);
+    $rowuser->bind_param('i',$user_id);
+    $rowuser->execute();
+    $result = $rowuser->get_result();
+    $rowUser = $result->fetch_assoc();
+}
+
 
 if(!isset($_GET['uitloggen'])){
 ?>

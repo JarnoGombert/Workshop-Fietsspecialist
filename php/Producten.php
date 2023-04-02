@@ -69,13 +69,13 @@ if(isset($_GET['categorieSelect'])){
                             </div>
                             <div class="TxtColor">
                                 <div class="TxtCard">
-                                        <?php if($prijsKProduct != "0"){?>
-                                                <span class="PrijsPproduct">€ <?=$prijsProduct;?></span><br/>
-                                                <span>€ <?=$prijsKProduct;?></span>
-                                        <?php } else { ?>
-                                            <span>€ <?=$prijsProduct;?></span>
-                                        <?php } ?>
-                                    </div>
+                                    <?php if($prijsKProduct != "0"){?>
+                                            <span class="PrijsPproduct">€ <?=$prijsProduct;?></span><br/>
+                                            <span>€ <?=$prijsKProduct;?></span>
+                                    <?php } else { ?>
+                                        <span>€ <?=$prijsProduct;?></span>
+                                    <?php } ?>
+                                </div>
                                 <div class="TxtCard">
                                     <div class="color-wrapper">
                                         <input type="color" value="<?=$kleurProduct;?>" name="color" id="color" disabled>

@@ -89,14 +89,64 @@ $(document).ready(function() {
         },
     });
 
-    // Get the select element
-    const selectElement = document.getElementById('KortingSelect');
-    // Add event listener for the change event
-    selectElement.addEventListener('change', (event) => {
-    // Get the selected option
-    const selectedOption = event.target.value;
+    // // Get the select element
+    // const selectElement = document.getElementById('KortingSelect');
+    // // Add event listener for the change event
+    // selectElement.addEventListener('change', (event) => {
+    // // Get the selected option
+    // const selectedOption = event.target.value;
 
-    // Do something with the selected option
-    console.log(selectedOption);
-    });
+    // // Do something with the selected option
+    // console.log(selectedOption);
+    // });
+
+    var elements = document.querySelectorAll('#totalPrice');
+    var total = 0;
+    for (var i = 0; i < elements.length; i++) {
+        total += parseFloat(elements[i].textContent);
+    }
+
+    // Assuming you have an array of shopping cart items with a quantity and price for each item
+    var products = document.querySelectorAll('#showProducts');
+    var items = products.length;
+    for (var i = 0; i < products.length; i++) {
+        var prijsFiets = document.querySelectorAll('#totalPrice');
+        var naamFiets = document.querySelectorAll('#title');
+        var quantityFiets = document.querySelectorAll('#quantity');
+    }
+    console.log(items);
+
+    var cartItems = [];
+    for (let i = 0; i < items; i++) {
+        cartItems.push({name: naamFiets[i].textContent, quantity: quantityFiets[i].textContent, price: prijsFiets[i].textContent});
+    }
+    console.log(cartItems);
+    
+    // Initialize counters
+    var totalItems = 0;
+    var totalPrice = 0;
+    
+    // Loop through the cart items and update the counters
+    for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        totalItems += parseFloat(item.quantity);
+        totalPrice += item.quantity * item.price;
+    }
+    
+    // Display the counters
+    console.log('Total items: ' + totalItems);
+    console.log('Total price: ' + totalPrice.toFixed(2));
+
+    var formattedTotal = totalPrice.toFixed(2);
+    var totalElement = document.getElementById('TotalAlleProducten');
+    totalElement.innerHTML = formattedTotal;
+
+    var verzendBedrag = 29.50;
+    var bedragPlusVerzend = parseFloat(formattedTotal) + verzendBedrag;
+
+    var verzendElement = document.getElementById('verzendkosten');
+    verzendElement.innerHTML = verzendBedrag.toFixed(2);
+
+    var winkelmandElement = document.getElementById('TotalWinkelmand');
+    winkelmandElement.innerHTML = bedragPlusVerzend.toFixed(2);
 });

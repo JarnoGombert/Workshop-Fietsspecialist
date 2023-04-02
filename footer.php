@@ -27,7 +27,7 @@
         </div>
         <div class="contactGegevens">
             T <a class="Contact" href="tel: 0575436345">0575-43 63 45</a> <br/>
-            E <a class="Contact">info@fietsspeciaal-bakker.nl</a>
+            E <a class="Contact" href="mailto:info@fietsspeciaal-bakker.nl">info@fietsspeciaal-bakker.nl</a>
         </div>
     </div>
     <div class="rowHeader">

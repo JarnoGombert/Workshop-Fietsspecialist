@@ -1,26 +1,56 @@
 <?php
+session_start(); 
 require "login/config.php";
 require "login/functies.php";
-session_start(); 
-ob_start(); 
 
-if(isset($_POST['email'], $_POST['password'])) { 
+$urlCMS = $url."cms";
+
+// if(isset($_POST['email'], $_POST['password'])) { 
+//     $email = $_POST['email'];
+//     $password = $_POST['password']; // hashed password.
+
+//     if(login($email, $password, $mysqli) == true) {
+//      // na inloggen doorsturen naar dashboard
+//      //======================================
+//        header('Location: maincms.php?user='.$email.'');
+//        exit;
+//     } 
+//     else {
+//      // login mislukt
+//      // ============
+//      header('Location: ./index.php?error=1');
+//     }
+// }
+if(isset($_POST['mySubmit'])){
     $email = $_POST['email'];
-    $password = $_POST['password']; // hashed password.
+    $password = $_POST['password'];
 
-    if(login($email, $password, $mysqli) == true) {
-     // na inloggen doorsturen naar dashboard
-     //======================================
-       header('Location: maincms.php?user='.$email.'');
-       exit;
-    } 
-    else {
-     // login mislukt
-     // ============
-     header('Location: ./index.php?error=1');
+    // Hash the password (you should use a stronger hashing algorithm in production)
+    //$hashed_password = md5($password);
+
+    // Query the database for the user record
+    $sql = $mysqli -> prepare("SELECT id FROM digifixxcms_gebruikers WHERE email = ? AND password = ?") or die ($mysqli->error.__LINE__);
+    $sql->bind_param('ss',$email, $password);
+    $sql->execute();
+    $sql->store_result();
+    $sql->bind_result($idUser);
+    $sql->fetch();
+
+    if (!$idUser) {
+        // If the user is not found, display an error message and redirect back to the login page
+        $_SESSION['login_error'] = "Invalid email or password";
+        header("Location: ".$urlCMS."/index.php");
+        exit;
+    } else {
+
+        // Set the user ID session
+        $_SESSION['user_id'] = $idUser;
+        print_r($idUser);
+        // Redirect the user to the home page
+        header("Location: ".$urlCMS."/maincms.php");
+        exit;
     }
- }
- $urlCMS = $url."cms";
+}
 ?>
 
 <!DOCTYPE html>
