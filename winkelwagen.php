@@ -55,14 +55,16 @@
                                 <?php } ?>
                             </div>
                         </div>
-                        <div id="quantity" class="winkelwagenTXT"><?=$row['quantity'];?></div>
+                        <!-- <div id="quantity" class="winkelwagenTXT"><?//=$row['quantity'];?></div> -->
+                        <input type="number" class="winkelwagenTXT" name="quantity" id="quantity" value="<?=$row['quantity'];?>">
                         <div class="winkelwagenTXT">
-                            <a href="<?=$url;?>wijzig-winkelwagen?deleteID=<?=$rowProducten['id'];?>">
+                            <a id="deleteID" href="<?=$url;?>wijzig-winkelwagen?deleteID=<?=$rowProducten['id'];?>">
                                 <i class="fa fa-trash-o"></i>
                             </a>
                         </div>
                     </div> 
                 <?php } ?>
+                <div><a href="" class="btn">Update winkelmand</a></div>
             </div>
             <div class="winkelwagenBetalen">
                 <div class="Row1">

@@ -43,10 +43,10 @@
                         $row = $query->fetch_assoc();
                         if($query->num_rows > 0)
                         {
-                            $imageURL = '../img/'.$row["file_name"];
+                            $imageURL = $url.'/img/'.$row["file_name"];
                         }else
                         {
-                            $imageURL = '../img/noimg.jpg';
+                            $imageURL = $url.'/img/noimg.jpg';
                         }
                              ?>
                         <a class="card" href="<?=$url;?><?=$urlProduct;?>">

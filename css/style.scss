@@ -752,6 +752,7 @@ footer{
     display: flex;
     gap: 20px;
     .producten-show{
+        width: 90%;
         flex-direction: column;
         display: flex;
         gap: 20px;
@@ -802,11 +803,12 @@ footer{
         }
         .winkelwagenTXT
         {
-            margin: 40px;
+            margin: 20px;
             font-size: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
+            outline: none;
 
             &.title{
                 grid-column: span 3 / span 3;
@@ -814,6 +816,23 @@ footer{
 
             &.totaalPrijs{
                 grid-column: span 2 / span 2;
+            }
+            &#quantity{
+                height: fit-content;
+                position: relative;
+                display: flex;
+                transform: translateY(-50%);
+                top: 42%;
+                padding: 10px;
+            }
+            #deleteID{
+                font-size: 36px;
+                color: $groen;
+                transition: all 0.3s;
+
+                &:hover{
+                    font-size: 40px;
+                }
             }
 
             .prijs{
@@ -861,7 +880,8 @@ footer{
         .winkelwagenInput {
             width: 100px;
             height: 35px;
-            background-color: #4CAF50;
+            background-color: $groen;
+            text-decoration: none;
             color: white;
             padding: 10px 20px;
             border: none;

@@ -638,6 +638,7 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
   gap: 20px;
 }
 .winkelwagen-Main .producten-show {
+  width: 90%;
   flex-direction: column;
   display: flex;
   gap: 20px;
@@ -684,17 +685,35 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
      object-fit: contain;
 }
 .winkelwagen-Main .showProducts .winkelwagenTXT {
-  margin: 40px;
+  margin: 20px;
   font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
 }
 .winkelwagen-Main .showProducts .winkelwagenTXT.title {
   grid-column: span 3/span 3;
 }
 .winkelwagen-Main .showProducts .winkelwagenTXT.totaalPrijs {
   grid-column: span 2/span 2;
+}
+.winkelwagen-Main .showProducts .winkelwagenTXT#quantity {
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  transform: translateY(-50%);
+  top: 42%;
+  padding: 10px;
+}
+.winkelwagen-Main .showProducts .winkelwagenTXT #deleteID {
+  font-size: 36px;
+  color: #95AEAB;
+  transition: all 0.3s;
+}
+.winkelwagen-Main .showProducts .winkelwagenTXT #deleteID:hover {
+  font-size: 40px;
 }
 .winkelwagen-Main .showProducts .winkelwagenTXT .prijs {
   text-align: center;
@@ -733,7 +752,8 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
 .winkelwagen-Main .winkelwagenBetalen .divInput .winkelwagenInput {
   width: 100px;
   height: 35px;
-  background-color: #4CAF50;
+  background-color: #95AEAB;
+  text-decoration: none;
   color: white;
   padding: 10px 20px;
   border: none;

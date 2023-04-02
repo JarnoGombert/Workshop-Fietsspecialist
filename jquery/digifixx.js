@@ -100,42 +100,112 @@ $(document).ready(function() {
     // console.log(selectedOption);
     // });
 
-    var elements = document.querySelectorAll('#totalPrice');
-    var total = 0;
-    for (var i = 0; i < elements.length; i++) {
-        total += parseFloat(elements[i].textContent);
-    }
+    //let num = document.querySelector('#quantity');
 
-    // Assuming you have an array of shopping cart items with a quantity and price for each item
+    // num.addEventListener('input', function () {
+    //     let valAsNumber = parseFloat(num.value);
+    //     console.log(valAsNumber);
+    // });
+
+    // Initialize counters
+    // var totalItems = 0;
+    // var totalPrice = 0;
+    
+    // // Loop through the cart items and update the counters
+    // for (var i = 0; i < cartItems.length; i++) {
+    //     var item = cartItems[i];
+    //     totalItems += parseFloat(item.quantity);
+    //     totalPrice += item.quantity * item.price;
+    // }
+
+    // var elements = document.querySelectorAll('#totalPrice');
+    // var total = 0;
+    // for (var i = 0; i < elements.length; i++) {
+    //     total += parseFloat(elements[i].textContent);
+    // }
+
+    // // Assuming you have an array of shopping cart items with a quantity and price for each item
+    // var products = document.querySelectorAll('#showProducts');
+    // var items = products.length;
+    // for (var i = 0; i < products.length; i++) {
+    //     var prijsFiets = document.querySelectorAll('#totalPrice');
+    //     var naamFiets = document.querySelectorAll('#title');
+    //     var quantityFiets = document.querySelectorAll('#quantity');
+    // }
+    // console.log(items);
+
+    // var cartItems = [];
+    // for (let i = 0; i < items; i++) {
+    //     cartItems.push({name: naamFiets[i].textContent, quantity: quantityFiets[i].textContent, price: prijsFiets[i].textContent});
+    // }
+    // console.log(cartItems);
+    
+    // // Display the counters
+    // console.log('Total items: ' + totalItems);
+    // console.log('Total price: ' + totalPrice.toFixed(2));
+
     var products = document.querySelectorAll('#showProducts');
     var items = products.length;
-    for (var i = 0; i < products.length; i++) {
-        var prijsFiets = document.querySelectorAll('#totalPrice');
-        var naamFiets = document.querySelectorAll('#title');
-        var quantityFiets = document.querySelectorAll('#quantity');
-    }
-    console.log(items);
 
     var cartItems = [];
-    for (let i = 0; i < items; i++) {
-        cartItems.push({name: naamFiets[i].textContent, quantity: quantityFiets[i].textContent, price: prijsFiets[i].textContent});
-    }
-    console.log(cartItems);
-    
-    // Initialize counters
-    var totalItems = 0;
     var totalPrice = 0;
-    
-    // Loop through the cart items and update the counters
-    for (var i = 0; i < cartItems.length; i++) {
-        var item = cartItems[i];
-        totalItems += parseFloat(item.quantity);
-        totalPrice += item.quantity * item.price;
+
+    // Loop through the products and add them to the cart
+    for (var i = 0; i < products.length; i++) {
+    var prijsFiets = products[i].querySelectorAll('#totalPrice');
+    var naamFiets = products[i].querySelectorAll('#title');
+    var quantityFiets = products[i].querySelectorAll('#quantity');
+
+    var itemPrice = parseFloat(prijsFiets[0].textContent);
+    var itemQuantity = parseInt(quantityFiets[0].value);
+    cartItems.push({ name: naamFiets[0].textContent, quantity: itemQuantity, price: itemPrice });
+
+    totalPrice += itemPrice * itemQuantity;
     }
+
+    // Update the total price display
+    var updateTotalPrice = totalPrice.toFixed(2);
+    var totalEl = document.getElementById('TotalAlleProducten');
+    totalEl.textContent = updateTotalPrice;
+
+    var verzendBedrag = 29.50;
+    var bedragPlusVerzend = parseFloat(updateTotalPrice) + verzendBedrag;
+
+    var winkelmandElement = document.getElementById('TotalWinkelmand');
+    winkelmandElement.textContent = bedragPlusVerzend.toFixed(2);
+
+    console.log(cartItems);
+
+    // Define an event listener function for quantity changes
+    function updateCart(event) {
+    var index = parseInt(event.target.dataset.index);
+    var quantity = parseInt(event.target.value);
+
+    cartItems[index].quantity = quantity;
+
+    // Recalculate the total price
+    var newTotalPrice = 0;
+    for (var i = 0; i < cartItems.length; i++) {
+        newTotalPrice += cartItems[i].quantity * cartItems[i].price;
+    }
+    var newbedragPlusVerzend = parseFloat(newTotalPrice) + verzendBedrag;
+
+    // Update the total price display
+    totalEl.textContent = newTotalPrice.toFixed(2);
+    winkelmandElement.textContent = newbedragPlusVerzend.toFixed(2);
+
+    console.log(cartItems);
+    }
+
+    // Loop through the products again and add event listeners to their quantity input elements
+    for (var i = 0; i < products.length; i++) {
+    var quantityFiets = products[i].querySelectorAll('#quantity');
+
+    quantityFiets[0].addEventListener('change', updateCart);
+    quantityFiets[0].dataset.index = i;
+    }
+
     
-    // Display the counters
-    console.log('Total items: ' + totalItems);
-    console.log('Total price: ' + totalPrice.toFixed(2));
 
     var formattedTotal = totalPrice.toFixed(2);
     var totalElement = document.getElementById('TotalAlleProducten');

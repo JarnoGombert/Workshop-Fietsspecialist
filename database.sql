@@ -3,13 +3,19 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 31 mrt 2023 om 22:25
+-- Gegenereerd op: 02 apr 2023 om 17:44
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `digifixx`
@@ -44,9 +50,11 @@ INSERT INTO `digifixxcms` (`id`, `item1`, `item2`, `item3`, `item4`, `item5`, `t
 (2, 'Producten', '', '', '', '', '', 'hoofdmenu', 'producten', 'actief', '0000-00-00'),
 (3, 'Over ons', '', '', '', '', 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.', 'hoofdmenu', 'over-ons', 'actief', '0000-00-00'),
 (4, 'Contact', '', '', '', '', '', 'hoofdmenu', 'contact', 'actief', '0000-00-00'),
-(5, 'Winkelwagen', '', '', '', '', '', 'hoofdmenu', 'winkelwagen', 'actief', '0000-00-00'),
+(5, 'Winkelwagen', '', '', '', '', '', 'overige', 'winkelwagen', 'actief', '0000-00-00'),
 (6, 'Betalings Methode', '', '', '', '', '', 'overige', 'betalings-methode', 'actief', '0000-00-00'),
-(7, 'Betaling Voltooid', '', '', '', '', '', 'overige', 'betaling-voltooid', 'actief', '0000-00-00');
+(7, 'Betaling Voltooid', '', '', '', '', '', 'overige', 'betaling-voltooid', 'actief', '0000-00-00'),
+(8, 'Wijzig winkelwagen', '', '', '', '', '', 'overige', 'wijzig-winkelwagen', 'actief', '0000-00-00'),
+(9, 'Inloggen', '', '', '', '', '', 'overige', 'inloggen', 'actief', '2023-04-02');
 
 -- --------------------------------------------------------
 
@@ -137,8 +145,8 @@ CREATE TABLE `digifixx_producten` (
   `model` varchar(200) NOT NULL,
   `merk` varchar(200) NOT NULL,
   `categorie` varchar(200) NOT NULL,
-  `prijs` varchar(11) NOT NULL DEFAULT '0',
-  `prijs_korting` varchar(11) NOT NULL DEFAULT '0',
+  `prijs` decimal(8,2) NOT NULL DEFAULT 0.00,
+  `prijs_korting` decimal(8,2) NOT NULL DEFAULT 0.00,
   `kleur` varchar(200) NOT NULL,
   `frameMaat` varchar(200) NOT NULL,
   `extras` varchar(200) NOT NULL,
@@ -152,11 +160,11 @@ CREATE TABLE `digifixx_producten` (
 --
 
 INSERT INTO `digifixx_producten` (`id`, `naam`, `model`, `merk`, `categorie`, `prijs`, `prijs_korting`, `kleur`, `frameMaat`, `extras`, `paginaurl`, `datum`, `status`) VALUES
-(1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '3.749,00', '0', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', '2023-03-08 12:02:45', 'actief'),
-(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen', '2.899', '0', '#61a8cc', '', '', 'product/gazelle-grenoble-c8-hmb-2023', '2023-03-31 11:02:45', 'actief'),
-(3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen', '2.999,99', '2.499,99', '#fbad54', '', '', 'product/sparta--d-rule-energy', '2023-03-31 11:02:45', 'actief'),
-(4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen', '1.499,99', '0', '#3d5dbd', '', '', 'product/stella-livorno-easy-mds', '2023-03-31 11:02:45', 'actief'),
-(5, 'RS 2 2023', 'Attend ', 'Giant', 'Stadfietsen', '699,00', '599,00', '#000000', '', '', 'product/giant-attend-rs-2-2023', '2023-03-31 11:02:45', 'actief');
+(1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '1223.75', '1000.00', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', '2023-03-08 12:02:45', 'actief'),
+(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen', '2200.90', '2000.00', '#61a8cc', '', '', 'product/gazelle-grenoble-c8-hmb-2023', '2023-03-31 11:02:45', 'actief'),
+(3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen', '2200.00', '0.00', '#fbad54', '', '', 'product/sparta--d-rule-energy', '2023-03-31 11:02:45', 'actief'),
+(4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen', '2221.50', '2220.00', '#3d5dbd', '', '', 'product/stella-livorno-easy-mds', '2023-03-31 11:02:45', 'actief'),
+(5, 'RS 2 2023', 'Attend ', 'Giant', 'Stadfietsen', '2699.00', '2599.00', '#000000', '', '', 'product/giant-attend-rs-2-2023', '2023-03-31 11:02:45', 'actief');
 
 -- --------------------------------------------------------
 
@@ -230,6 +238,29 @@ CREATE TABLE `digifixx_settings` (
 INSERT INTO `digifixx_settings` (`id`, `weburl`, `naamwebsite`) VALUES
 (1, 'https://localhost/School/Workshops/Workshop-Fietsspecialist/', 'Fietsspecialist Bakker');
 
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `shopping_bag`
+--
+
+CREATE TABLE `shopping_bag` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `shopping_bag`
+--
+
+INSERT INTO `shopping_bag` (`id`, `user_id`, `product_id`, `quantity`, `created_at`) VALUES
+(1, 2, 3, 8, '2023-04-02 12:21:18'),
+(2, 1, 2, 4, '2023-04-02 12:58:01'),
+(3, 1, 3, 3, '2023-04-02 13:22:24');
+
 --
 -- Indexen voor geëxporteerde tabellen
 --
@@ -284,6 +315,12 @@ ALTER TABLE `digifixx_settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexen voor tabel `shopping_bag`
+--
+ALTER TABLE `shopping_bag`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -291,7 +328,7 @@ ALTER TABLE `digifixx_settings`
 -- AUTO_INCREMENT voor een tabel `digifixxcms`
 --
 ALTER TABLE `digifixxcms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixxcms_gebruikers`
@@ -334,4 +371,14 @@ ALTER TABLE `digifixx_reviews`
 --
 ALTER TABLE `digifixx_settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT voor een tabel `shopping_bag`
+--
+ALTER TABLE `shopping_bag`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

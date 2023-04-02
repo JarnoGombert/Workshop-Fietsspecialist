@@ -1,6 +1,6 @@
 <?php
     //menu items ophalen
-    $sqlMenu = $mysqli -> prepare("SELECT id, item1, paginaurl FROM digifixxcms WHERE keuze = ? AND STATUS = 'actief' LIMIT 4") OR DIE ($mysqli->error.__LINE__);
+    $sqlMenu = $mysqli -> prepare("SELECT id, item1, paginaurl FROM digifixxcms WHERE keuze = ? AND STATUS = 'actief' LIMIT 5") OR DIE ($mysqli->error.__LINE__);
     $keuze = "hoofdmenu";
     $sqlMenu -> bind_param('s',$keuze);
     $sqlMenu -> execute();
@@ -31,4 +31,5 @@
             </li>";
         } ?>
         <li><a href="<?=$url;?>winkelwagen"><i class="fa fa-shopping-cart"></i></a></li>   
+        <li><a href="<?=$url;?>inloggen"><i class="fa fa-sign-in"></i></a></li>   
 </ul>
