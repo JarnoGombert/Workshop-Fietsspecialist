@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET['categorieSelect'])){
+if(isset($_GET['categorieSelect']) && $_GET['categorieSelect'] != "alle-fietsen"){
     if(strpos($_GET['categorieSelect'], "+") !== false){
         $categorieExplode = str_replace("+"," ",$_GET['categorieSelect']);
     } else{
@@ -40,6 +40,7 @@ if(isset($_GET['categorieSelect'])){
                             }
                         ?>
                         <?php //categorien ophalen
+                        echo '<option value="alle-fietsen">Alle fietsen</option>';
                         foreach (getCategorie($mysqli) as $categorien) {
                         echo '<option value="'.htmlspecialchars($categorien['catNaam']).'" >'.htmlspecialchars($categorien['catNaam']).'</option>';		
                         } //functie categorien ?>

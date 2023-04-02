@@ -27,7 +27,6 @@ body {
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 17px;
   text-decoration: none;
@@ -65,24 +64,78 @@ body {
   top: 50%;
   left: 50%;
 }
-#login-main #logincontainer #login_form .logologin {
+#login-main #logincontainer .logologin {
   border-radius: 1rem;
 }
-#login-main #logincontainer #login_form .inlogkop {
+#login-main #logincontainer .tab-group {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 30px 0 30px 0;
+  justify-content: center;
+  align-items: center;
+}
+#login-main #logincontainer .tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#login-main #logincontainer .tab-group .tab {
+  display: flex;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(221, 221, 221, 0.25);
+  color: #DDD;
+  width: 50%;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+  justify-content: center;
+}
+#login-main #logincontainer .tab-group .tab:first-of-type {
+  border-radius: 10px 0 0 10px;
+}
+#login-main #logincontainer .tab-group .tab:last-of-type {
+  border-radius: 0 10px 10px 0;
+}
+#login-main #logincontainer .tab-group .tab:hover {
+  background: #333;
+  color: #fff;
+}
+#login-main #logincontainer .tab-group .tab.active {
+  background: #333;
+  color: #fff;
+}
+#login-main #logincontainer .tab-content .tab-pane {
+  display: none;
+}
+#login-main #logincontainer .tab-content .tab-pane.active {
+  display: block;
+}
+#login-main #logincontainer .tab-content #login_form .inlogkop, #login-main #logincontainer .tab-content #register_form .inlogkop {
   text-align: center;
   letter-spacing: 2px;
   color: #fff;
 }
-#login-main #logincontainer #login_form .foutlogin {
+#login-main #logincontainer .tab-content #login_form .foutlogin, #login-main #logincontainer .tab-content #register_form .foutlogin {
   text-align: center;
   padding-bottom: 12px;
   color: #a71b1b;
 }
-#login-main #logincontainer #login_form .inlog-inner {
+#login-main #logincontainer .tab-content #login_form .register-inner, #login-main #logincontainer .tab-content #register_form .register-inner {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#login-main #logincontainer .tab-content #login_form .register-inner button, #login-main #logincontainer .tab-content #register_form .register-inner button {
+  grid-column: span 2/span 2;
+  padding: 5px 15px !important;
+}
+#login-main #logincontainer .tab-content #login_form .inlog-inner, #login-main #logincontainer .tab-content #login_form .register-inner, #login-main #logincontainer .tab-content #register_form .inlog-inner, #login-main #logincontainer .tab-content #register_form .register-inner {
   display: flex;
   gap: 4px;
 }
-#login-main #logincontainer #login_form .inlog-inner .logindiv {
+#login-main #logincontainer .tab-content #login_form .inlog-inner .logindiv, #login-main #logincontainer .tab-content #login_form .inlog-inner .registerdiv, #login-main #logincontainer .tab-content #login_form .register-inner .logindiv, #login-main #logincontainer .tab-content #login_form .register-inner .registerdiv, #login-main #logincontainer .tab-content #register_form .inlog-inner .logindiv, #login-main #logincontainer .tab-content #register_form .inlog-inner .registerdiv, #login-main #logincontainer .tab-content #register_form .register-inner .logindiv, #login-main #logincontainer .tab-content #register_form .register-inner .registerdiv {
   background: #414850;
   padding: 12px;
   position: relative;
@@ -90,10 +143,10 @@ body {
   gap: 10px;
   border-radius: 5px;
 }
-#login-main #logincontainer #login_form .inlog-inner .logindiv .fa {
+#login-main #logincontainer .tab-content #login_form .inlog-inner .logindiv .fa, #login-main #logincontainer .tab-content #login_form .inlog-inner .registerdiv .fa, #login-main #logincontainer .tab-content #login_form .register-inner .logindiv .fa, #login-main #logincontainer .tab-content #login_form .register-inner .registerdiv .fa, #login-main #logincontainer .tab-content #register_form .inlog-inner .logindiv .fa, #login-main #logincontainer .tab-content #register_form .inlog-inner .registerdiv .fa, #login-main #logincontainer .tab-content #register_form .register-inner .logindiv .fa, #login-main #logincontainer .tab-content #register_form .register-inner .registerdiv .fa {
   color: #fff;
 }
-#login-main #logincontainer #login_form .inlog-inner .logindiv .fa.fa-eye {
+#login-main #logincontainer .tab-content #login_form .inlog-inner .logindiv .fa.fa-eye, #login-main #logincontainer .tab-content #login_form .inlog-inner .registerdiv .fa.fa-eye, #login-main #logincontainer .tab-content #login_form .register-inner .logindiv .fa.fa-eye, #login-main #logincontainer .tab-content #login_form .register-inner .registerdiv .fa.fa-eye, #login-main #logincontainer .tab-content #register_form .inlog-inner .logindiv .fa.fa-eye, #login-main #logincontainer .tab-content #register_form .inlog-inner .registerdiv .fa.fa-eye, #login-main #logincontainer .tab-content #register_form .register-inner .logindiv .fa.fa-eye, #login-main #logincontainer .tab-content #register_form .register-inner .registerdiv .fa.fa-eye {
   position: absolute;
   right: 0;
   top: 0;
@@ -104,13 +157,13 @@ body {
   justify-content: center;
   cursor: pointer;
 }
-#login-main #logincontainer #login_form .inlog-inner .logindiv input {
+#login-main #logincontainer .tab-content #login_form .inlog-inner .logindiv input, #login-main #logincontainer .tab-content #login_form .inlog-inner .registerdiv input, #login-main #logincontainer .tab-content #login_form .register-inner .logindiv input, #login-main #logincontainer .tab-content #login_form .register-inner .registerdiv input, #login-main #logincontainer .tab-content #register_form .inlog-inner .logindiv input, #login-main #logincontainer .tab-content #register_form .inlog-inner .registerdiv input, #login-main #logincontainer .tab-content #register_form .register-inner .logindiv input, #login-main #logincontainer .tab-content #register_form .register-inner .registerdiv input {
   background: transparent;
   color: #fff;
   outline: none;
   border: none;
 }
-#login-main #logincontainer #login_form .inlog-inner button[type=submit] {
+#login-main #logincontainer .tab-content #login_form .inlog-inner button[type=submit], #login-main #logincontainer .tab-content #login_form .register-inner button[type=submit], #login-main #logincontainer .tab-content #register_form .inlog-inner button[type=submit], #login-main #logincontainer .tab-content #register_form .register-inner button[type=submit] {
   border-radius: 5px;
   padding: 0px 15px;
   font-size: 18px;
@@ -252,8 +305,7 @@ main article .deleteIMG {
   width: 100%;
 }
 main article .deleteIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100%;
   width: 100%;
   border-radius: 12px;
@@ -336,8 +388,7 @@ main article section#paginaBewerken .right .image-wrapper .img, main article sec
   width: 190px;
 }
 main article section#paginaBewerken .right .image-wrapper .img img, main article section#Productbewerken .right .image-wrapper .img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#paginaBewerken .right .image-wrapper .img .btn-delete, main article section#Productbewerken .right .image-wrapper .img .btn-delete {
@@ -349,6 +400,59 @@ main article section#paginaBewerken .right .image-wrapper .img .btn-delete, main
   color: #fff;
   padding: 6px;
   font-size: 22px;
+}
+main article section .instellingen-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+main article section .instellingen-wrapper .settingTab {
+  position: relative;
+  display: flex;
+  font-size: 16px;
+  width: 75%;
+  height: 100%;
+}
+main article section .instellingen-wrapper .settingTab strong {
+  background: #DDD;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+}
+main article section .instellingen-wrapper .settingTab span {
+  padding: 20px;
+  background: #95AEAB;
+  border-radius: 0 10px 10px 0;
+}
+main article section .dashboard-wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+main article section .dashboard-wrapper .dashTab {
+  height: 150px;
+  background: #95AEAB;
+  border-radius: 12px;
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: all 0.3s;
+}
+main article section .dashboard-wrapper .dashTab:hover {
+  transform: scale(0.9);
+}
+main article section .dashboard-wrapper .dashTab:hover i {
+  transform: rotate(180deg);
+}
+main article section .dashboard-wrapper .dashTab i {
+  transform: rotate(0deg);
+  transition: all 0.6s;
 }
 main article section#webpaginas #webpaginas-wrapper {
   display: flex;
@@ -369,8 +473,7 @@ main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG {
   width: 80px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageTITLE {
@@ -403,8 +506,7 @@ main article section#webpaginas .webpaginaTitels .pageIMG {
   width: auto;
 }
 main article section#webpaginas .webpaginaTitels .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#webpaginas .webpaginaTitels .pageCAT {
@@ -432,8 +534,7 @@ main article section#producten #producten-wrapper .product .pageIMG {
   width: 80px;
 }
 main article section#producten #producten-wrapper .product .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#producten #producten-wrapper .product .pageCAT {
@@ -469,8 +570,7 @@ main article section#producten .productTitle .pageIMG {
   width: auto;
 }
 main article section#producten .productTitle .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#producten .productTitle .pageCAT {
@@ -561,4 +661,4 @@ main article section .title {
   padding: 5px 10px;
   font-family: "Rosario", sans-serif;
   resize: none;
-}/*# sourceMappingURL=cmsStyle.css.map */
+}

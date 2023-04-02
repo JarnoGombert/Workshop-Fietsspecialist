@@ -8,4 +8,15 @@ $sqlDashboard->bind_result($idDashboard, $titelDashboard, $catDashboard, $urlDas
 
 <section id="dashboard">
     <div class="title">Dashboard</div>
+    <div class="dashboard-wrapper">
+        <?php if($rowUser['niveau'] == "gebruiker"){ ?>
+            <a class="dashTab" href="?page=gebruiker_bewerken&id=<?php echo $rowUser['id']; ?>"><i class="fa fa-gear"></i> Mijn account</a>
+            <a class="dashTab" href="index.php?uitloggen=ja"><i class="fa fa-sign-out"></i> Uitloggen</a>
+        <?php } ?>
+        <?php if($rowUser['niveau'] == "admin" || $rowUser['niveau'] == "medewerker"){ ?>
+            <a class="dashTab" href="?page=nieuwe_pagina"><i class="fa fa-plus"></i> Nieuwe Pagina</a>
+            <a class="dashTab" href="?page=nieuw_product"><i class="fa fa-plus"></i> Nieuw Product</a>
+            <a class="dashTab" href="?page=nieuw_review"><i class="fa fa-plus"></i> Nieuw Review</a>
+        <?php } ?>
+    </div>
 </section>

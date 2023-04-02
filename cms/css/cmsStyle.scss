@@ -14,6 +14,7 @@ $primary-color: #DDD;
 $logo-color: #414850;
 $secondary-color: $logo-color;
 $white: #fff;
+$groen: #95AEAB;
 $error: #a71b1b;
 $font: 'Rosario', sans-serif;
 
@@ -79,64 +80,128 @@ body
         position: absolute;
         top: 50%;
         left: 50%;
+        
+        .logologin{
+            border-radius: 1rem;
+        }
 
-        #login_form{
-            .logologin{
-                border-radius: 1rem;
+        .tab-group {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 30px 0 30px 0;
+            justify-content: center;
+            align-items: center;
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
             }
-            .inlogkop{
-                text-align: center;
-                letter-spacing: 2px;
-                color: $white;
-            }
-            .foutlogin{
-                text-align: center;
-                padding-bottom: 12px;
-                color: $error;
-            }
-            .inlog-inner{
+            .tab {
                 display: flex;
-                gap: 4px;
-                .logindiv{
-                    background: $logo-color;
-                    padding: 12px;
-                    position: relative;
+                text-decoration: none;
+                padding: 15px;
+                background:rgba(#DDD,.25);
+                color: #DDD;
+                width: 50%;
+                font-size: 20px;
+                text-align: center;
+                cursor: pointer;
+                transition: 0.5s ease;
+                justify-content: center;
+
+                &:first-of-type{
+                    border-radius: 10px 0 0 10px;
+                }
+                &:last-of-type{
+                    border-radius: 0 10px 10px 0;
+                }
+
+                &:hover {
+                background:#333;
+                color:$white;
+                }
+
+                &.active {
+                    background:#333;
+                    color:$white;
+                }
+            }              
+        }
+        
+        .tab-content{
+            .tab-pane {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+           #login_form, #register_form{
+                .inlogkop{
+                    text-align: center;
+                    letter-spacing: 2px;
+                    color: $white;
+                }
+                .foutlogin{
+                    text-align: center;
+                    padding-bottom: 12px;
+                    color: $error;
+                }
+                .register-inner{
+                    display: grid !important;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+                    button{
+                        grid-column: span 2 / span 2;
+                        padding: 5px 15px !important;
+                    }
+                }
+                .inlog-inner, .register-inner{
                     display: flex;
-                    gap: 10px;
-                    border-radius: 5px;
+                    gap: 4px;
+                    .logindiv, .registerdiv{
+                        background: $logo-color;
+                        padding: 12px;
+                        position: relative;
+                        display: flex;
+                        gap: 10px;
+                        border-radius: 5px;
 
-                    .fa{
-                        color: $white;
+                        .fa{
+                            color: $white;
 
-                        &.fa-eye{
-                            position: absolute;
-                            right: 0;
-                            top: 0;
-                            width: 20%;
-                            height: 100%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            cursor: pointer;
+                            &.fa-eye{
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                width: 20%;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                cursor: pointer;
+                            }
+                        }
+                        input{
+                            background: transparent;
+                            color: $white;
+                            outline: none;
+                            border: none;
                         }
                     }
-                    input{
-                        background: transparent;
-                        color: $white;
-                        outline: none;
+                    button[type="submit"]{
+                        border-radius: 5px;
+                        padding: 0px 15px;
+                        font-size: 18px;
                         border: none;
+                        color: $white;
+                        background: $logo-color;
                     }
                 }
-                button[type="submit"]{
-                    border-radius: 5px;
-                    padding: 0px 15px;
-                    font-size: 18px;
-                    border: none;
-                    color: $white;
-                    background: $logo-color;
-                }
-            }
+            } 
         }
+        
     }
 }
 header {
@@ -393,6 +458,66 @@ main {
                                 font-size: 22px;
                             }
                         }
+                    }
+                }
+            }
+
+            .instellingen-wrapper{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+
+                .settingTab{
+                    position: relative;
+                    display: flex;
+                    font-size: 16px;
+                    width: 75%;
+                    height: 100%;
+
+                    strong{
+                        background: $primary-color;
+                        padding: 20px;
+                        border-radius: 10px 0 0 10px;
+                    }
+                    span{
+                        padding: 20px;
+                        background: $groen;
+                        border-radius: 0 10px 10px 0;
+                    }
+                }
+            }
+            .dashboard-wrapper{
+                display: grid;
+                grid-gap: 20px;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+
+                .dashTab{
+                    height: 150px;
+                    background: $groen;
+                    border-radius: 12px;
+                    font-size: 30px;
+                    color: $white;
+                    text-decoration: none;
+                    display: flex;
+                    gap: 10px;
+                    width: auto;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    transition: all 0.3s;
+
+                    &:hover{
+                        transform: scale(0.9);
+
+                        i{
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    i{
+                        transform: rotate(0deg);
+                        transition: all 0.6s;
                     }
                 }
             }

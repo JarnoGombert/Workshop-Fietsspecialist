@@ -51,6 +51,9 @@
                 include 'php/betalingvoltiood.php';
             } else if($row['id'] == '8') {
                 include 'php/process_form.php';
+            } else if($row['id'] == '9') {
+                header('Location: ' . $url . "cms/index.php");
+                exit;
             }
         ?> 
     </div>

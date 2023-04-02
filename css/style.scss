@@ -131,7 +131,7 @@ body
                     text-align: center;
                     list-style-type: none;
                     font-size: 18px;
-                    margin: 30px;
+                    margin: 30px 15px;
                     text-decoration: none;
 
                     &.active {
@@ -906,6 +906,11 @@ footer{
 
     }
 
+}
+.lege-winkelmand{
+    p{
+        margin: 0;
+    }
 }
 
 
