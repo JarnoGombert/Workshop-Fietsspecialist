@@ -1,21 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 apr 2023 om 17:44
+-- Gegenereerd op: 02 apr 2023 om 23:03
 -- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.6
+-- PHP-versie: 8.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `digifixx`
@@ -89,7 +83,8 @@ CREATE TABLE `digifixxcms_gebruikers` (
 
 INSERT INTO `digifixxcms_gebruikers` (`id`, `username`, `niveau`, `email`, `password`, `titel`, `geslacht`, `voorletters`, `tussenvoegsel`, `achternaam`, `adres`, `postcode`, `plaats`, `telefoon`, `mobiel`, `actief`, `datum_invoer`, `ipadres`) VALUES
 (1, 'digifixx', 'admin', 'info@digifixx.nl', 'Digifixx2000!', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', ''),
-(2, 'user', 'gebruiker', 'info@user.nl', 'user', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '');
+(2, 'user', 'gebruiker', 'info@user.nl', 'user', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', ''),
+(3, 'JarnoGombert', 'gebruiker', 'jarnogombert@gmail.com', 'Test', '', '', 'J', '', 'Gombert', '', '', '', '', '', '', '0000-00-00 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -259,7 +254,8 @@ CREATE TABLE `shopping_bag` (
 INSERT INTO `shopping_bag` (`id`, `user_id`, `product_id`, `quantity`, `created_at`) VALUES
 (1, 2, 3, 8, '2023-04-02 12:21:18'),
 (2, 1, 2, 4, '2023-04-02 12:58:01'),
-(3, 1, 3, 3, '2023-04-02 13:22:24');
+(3, 1, 3, 3, '2023-04-02 13:22:24'),
+(4, 0, 3, 4, '2023-04-02 18:47:29');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -334,7 +330,7 @@ ALTER TABLE `digifixxcms`
 -- AUTO_INCREMENT voor een tabel `digifixxcms_gebruikers`
 --
 ALTER TABLE `digifixxcms_gebruikers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixxcms_product_reviews`
@@ -376,9 +372,5 @@ ALTER TABLE `digifixx_settings`
 -- AUTO_INCREMENT voor een tabel `shopping_bag`
 --
 ALTER TABLE `shopping_bag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
