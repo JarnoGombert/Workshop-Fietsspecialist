@@ -692,7 +692,11 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
   grid-column: span 2/span 2;
 }
 .winkelwagen-Main .showProducts .winkelwagenTXT#quantity {
-  height: fit-content;
+  height: 35px;
+  background: #95AEAB;
+  color: #fff;
+  border-radius: 12px;
+  border: none;
   position: relative;
   display: flex;
   transform: translateY(-50%);

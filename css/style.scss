@@ -818,7 +818,11 @@ footer{
                 grid-column: span 2 / span 2;
             }
             &#quantity{
-                height: fit-content;
+                height: 35px;
+                background: $groen;
+                color: $white;
+                border-radius: 12px;
+                border: none;
                 position: relative;
                 display: flex;
                 transform: translateY(-50%);
