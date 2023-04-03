@@ -30,5 +30,7 @@ if($_GET['opslaan'] == "ja"){
   exit;
 }
 
-
+if($_GET['deleteID']){
+  
+}
 ?>
