@@ -20,7 +20,6 @@
         <!-- Bitcoin form fields -->
         <input type="text" name="btc-address" placeholder="Bitcoin adres" required>
         <input class="divInput" type="submit" value="betalen">
-
     </form>
 
     <form id="ideal-form" style="display:none;" action="<?=$url;?>betaling-voltooid" method="post">
