@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 apr 2023 om 23:03
+-- Gegenereerd op: 05 apr 2023 om 20:29
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.4
 
@@ -255,7 +255,8 @@ INSERT INTO `shopping_bag` (`id`, `user_id`, `product_id`, `quantity`, `created_
 (1, 2, 3, 8, '2023-04-02 12:21:18'),
 (2, 1, 2, 4, '2023-04-02 12:58:01'),
 (3, 1, 3, 3, '2023-04-02 13:22:24'),
-(4, 0, 3, 4, '2023-04-02 18:47:29');
+(4, 0, 3, 4, '2023-04-02 18:47:29'),
+(5, 3, 2, 1, '2023-04-03 06:45:25');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -372,5 +373,5 @@ ALTER TABLE `digifixx_settings`
 -- AUTO_INCREMENT voor een tabel `shopping_bag`
 --
 ALTER TABLE `shopping_bag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
