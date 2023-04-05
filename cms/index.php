@@ -97,7 +97,7 @@ if(isset($_POST['mySubmit'])){
 <body>
     <main id="login-main">
         <div id="logincontainer">  
-            <img src="images/logo.JPG" class="logologin" width="500px">
+            <a href="<?=$url;?>"><img src="images/logo.JPG" class="logologin" width="500px"></a>
             <?php if(isset($_GET['error'])) { $error = 'Foutieve of onbekende inlogcombinatie!'; } ?>
             <div class="tab-group">
                 <div class="tab active" data-tab="tab1">Log In</div>
