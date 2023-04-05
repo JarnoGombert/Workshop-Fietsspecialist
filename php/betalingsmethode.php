@@ -25,7 +25,18 @@
 
     <form id="ideal-form" style="display:none;" action="<?=$url;?>betaling-voltooid" method="post">
         <!-- iDeal form fields -->
-        <input type="text" name="bank-name" placeholder="Bank naam" required>
+        <select id="Select-bank" name="Kies uw bank">
+            <option value="rabobank">ABN AMRO</option>
+            <option value="rabobank">ASN Bank</option>
+            <option value="rabobank">Deutsche Bank</option>
+            <option value="rabobank">Friesland Bank</option>
+            <option value="rabobank">ING</option>
+            <option value="rabobank">Rabobank</option>
+            <option value="rabobank">RBS</option>
+            <option value="rabobank">SNS Bank</option>
+            <option value="rabobank">Triodos Bank</option>
+            <option value="rabobank">Van Lanshot Bankier</option>
+        </select>
         <input type="text" name="account-number" placeholder="Acount nummer" required>
         <input class="divInput" type="submit" value="betalen">
     </form>
