@@ -62,6 +62,7 @@ body {
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 14px;
   text-decoration: none;
@@ -151,7 +152,8 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #slider-main #hero .basis-slider .swiper .swiper-pagination .swiper-pagination-bullet-active {
   background: #fff !important;
@@ -250,7 +252,8 @@ body {
 .Product-main .ProductCard .card .ImgCard {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .Product-main .ProductCard .card .TxtColor {
   display: flex;
@@ -317,7 +320,8 @@ body {
   transform: translate(-50%, -50%);
   height: 80%;
   width: 80%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .Main-categorieen {
@@ -457,7 +461,8 @@ body {
   width: 290px;
 }
 .contentVervolgMain .content aside .image-wrapper .img img, .contentWinkelwagen .content aside .image-wrapper .img img, .contentProductMain .content aside .image-wrapper .img img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 12px;
 }
 .contentVervolgMain .content article, .contentWinkelwagen .content article, .contentProductMain .content article {
@@ -521,6 +526,7 @@ footer .rowHeader a, footer .rowCategorieen a {
   color: black;
   text-decoration: none;
   margin-top: 10px;
+  width: -moz-fit-content;
   width: fit-content;
   padding-bottom: 5px;
 }
@@ -675,7 +681,8 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
   width: 90%;
   height: 80%;
   transform: translate(-50%, -50%);
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .winkelwagen-Main .showProducts .winkelwagenTXT {
   margin: 20px;
@@ -810,7 +817,8 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
   padding: 10px;
 }
 .Review .ReviewRow1 .ReviewCard .ImageWrapper img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
   width: 100%;
   border-radius: 100%;
@@ -836,4 +844,4 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
 }
 .footerEnd .FooterEndContactRight {
   margin-right: 10px;
-}
+}/*# sourceMappingURL=style.css.map */

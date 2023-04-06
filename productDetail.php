@@ -18,10 +18,20 @@
     <div class="container mx-auto">
         <?php include 'php/breadcrumbs.php'; ?>
         <div class="title"><?=$rowFiets['merk'];?> <?=$rowFiets['model'];?> <?=$rowFiets['naam'];?></div>
-        <div class="product-detail">
-            <aside id="images">
 
+        <div class="product-detail">
+        <div class="content">
+            <aside>
+                <div class="image-wrapper">
+                    <div class="img">
+                        <img src="<?=$url;?>img/FietsImage1.png" height="100%" width="100%" alt="">
+                    </div>
+                </div>
             </aside>
+            <div class="ProductDetailInfo">
+                    <span>Naam: test</span>
+            </div>
+        </div>
             <article id="shopping-info">
                 <form id="taw" method="POST" action="#">
                     <label for="aantal">Aantal</label>
