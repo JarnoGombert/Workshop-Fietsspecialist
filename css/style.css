@@ -353,9 +353,6 @@ body {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  /* Creditcardformulier */
-  /* Bitcoinformulier */
-  /* iDeal-formulier */
 }
 .betaalmethode-main label {
   display: block;
@@ -426,15 +423,6 @@ body {
 }
 .betaalmethode-main .divInput:hover {
   background-color: #3e8e41;
-}
-.betaalmethode-main #creditcard-form {
-  display: none;
-}
-.betaalmethode-main #bitcoin-form {
-  display: none;
-}
-.betaalmethode-main #ideal-form {
-  display: none;
 }
 
 .contentVervolgMain, .contentWinkelwagen, .contentProductMain {
