@@ -191,4 +191,8 @@ $(document).ready(function() {
 
     var winkelmandElement = document.getElementById('TotalWinkelmand');
     winkelmandElement.innerHTML = bedragPlusVerzend.toFixed(2);
+
+    var naarBetaalMethode = document.getElementById("winkelwagen-betaal-btn");
+    naarBetaalMethode.setAttribute("href", "https://localhost/School/Workshops/Workshop-Fietsspecialist/betalings-methode?totaalbedrag=" + bedragPlusVerzend.toFixed(2));
+
 });

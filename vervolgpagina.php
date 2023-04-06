@@ -48,7 +48,7 @@
             } else if($row['id'] == '6') {
                 include 'php/betalingsmethode.php';
             }else if($row['id'] == '7') {
-                include 'php/betalingvoltiood.php';
+                include 'php/betalingvoltooid.php';
             } else if($row['id'] == '8') {
                 include 'php/process_form.php';
             } else if($row['id'] == '9') {

@@ -1,14 +1,14 @@
 <?php
-if($_GET['opslaan'] == "ja"){
+if(isset($_GET['opslaan']) == "ja"){
     $user_id = $_SESSION['user_id'];
     // $product_id = $_POST['product_id'];
     // $quantity = $_POST['quantity'];
     $product_id = $_GET['pd'];
     $quantity = $_GET['q'];
 
-    print_r($user_id);
-    print_r($product_id);
-    print_r($quantity);
+    // print_r($user_id);
+    // print_r($product_id);
+    // print_r($quantity);
 
     // Validate the input data
     // if (!is_numeric($user_id) || !is_numeric($product_id) || !is_numeric($quantity)) {
@@ -31,6 +31,12 @@ if($_GET['opslaan'] == "ja"){
 }
 
 if($_GET['deleteID']){
-  
+  $user_id = $_SESSION['user_id'];
+  $product_delete_id = $_GET['deleteID'];
+
+  $shopping_delete = $mysqli->query("DELETE FROM `shopping_bag` WHERE user_id = '".$mysqli->real_escape_string($user_id)."' AND product_id = '".$product_delete_id."'") or die($mysqli->error.__LINE__);	
+
+  header("Location: ".$url."winkelwagen");
+  exit;
 }
 ?>

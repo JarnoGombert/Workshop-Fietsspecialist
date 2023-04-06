@@ -1,44 +1,97 @@
+<?php
+    $user_id = $_SESSION['user_id'];
+
+    if(isset($_POST['payment-method'])){
+        $payment_method = $_POST['payment-method'];
+        $totaalBedrag = $_GET['totaalbedrag'];
+
+        switch ($payment_method) {
+            case 'creditcard':
+                $card_number = $_POST['card-number'];
+                $card_holder_name = $_POST['card-holder-name'];
+                $expiry_date = $_POST['expiry-date'];
+                $cvv = $_POST['cvv'];
+                break;
+            case 'bitcoin':
+                $btc_address = $_POST['btc-address'];
+                break;
+            case 'ideal':
+                $selected_bank = $_POST['KiesUwBank'];
+                $rekening_number = $_POST['rekening-number'];
+                break;
+                print_r('ideal Test');
+        }
+
+        $winkelmandProducts = $mysqli->prepare("SELECT product_id FROM shopping_bag WHERE user_id = ".$mysqli->real_escape_string($user_id)."");
+        $winkelmandProducts->execute();
+
+        foreach ($winkelmandProducts as $items) {
+            $product_ids[] = $items["product_id"];
+        }
+        $Allproducts = json_encode($product_ids);
+
+        print_r($Allproducts);
+
+        $shopping_make_order = $mysqli->query("INSERT orders SET user_id = '".$mysqli->real_escape_string($user_id)."',
+                                                                    products 	= '".$Allproducts."',
+                                                                    payment_method	= '".$payment_method."',
+                                                                    card_number	= '".$card_number."',
+                                                                    card_holder_name	= '".$card_holder_name."',
+                                                                    expiry_date	= '".$expiry_date."',
+                                                                    cvv	= '".$cvv."',
+                                                                    btc_address	= '".$btc_address."',
+                                                                    selected_bank	= '".$selected_bank."',
+                                                                    rekening_number	= '".$rekening_number."',
+                                                                    total_price	= '".$totaalBedrag."'") or die($mysqli->error.__LINE__);	
+
+        //$betaling_voltooid = $mysqli->query("DELETE FROM `shopping_bag` WHERE user_id = ".$mysqli->real_escape_string($user_id)."") or die($mysqli->error.__LINE__);
+    
+        header("Location: ".$url."betaling-voltooid");
+        exit; 
+    }
+   
+?>
+
 <div class="betaalmethode-main">
-    <label for="payment-method">Selecteer betaalmethode:</label>
-    <select id="payment-method" name="payment-method">
-        <option value="">&#xf245; Selecteer</option>
-        <option value="creditcard"><span>&#xf09d;</span> Credit Card</option>
-        <option value="bitcoin"><span>&#xf15a;</span> Bitcoin</option>
-        <option value="ideal"><span>&#xf0d6;</span> iDeal</option>
-    </select>
-
-    <form id="creditcard-form" action="<?=$url;?>betaling-voltooid" method="post">
-        <!-- Credit card form fields -->
-        <input type="text" name="card-number" placeholder="kaart nummer" verplicht>
-        <input type="text" name="card-holder-name" placeholder="kaart houder naam" required>
-        <input type="text" name="expiry-date" placeholder="afloop datum" required>
-        <input type="text" name="cvv" placeholder="CVV">
-        <input class="divInput" type="submit" value="betalen">
-    </form>
-
-    <form id="bitcoin-form" style="display:none;" action="<?=$url;?>betaling-voltooid" method="post">
-        <!-- Bitcoin form fields -->
-        <input type="text" name="btc-address" placeholder="Bitcoin adres" required>
-        <input class="divInput" type="submit" value="betalen">
-
-    </form>
-
-    <form id="ideal-form" style="display:none;" action="<?=$url;?>betaling-voltooid" method="post">
-        <!-- iDeal form fields -->
-        <select id="Select-bank" name="Kies uw bank">
-            <option value="rabobank">ABN AMRO</option>
-            <option value="rabobank">ASN Bank</option>
-            <option value="rabobank">Deutsche Bank</option>
-            <option value="rabobank">Friesland Bank</option>
-            <option value="rabobank">ING</option>
-            <option value="rabobank">Rabobank</option>
-            <option value="rabobank">RBS</option>
-            <option value="rabobank">SNS Bank</option>
-            <option value="rabobank">Triodos Bank</option>
-            <option value="rabobank">Van Lanshot Bankier</option>
+    <form action="#" method="post">
+        <label for="payment-method">Selecteer betaalmethode:</label>
+        <select id="payment-method" name="payment-method">
+            <option value="">&#xf245; Selecteer</option>
+            <option value="creditcard"><span>&#xf09d;</span> Credit Card</option>
+            <option value="bitcoin"><span>&#xf15a;</span> Bitcoin</option>
+            <option value="ideal"><span>&#xf0d6;</span> iDeal</option>
         </select>
-        <input type="text" name="account-number" placeholder="Acount nummer" required>
-        <input class="divInput" type="submit" value="betalen">
+
+        <div id="creditcard-form">
+            <!-- Credit card form fields -->
+            <input type="text" name="card-number" placeholder="kaart nummer" required>
+            <input type="text" name="card-holder-name" placeholder="kaart houder naam" required>
+            <input type="text" name="expiry-date" placeholder="afloop datum" required>
+            <input type="text" name="cvv" placeholder="CVV">
+        </div>
+
+        <div id="bitcoin-form" style="display:none;">
+            <!-- Bitcoin form fields -->
+            <input type="text" name="btc-address" placeholder="Bitcoin adres" required>
+        </div>
+
+        <div id="ideal-form" style="display:none;">
+            <!-- iDeal form fields -->
+            <select id="Select-bank" name="KiesUwBank">
+                <option value="abn amro">ABN AMRO</option>
+                <option value="asn bank">ASN Bank</option>
+                <option value="deutsche bank">Deutsche Bank</option>
+                <option value="friesland bank">Friesland Bank</option>
+                <option value="ing">ING</option>
+                <option value="rabobank">Rabobank</option>
+                <option value="rbs">RBS</option>
+                <option value="sns bank">SNS Bank</option>
+                <option value="triodos bank">Triodos Bank</option>
+                <option value="van lanshot bankier">Van Lanshot Bankier</option>
+            </select>
+            <input type="text" name="rekening-number" placeholder="Rekening nummer" required>
+        </div>
+        <input class="divInput" type="submit" name="betalen" value="betalen">
     </form>
 </div>
 

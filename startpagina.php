@@ -127,7 +127,7 @@
                         $catProduct = strtolower($namePCategorie);
                     }
                 ?>
-                    <a href="<?=$url;?>producten?categorie=<?=$catProduct;?>"><?=$namePCategorie;?></a>
+                    <a href="<?=$url;?>producten?categorieSelect=<?=$catProduct;?>"><?=$namePCategorie;?></a>
             <?php } ?>
         </div>
     </div>

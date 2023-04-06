@@ -1,15 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 apr 2023 om 23:03
+-- Gegenereerd op: 05 apr 2023 om 22:16
 -- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.4
+-- PHP-versie: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `digifixx`
@@ -236,6 +242,28 @@ INSERT INTO `digifixx_settings` (`id`, `weburl`, `naamwebsite`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `products` varchar(200) NOT NULL,
+  `payment_method` varchar(200) NOT NULL,
+  `card_number` int(200) DEFAULT NULL,
+  `card_holder_name` varchar(200) DEFAULT NULL,
+  `expiry_date` varchar(200) DEFAULT NULL,
+  `cvv` int(11) DEFAULT NULL,
+  `btc_address` varchar(200) DEFAULT NULL,
+  `selected_bank` varchar(200) NOT NULL,
+  `rekening_number` int(200) NOT NULL,
+  `total_price` decimal(8,2) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `shopping_bag`
 --
 
@@ -255,7 +283,9 @@ INSERT INTO `shopping_bag` (`id`, `user_id`, `product_id`, `quantity`, `created_
 (1, 2, 3, 8, '2023-04-02 12:21:18'),
 (2, 1, 2, 4, '2023-04-02 12:58:01'),
 (3, 1, 3, 3, '2023-04-02 13:22:24'),
-(4, 0, 3, 4, '2023-04-02 18:47:29');
+(4, 0, 3, 4, '2023-04-02 18:47:29'),
+(8, 3, 3, 2, '2023-04-05 20:06:36'),
+(9, 3, 5, 1, '2023-04-05 20:06:40');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -309,6 +339,12 @@ ALTER TABLE `digifixx_reviews`
 --
 ALTER TABLE `digifixx_settings`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexen voor tabel `shopping_bag`
@@ -369,8 +405,18 @@ ALTER TABLE `digifixx_settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT voor een tabel `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT voor een tabel `shopping_bag`
 --
 ALTER TABLE `shopping_bag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
