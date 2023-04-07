@@ -15,8 +15,6 @@ if(isset($_GET['categorieSelect']) && $_GET['categorieSelect'] != "alle-fietsen"
 } else {
     //Producten items ophalen
     $sqlProduct = $mysqli -> prepare("SELECT id, naam, model, merk, categorie, prijs, prijs_korting, kleur, frameMaat, extras, paginaurl, status FROM digifixx_producten WHERE status = 'actief'") or die ($mysqli->error.__LINE__);
-    // $productId = $_GET['id'];
-    // $sqlProduct->bind_param('i',$productId);
     $sqlProduct->execute();
     $sqlProduct->store_result();
     $sqlProduct->bind_result($idProduct, $titelProduct, $modelProduct, $merkProduct, $CatProduct, $prijsProduct, $prijsKProduct, $kleurProduct, $frameMaatProduct, $extraProduct, $urlProduct, $statusProduct);
@@ -26,10 +24,6 @@ if(isset($_GET['categorieSelect']) && $_GET['categorieSelect'] != "alle-fietsen"
 <div class="Product-main">
         <div class="container mx-auto">
             <div class="filters">
-                <select name="KortingSelect" id="KortingSelect">
-                    <option value="alle-fietsen">Alle fietsen</option>
-                    <option value="korting">Korting</option>
-                </select>
                 <form id="CatfiltersForm" action="">
                     <select id="categorieSelect" name="categorieSelect" placeholder="Selecteer een categorie">	
                         <?php

@@ -427,6 +427,56 @@ main article section .instellingen-wrapper .settingTab span {
   background: #95AEAB;
   border-radius: 0 10px 10px 0;
 }
+main article section .gebruikers-wrapper .gebruikerTab {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+main article section .gebruikers-wrapper .gebruikerTab:first-of-type {
+  background: #95AEAB;
+  border-radius: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+main article section .gebruikers-wrapper .gebruikerTab .icon {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+main article section .gebruikers-wrapper .gebruikerTab .icon .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main article section .gebruikers-wrapper .gebruikerTab .icon.icon:before, main article section .gebruikers-wrapper .gebruikerTab .icon.icon:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+main article section .gebruikers-wrapper .gebruikerTab .icon.user.user:before {
+  top: 25%;
+  left: 35%;
+  width: 30%;
+  height: 30%;
+  border: 2px solid #2B2B36;
+  border-radius: 50%;
+}
+main article section .gebruikers-wrapper .gebruikerTab .icon.user.user:after {
+  bottom: 11%;
+  left: 25%;
+  width: 50%;
+  height: 20%;
+  border-top: 2px solid #2B2B36;
+  border-left: 2px solid #2B2B36;
+  border-right: 2px solid #2B2B36;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+main article section .gebruikers-wrapper .gebruikerTab .edit-buttons {
+  display: flex;
+  gap: 10px;
+}
 main article section .dashboard-wrapper {
   display: grid;
   grid-gap: 20px;

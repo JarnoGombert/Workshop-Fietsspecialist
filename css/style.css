@@ -344,6 +344,12 @@ body {
 }
 .Main-categorieen .merk-inner a {
   text-decoration: none;
+  font-weight: 600;
+  color: #57918a;
+  transition: all 0.3s;
+}
+.Main-categorieen .merk-inner a:hover {
+  transform: scale(1.1);
 }
 
 .betaalmethode-main {
@@ -832,4 +838,7 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
 }
 .footerEnd .FooterEndContactRight {
   margin-right: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */

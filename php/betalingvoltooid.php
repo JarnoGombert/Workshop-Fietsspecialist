@@ -1,1 +1,1 @@
-<h1>Je hebt betaald!!</h1>
+<h1>Uw betaling is voltooid.</h1>

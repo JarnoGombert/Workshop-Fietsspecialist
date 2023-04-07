@@ -28,11 +28,10 @@
                     </div>
                 </div>
             </aside>
-            <div class="ProductDetailInfo">
-                    <span>Naam: test</span>
-            </div>
-        </div>
             <article id="shopping-info">
+                <div class="ProductDetailInfo">
+                    <span>Naam: test</span>
+                </div>
                 <form id="taw" method="POST" action="#">
                     <label for="aantal">Aantal</label>
                     <input type="number" name="quantity" id="quantity">
@@ -42,6 +41,7 @@
                     <input type="submit" name="submit" id="winkelwagenAdd" class="btn" value="Toevoegen aan winkelwagen">
                 </form>
             </article>
+        </div>
         </div>
     </div>
 </section>

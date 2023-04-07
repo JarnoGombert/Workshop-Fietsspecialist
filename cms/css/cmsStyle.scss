@@ -15,6 +15,7 @@ $logo-color: #414850;
 $secondary-color: $logo-color;
 $white: #fff;
 $groen: #95AEAB;
+$donker-groen: #57918a;
 $error: #a71b1b;
 $font: 'Rosario', sans-serif;
 
@@ -484,6 +485,64 @@ main {
                         padding: 20px;
                         background: $groen;
                         border-radius: 0 10px 10px 0;
+                    }
+                }
+            }
+            .gebruikers-wrapper{
+                .gebruikerTab{
+                    display: grid;
+                    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+                    &:first-of-type{
+                        background: $groen;
+                        border-radius: 8px;
+                        align-items: center;
+                        margin-bottom: 10px;
+                    }
+                    .icon{
+                        position: relative;
+                        display: inline-block;
+                        width: 32px;
+                        height: 32px;
+
+                        .fa{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        &.icon:before, &.icon:after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                        }
+
+                        &.user{
+                            &.user:before {
+                                top: 25%;
+                                left: 35%;
+                                width: 30%;
+                                height: 30%;
+                                border: 2px solid #2B2B36;
+                                border-radius: 50%;
+                            }
+                            &.user:after {
+                                bottom: 11%;
+                                left: 25%;
+                                width: 50%;
+                                height: 20%;
+                                border-top: 2px solid #2B2B36;
+                                border-left: 2px solid #2B2B36;
+                                border-right: 2px solid #2B2B36;
+                                border-top-left-radius: 20px;
+                                border-top-right-radius: 20px;
+                            }
+                        }
+                    }
+                    .edit-buttons{
+                        display: flex;
+                        gap: 10px;
                     }
                 }
             }

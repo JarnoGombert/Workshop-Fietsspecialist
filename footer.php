@@ -64,7 +64,7 @@
         © 2023, Fietsspeciaal Bakker
     </span>
     <span class="FooterEndContactRight">
-        <a>Made by digifixx</a>
+        <a>Made by Digifixx</a>
         <img src="<?=$url;?>Images/DigifixxLogo.png" style="width: 60px; height: 30px;">
     </span>
 </div>

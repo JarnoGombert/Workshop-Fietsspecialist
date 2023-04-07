@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 05 apr 2023 om 22:16
+-- Gegenereerd op: 07 apr 2023 om 13:12
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -162,7 +162,7 @@ CREATE TABLE `digifixx_producten` (
 
 INSERT INTO `digifixx_producten` (`id`, `naam`, `model`, `merk`, `categorie`, `prijs`, `prijs_korting`, `kleur`, `frameMaat`, `extras`, `paginaurl`, `datum`, `status`) VALUES
 (1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '1223.75', '1000.00', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', '2023-03-08 12:02:45', 'actief'),
-(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen', '2200.90', '2000.00', '#61a8cc', '', '', 'product/gazelle-grenoble-c8-hmb-2023', '2023-03-31 11:02:45', 'actief'),
+(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen', '2200.90', '0.00', '#61a8cc', '', '', 'product/gazelle-grenoble-c8-hmb-2023', '2023-03-31 11:02:45', 'actief'),
 (3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen', '2200.00', '0.00', '#fbad54', '', '', 'product/sparta--d-rule-energy', '2023-03-31 11:02:45', 'actief'),
 (4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen', '2221.50', '2220.00', '#3d5dbd', '', '', 'product/stella-livorno-easy-mds', '2023-03-31 11:02:45', 'actief'),
 (5, 'RS 2 2023', 'Attend ', 'Giant', 'Stadfietsen', '2699.00', '2599.00', '#000000', '', '', 'product/giant-attend-rs-2-2023', '2023-03-31 11:02:45', 'actief');
@@ -250,13 +250,13 @@ CREATE TABLE `orders` (
   `user_id` int(11) NOT NULL,
   `products` varchar(200) NOT NULL,
   `payment_method` varchar(200) NOT NULL,
-  `card_number` int(200) DEFAULT NULL,
+  `card_number` varchar(200) DEFAULT NULL,
   `card_holder_name` varchar(200) DEFAULT NULL,
   `expiry_date` varchar(200) DEFAULT NULL,
   `cvv` int(11) DEFAULT NULL,
   `btc_address` varchar(200) DEFAULT NULL,
   `selected_bank` varchar(200) NOT NULL,
-  `rekening_number` int(200) NOT NULL,
+  `rekening_number` varchar(200) NOT NULL,
   `total_price` decimal(8,2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -408,7 +408,7 @@ ALTER TABLE `digifixx_settings`
 -- AUTO_INCREMENT voor een tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT voor een tabel `shopping_bag`

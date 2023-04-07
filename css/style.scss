@@ -14,6 +14,7 @@ $primary-color: #DDD;
 $logo-color: #414850;
 $secondary-color: $logo-color;
 $groen: #95AEAB;
+$donker-groen: #57918a;
 $white: #fff;
 $font: 'Rosario', sans-serif;
 
@@ -408,6 +409,13 @@ body
 
         a{
             text-decoration: none;
+            font-weight: 600;
+            color: $donker-groen;
+            transition: all 0.3s;
+
+            &:hover{
+                transform: scale(1.1);
+            }
         }
     }
 }
@@ -981,5 +989,8 @@ footer{
     .FooterEndContactRight
     {
         margin-right: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
     }
 }
