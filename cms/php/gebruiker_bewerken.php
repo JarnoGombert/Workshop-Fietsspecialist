@@ -1,5 +1,21 @@
 <?php
+if(isset($_GET['deleteGebruikerId'])){
+    $deleteID = $_GET['deleteGebruikerId'];
+    $gebruikersInfo = $mysqli->query("DELETE FROM `digifixxcms_gebruikers` WHERE id = ".$deleteID."");
+
+    header('Location: ?page=gebruikers');
+    exit;
+} else {
+
 $user_id = $_SESSION['user_id'];
+if(isset($_GET['editid'])){
+    $gebruikerID = $_GET['editid'];
+} else if(isset($_GET['nieuwid'])) {
+    $gebruikerID = $_GET['nieuwid'];
+} else {
+    $gebruikerID = $user_id;
+}
+
 
 if(isset($_GET['opslaan']) == "ja") {
     $sql_insert = $mysqli->query("UPDATE digifixxcms_gebruikers SET 
@@ -16,14 +32,14 @@ if(isset($_GET['opslaan']) == "ja") {
     postcode       = '" . $mysqli->real_escape_string($_POST['postcode']) . "',
     plaats       = '" . $mysqli->real_escape_string($_POST['plaats']) . "',
     telefoon       = '" . $mysqli->real_escape_string($_POST['telefoon']) . "',
-    mobiel       = '" . $mysqli->real_escape_string($_POST['mobiel']) . "' WHERE id = '" . $user_id . "' ") or die($mysqli->error . __LINE__);
+    mobiel       = '" . $mysqli->real_escape_string($_POST['mobiel']) . "' WHERE id = '" . $gebruikerID . "' ") or die($mysqli->error . __LINE__);
 
     //pagina redirecten om deze te kunnen bewerken
-    header('Location: ?page=gebruiker_bewerken&id=' . $user_id . '');
+    header('Location: ?page=gebruiker_bewerken&id=' . $gebruikerID . '');
     exit;
 }
 
-$gebruikersInfo = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = ".$user_id."");
+$gebruikersInfo = $mysqli->query("SELECT * FROM digifixxcms_gebruikers WHERE id = ".$gebruikerID."");
 $rowGebruiker = $gebruikersInfo->fetch_assoc();
 
 //Als $_GET opgeslagen=ja is de pagina correct ingevuld en opgeslagen: dus we tonen een alert
@@ -34,12 +50,14 @@ if (isset($_GET['opslaan']) == "ja") {
     </div>
     ";
 };
+
+}
 ?>
 
 <section id="gebruiker_edit">
     <div class="left">
         <div class="title">Gebruiker bewerken</div>
-        <form action="?page=gebruiker_bewerken&id=<?=$user_id;?>&opslaan=ja" method="POST">
+        <form action="?page=gebruiker_bewerken&id=<?=$gebruikerID;?>&opslaan=ja" method="POST">
             <div class="form-group">
                 <label for="username">Gebruikersnaam</label>
                 <input type="text" value="<?=$rowGebruiker['username'];?>" name="username" id="username">

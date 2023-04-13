@@ -89,7 +89,7 @@ if (isset($_GET['opslaan']) == "ja") {
                 </select>
             </div>
             <div class="form-group">
-                <label for="extras">Fiets extras</label>
+                <label for="extras">Fiets extras/informatie</label>
                 <textarea name="extras" id="extras" rows="10"><?=$extraProduct;?></textarea>
             </div>
             <div class="form-group">

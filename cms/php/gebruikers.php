@@ -28,7 +28,7 @@ $sqlGebruikers->bind_result($idGebruikers, $usernameGebruikers, $voorLettersGebr
             <div><?=$naam;?></div>
             <div><?=$niveauGebruikers;?></div>
             <div><?=$emailGebruikers;?></div>
-            <div class="edit-buttons"><a href=""><i class="fa fa-edit"></i></a><a href=""><i class="fa fa-trash"></i></a></div>
+            <div class="edit-buttons"><a href="?page=gebruiker_bewerken&editid=<?=$idGebruikers;?>"><i class="fa fa-edit"></i></a><a href="?page=gebruiker_bewerken&deleteGebruikerId=<?=$idGebruikers;?>"><i class="fa fa-trash"></i></a></div>
         </div>
         <?php } ?>
     </div>

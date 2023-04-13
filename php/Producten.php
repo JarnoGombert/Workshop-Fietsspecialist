@@ -45,7 +45,7 @@ if(isset($_GET['categorieSelect']) && $_GET['categorieSelect'] != "alle-fietsen"
             <div class="ProductCard">
                 <?php
                     while($sqlProduct->fetch()) {
-                           $query = $mysqli->query("SELECT * FROM digifixx_images WHERE product_id = ".$idProduct."");
+                        $query = $mysqli->query("SELECT * FROM digifixx_images WHERE product_id = ".$idProduct."");
                         $row = $query->fetch_assoc();
                         if($query->num_rows > 0)
                         {

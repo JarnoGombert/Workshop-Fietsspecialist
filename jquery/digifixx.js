@@ -124,15 +124,17 @@ $(document).ready(function() {
 
     // Loop through the products and add them to the cart
     for (var i = 0; i < products.length; i++) {
-    var prijsFiets = products[i].querySelectorAll('#totalPrice');
-    var naamFiets = products[i].querySelectorAll('#title');
-    var quantityFiets = products[i].querySelectorAll('#quantity');
+        var prijsFiets = products[i].querySelectorAll('#totalPrice');
+        var naamFiets = products[i].querySelectorAll('#title');
+        var quantityFiets = products[i].querySelectorAll('#quantity');
+        var ProductID = products[i].querySelectorAll('#product_id');
 
-    var itemPrice = parseFloat(prijsFiets[0].textContent);
-    var itemQuantity = parseInt(quantityFiets[0].value);
-    cartItems.push({ name: naamFiets[0].textContent, quantity: itemQuantity, price: itemPrice });
+        var itemPrice = parseFloat(prijsFiets[0].textContent);
+        var itemQuantity = parseInt(quantityFiets[0].value);
+        var itemProductID = parseInt(ProductID[0].value);
+        cartItems.push({ id: itemProductID, name: naamFiets[0].textContent, quantity: itemQuantity, price: itemPrice });
 
-    totalPrice += itemPrice * itemQuantity;
+        totalPrice += itemPrice * itemQuantity;
     }
 
     // Update the total price display
@@ -150,34 +152,58 @@ $(document).ready(function() {
 
     // Define an event listener function for quantity changes
     function updateCart(event) {
-    var index = parseInt(event.target.dataset.index);
-    var quantity = parseInt(event.target.value);
+        var index = parseInt(event.target.dataset.index);
+        var quantity = parseInt(event.target.value);
 
-    cartItems[index].quantity = quantity;
+        cartItems[index].quantity = quantity;
 
-    // Recalculate the total price
-    var newTotalPrice = 0;
-    for (var i = 0; i < cartItems.length; i++) {
-        newTotalPrice += cartItems[i].quantity * cartItems[i].price;
+        // Recalculate the total price
+        var newTotalPrice = 0;
+        for (var i = 0; i < cartItems.length; i++) {
+            newTotalPrice += cartItems[i].quantity * cartItems[i].price;
+        }
+        var newbedragPlusVerzend = parseFloat(newTotalPrice) + verzendBedrag;
+
+        // Update the total price display
+        totalEl.textContent = newTotalPrice.toFixed(2);
+        winkelmandElement.textContent = newbedragPlusVerzend.toFixed(2);
+
+        console.log(cartItems);
+
+        // Call the updateWinkelwagenData function for the current item
+        updateWinkelwagenData(index);
     }
-    var newbedragPlusVerzend = parseFloat(newTotalPrice) + verzendBedrag;
 
-    // Update the total price display
-    totalEl.textContent = newTotalPrice.toFixed(2);
-    winkelmandElement.textContent = newbedragPlusVerzend.toFixed(2);
-
-    console.log(cartItems);
+    function updateWinkelwagenData(i) {
+        var quantity = cartItems[i].quantity;
+        var productId = cartItems[i].id;
+    
+        // Send an AJAX request to update the product quantity
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://localhost/School/Workshops/Workshop-Fietsspecialist/wijzig-winkelwagen/');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+    
+        var data = {
+            productId: productId,
+            quantity: quantity
+        };
+    
+        xhr.send(JSON.stringify(data));
+    
+        console.log("test");
+        console.log(encodeURIComponent(productId) + "" + encodeURIComponent(quantity));
     }
 
     // Loop through the products again and add event listeners to their quantity input elements
     for (var i = 0; i < products.length; i++) {
-    var quantityFiets = products[i].querySelectorAll('#quantity');
+        var quantityFiets = products[i].querySelectorAll('#quantity');
 
-    quantityFiets[0].addEventListener('change', updateCart);
-    quantityFiets[0].dataset.index = i;
+        quantityFiets[0].addEventListener('change', updateCart);
+        quantityFiets[0].dataset.index = i;
     }
 
-    
+    var updateWinkelwagen = document.getElementById('updateWinkelwagen');
+    updateWinkelwagen.addEventListener('click', updateWinkelwagenData);
 
     var formattedTotal = totalPrice.toFixed(2);
     var totalElement = document.getElementById('TotalAlleProducten');

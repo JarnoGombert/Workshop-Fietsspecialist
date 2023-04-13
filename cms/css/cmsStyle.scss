@@ -543,6 +543,24 @@ main {
                     .edit-buttons{
                         display: flex;
                         gap: 10px;
+
+                        a{
+                            &:hover {
+                                i {
+                                    transform: scale(1.1);
+                                }
+                            }
+                            i {
+                                font-size: 30px;
+                                color: $white;
+                            }
+
+                            &:last-of-type{
+                                i{
+                                    color: $error;
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 07 apr 2023 om 13:12
+-- Gegenereerd op: 13 apr 2023 om 22:21
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -161,11 +161,11 @@ CREATE TABLE `digifixx_producten` (
 --
 
 INSERT INTO `digifixx_producten` (`id`, `naam`, `model`, `merk`, `categorie`, `prijs`, `prijs_korting`, `kleur`, `frameMaat`, `extras`, `paginaurl`, `datum`, `status`) VALUES
-(1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '1223.75', '1000.00', '#ccc7c7', '56/57', '', 'product/premio-evo-5-lite-comfort', '2023-03-08 12:02:45', 'actief'),
-(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen', '2200.90', '0.00', '#61a8cc', '', '', 'product/gazelle-grenoble-c8-hmb-2023', '2023-03-31 11:02:45', 'actief'),
-(3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen', '2200.00', '0.00', '#fbad54', '', '', 'product/sparta--d-rule-energy', '2023-03-31 11:02:45', 'actief'),
-(4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen', '2221.50', '2220.00', '#3d5dbd', '', '', 'product/stella-livorno-easy-mds', '2023-03-31 11:02:45', 'actief'),
-(5, 'RS 2 2023', 'Attend ', 'Giant', 'Stadfietsen', '2699.00', '2599.00', '#000000', '', '', 'product/giant-attend-rs-2-2023', '2023-03-31 11:02:45', 'actief');
+(1, 'Lite Comfort', 'EVO 5', 'Premio', 'Stadfietsen', '1223.75', '1000.00', '#ccc7c7', '56/57', 'Een fiets is een voertuig dat oorspronkelijk veelal louter met spierkracht werd aangedreven. De hedendaagse fiets bestaat doorgaans uit twee wielen, een frame, een zadel, een stuur en een trapas met p', 'product/premio-evo-5-lite-comfort', '2023-03-08 12:02:45', 'actief'),
+(2, 'HMB 2023', ' Grenoble C8', 'Gazelle', 'Elektrische fietsen', '2200.90', '0.00', '#61a8cc', '', 'Een fiets is een voertuig dat oorspronkelijk veelal louter met spierkracht werd aangedreven. De hedendaagse fiets bestaat doorgaans uit twee wielen, een frame, een zadel, een stuur en een trapas met p', 'product/gazelle-grenoble-c8-hmb-2023', '2023-03-31 11:02:45', 'actief'),
+(3, 'ENERGY 2023', 'd-RULE', 'Sparta', 'Elektrische fietsen', '2200.00', '0.00', '#fbad54', '', 'Een fiets is een voertuig dat oorspronkelijk veelal louter met spierkracht werd aangedreven. De hedendaagse fiets bestaat doorgaans uit twee wielen, een frame, een zadel, een stuur en een trapas met p', 'product/sparta--d-rule-energy', '2023-03-31 11:02:45', 'actief'),
+(4, 'Easy MDS', 'Livorno', 'Stella', 'Elektrische fietsen', '2221.50', '2220.00', '#3d5dbd', '', 'Een fiets is een voertuig dat oorspronkelijk veelal louter met spierkracht werd aangedreven. De hedendaagse fiets bestaat doorgaans uit twee wielen, een frame, een zadel, een stuur en een trapas met p', 'product/stella-livorno-easy-mds', '2023-03-31 11:02:45', 'actief'),
+(5, 'RS 2 2023', 'Attend ', 'Giant', 'Stadfietsen', '2699.00', '2599.00', '#000000', '', 'Een fiets is een voertuig dat oorspronkelijk veelal louter met spierkracht werd aangedreven. De hedendaagse fiets bestaat doorgaans uit twee wielen, een frame, een zadel, een stuur en een trapas met p', 'product/giant-attend-rs-2-2023', '2023-03-31 11:02:45', 'actief');
 
 -- --------------------------------------------------------
 
@@ -281,8 +281,8 @@ CREATE TABLE `shopping_bag` (
 
 INSERT INTO `shopping_bag` (`id`, `user_id`, `product_id`, `quantity`, `created_at`) VALUES
 (1, 2, 3, 8, '2023-04-02 12:21:18'),
-(2, 1, 2, 4, '2023-04-02 12:58:01'),
-(3, 1, 3, 3, '2023-04-02 13:22:24'),
+(2, 1, 2, 1, '2023-04-02 12:58:01'),
+(3, 1, 3, 1, '2023-04-02 13:22:24'),
 (4, 0, 3, 4, '2023-04-02 18:47:29'),
 (8, 3, 3, 2, '2023-04-05 20:06:36'),
 (9, 3, 5, 1, '2023-04-05 20:06:40');
@@ -366,7 +366,7 @@ ALTER TABLE `digifixxcms`
 -- AUTO_INCREMENT voor een tabel `digifixxcms_gebruikers`
 --
 ALTER TABLE `digifixxcms_gebruikers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixxcms_product_reviews`

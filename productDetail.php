@@ -13,28 +13,49 @@
         // Get the user ID and product ID from the request parameters
         header('Location: ' . $url. "wijzig-winkelwagen?pd=" . $_POST['product_id'] . "&q=" . $_POST['quantity'] . "&opslaan=ja");
         exit;	
-    } ?>
+    } 
+    ?>
 <section class="contentProductMain">
     <div class="container mx-auto">
         <?php include 'php/breadcrumbs.php'; ?>
-        <div class="title"><?=$rowFiets['merk'];?> <?=$rowFiets['model'];?> <?=$rowFiets['naam'];?></div>
-
         <div class="product-detail">
         <div class="content">
             <aside>
                 <div class="image-wrapper">
                     <div class="img">
-                        <img src="<?=$url;?>img/FietsImage1.png" height="100%" width="100%" alt="">
+                        <?php
+                            $queryFIMG = $mysqli->query("SELECT * FROM digifixx_images WHERE product_id = ".$rowFiets['id']."");
+                            $rowIMG = $queryFIMG->fetch_assoc();
+                            if($queryFIMG->num_rows > 0)
+                            {
+                                $imageURL = 'img/'.$rowIMG["file_name"];
+                            }else
+                            {
+                                $imageURL = 'img/noimg.jpg';
+                            }
+                        ?>
+                        <img src="<?=$url;?><?=$imageURL;?>" height="100%" width="100%" alt="">
                     </div>
                 </div>
             </aside>
             <article id="shopping-info">
                 <div class="ProductDetailInfo">
-                    <span>Naam: test</span>
+                    <span class="title"><?=$rowFiets['merk'];?> <?=$rowFiets['model'];?> <?=$rowFiets['naam'];?></span>
+                    <div class="productPrice">
+                        <?php if($rowFiets['prijs_korting'] != "0"){?>
+                                <span class="PrijsPproduct">€ <?=$rowFiets['prijs'];?></span><br/>
+                                <span>Prijs: € <?=$rowFiets['prijs_korting'];?></span>
+                        <?php } else { ?>
+                            <span>Prijs: € <?=$rowFiets['prijs'];?></span>
+                        <?php } ?>
+                    </div>
+                    <div class="product-informatie">
+                        <?=$rowFiets['extras'];?>
+                    </div>
                 </div>
                 <form id="taw" method="POST" action="#">
                     <label for="aantal">Aantal</label>
-                    <input type="number" name="quantity" id="quantity">
+                    <input type="number" min="1" name="quantity" id="quantity">
 
                     <input type="hidden" name="product_id" value="<?=$rowFiets['id'];?>">
 

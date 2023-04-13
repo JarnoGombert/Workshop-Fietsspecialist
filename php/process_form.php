@@ -39,4 +39,17 @@ if($_GET['deleteID']){
   header("Location: ".$url."winkelwagen");
   exit;
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {  
+  $json_data = file_get_contents('php://input');
+  $data = json_decode($json_data, true);
+  $user_id = $_SESSION['user_id'];
+  $productId = $data['productId'];
+  $quantity = $data['quantity'];
+
+  $shopping_update = $mysqli->query("UPDATE shopping_bag SET quantity = '".$quantity."' WHERE user_id = '".$user_id."' AND product_id = '".$productId."'") or die($mysqli->error.__LINE__);	
+
+  header("Location: ".$url."winkelwagen");
+  exit;
+}
 ?>

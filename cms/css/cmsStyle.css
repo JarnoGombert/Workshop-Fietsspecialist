@@ -477,6 +477,16 @@ main article section .gebruikers-wrapper .gebruikerTab .edit-buttons {
   display: flex;
   gap: 10px;
 }
+main article section .gebruikers-wrapper .gebruikerTab .edit-buttons a:hover i {
+  transform: scale(1.1);
+}
+main article section .gebruikers-wrapper .gebruikerTab .edit-buttons a i {
+  font-size: 30px;
+  color: #fff;
+}
+main article section .gebruikers-wrapper .gebruikerTab .edit-buttons a:last-of-type i {
+  color: #a71b1b;
+}
 main article section .dashboard-wrapper {
   display: grid;
   grid-gap: 20px;

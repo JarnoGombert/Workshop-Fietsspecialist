@@ -973,6 +973,58 @@ footer{
 
 }
 
+.product-detail{
+    padding: 2rem 0rem;
+    .content{
+        .image-wrapper{
+            padding: 1rem 2rem 0rem 2rem !important;
+            .img {
+                height: 100% !important;
+                width: 400px !important;
+            }
+        }
+        #shopping-info{
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+
+            .ProductDetailInfo{
+                .PrijsPproduct
+                {
+                    font-size: 15px;
+                    text-decoration: line-through;
+                    color: #ddd;
+                }
+                .productPrice{
+                    margin-top: 30px;
+                    font-size: 24px;
+                }
+                .product-informatie{
+                    height: auto;
+                    max-height: 90px;
+                    width: 60%;
+                    padding: 1rem 0;
+                }
+            }
+
+            form{
+                display: flex;
+                width: 27%;
+                gap: 10px;
+                font-size: 20px;
+                align-items: center;
+                flex-wrap: wrap;
+
+                input[type="number"]{
+                    width: 35px;
+                    height: 30px;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
 .footerEnd
 {
     width: 100%;
