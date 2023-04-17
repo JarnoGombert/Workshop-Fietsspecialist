@@ -4,7 +4,12 @@
         <div class="title"><?=$row['item1'];?></div>
         <?php if($row['tekst']){ ?>
             <div class="content">
-                <aside><?php include 'php/afbeeldingen-zijkant.php'; ?></aside>
+                <!-- <aside><?php include 'php/afbeeldingen-zijkant.php'; ?></aside> -->
+                <aside><img src="<?=$url;?>Img/teamfoto.jpg" style="
+    border-radius: 24px;
+    height: 100%;
+    width: 80%;
+"></aside>
                 <article><?=$row['tekst'];?></article>
             </div>
         <?php
