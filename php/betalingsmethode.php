@@ -2,8 +2,12 @@
     $user_id = $_SESSION['user_id'];
 
     if(isset($_POST['payment-method'])){
+        if(isset($_GET['totaalbedrag'])){
+            $totaalBedrag = $_GET['totaalbedrag'];
+        } else {
+            $totaalBedrag = 0.00;
+        }
         $payment_method = $_POST['payment-method'];
-        $totaalBedrag = $_GET['totaalbedrag'];
         $dataCheck = false;
 
         if($payment_method == "creditcard"){
@@ -104,20 +108,20 @@
 
         <div id="creditcard-form" style="visibility:hidden;height:0;">
             <!-- Credit card form fields -->
-            <input type="text" name="card-number" placeholder="kaart nummer" required>
-            <input type="text" name="card-holder-name" placeholder="kaart houder naam" required>
-            <input type="text" name="expiry-date" placeholder="afloop datum" required>
+            <input type="text" name="card-number" placeholder="kaart nummer">
+            <input type="text" name="card-holder-name" placeholder="kaart houder naam">
+            <input type="text" name="expiry-date" placeholder="afloop datum">
             <input type="text" name="cvv" placeholder="CVV">
         </div>
 
         <div id="bitcoin-form" style="visibility:hidden;height:0;">
             <!-- Bitcoin form fields -->
-            <input type="text" name="btc-address" placeholder="Bitcoin adres" required>
+            <input type="text" name="btc-address" placeholder="Bitcoin adres">
         </div>
 
         <div id="ideal-form" style="visibility:hidden; height:0;">
             <!-- iDeal form fields -->
-            <select id="Select-bank" name="KiesUwBank" required>
+            <select id="Select-bank" name="KiesUwBank">
                 <option value="abn amro">ABN AMRO</option>
                 <option value="asn bank">ASN Bank</option>
                 <option value="deutsche bank">Deutsche Bank</option>
@@ -129,7 +133,7 @@
                 <option value="triodos bank">Triodos Bank</option>
                 <option value="van lanshot bankier">Van Lanshot Bankier</option>
             </select>
-            <input type="text" name="rekening-number" placeholder="Rekening nummer" required>
+            <input type="text" name="rekening-number" placeholder="Rekening nummer">
         </div>
         <input class="divInput" type="submit" name="betalen" value="betalen">
     </form>

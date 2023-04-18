@@ -189,9 +189,6 @@ $(document).ready(function() {
         };
     
         xhr.send(JSON.stringify(data));
-    
-        console.log("test");
-        console.log(encodeURIComponent(productId) + "" + encodeURIComponent(quantity));
     }
 
     // Loop through the products again and add event listeners to their quantity input elements
@@ -202,15 +199,11 @@ $(document).ready(function() {
         quantityFiets[0].dataset.index = i;
     }
 
-    var updateWinkelwagen = document.getElementById('updateWinkelwagen');
-    updateWinkelwagen.addEventListener('click', updateWinkelwagenData);
-
     var formattedTotal = totalPrice.toFixed(2);
     var totalElement = document.getElementById('TotalAlleProducten');
     totalElement.innerHTML = formattedTotal;
 
-    var verzendBedrag = 29.50;
-    var bedragPlusVerzend = parseFloat(formattedTotal) + verzendBedrag;
+    var bedragPlusVerzend = parseFloat(formattedTotal) + 29.50;
 
     var verzendElement = document.getElementById('verzendkosten');
     verzendElement.innerHTML = verzendBedrag.toFixed(2);
@@ -221,4 +214,6 @@ $(document).ready(function() {
     var naarBetaalMethode = document.getElementById("winkelwagen-betaal-btn");
     naarBetaalMethode.setAttribute("href", "https://localhost/School/Workshops/Workshop-Fietsspecialist/betalings-methode?totaalbedrag=" + bedragPlusVerzend.toFixed(2));
 
+    var updateWinkelwagen = document.getElementById('updateWinkelwagen');
+    updateWinkelwagen.addEventListener('click', updateWinkelwagenData);    
 });

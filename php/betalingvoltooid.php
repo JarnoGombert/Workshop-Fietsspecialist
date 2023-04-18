@@ -1,1 +1,1 @@
-<h1>Uw betaling is voltooid.</h1>
+<h1>Bedankt voor uw bestelling bij Fietsspeciaal Bakker.</h1>

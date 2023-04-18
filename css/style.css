@@ -183,6 +183,10 @@ body {
   background-color: white;
   margin: 20px;
   position: relative;
+  transition: all 0.5s;
+}
+.Rectagnle-main .card:hover {
+  transform: translate(10px, -10px);
 }
 .Rectagnle-main .card .ImgCard {
   width: 250px;
@@ -871,10 +875,10 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
   align-items: center;
 }
 .footerEnd .FooterEndContactLeft {
-  margin-left: 10px;
+  margin-left: 50px;
 }
 .footerEnd .FooterEndContactRight {
-  margin-right: 10px;
+  margin-right: 50px;
   display: flex;
   gap: 10px;
   align-items: center;
