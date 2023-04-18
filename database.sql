@@ -1,21 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 apr 2023 om 22:21
+-- Gegenereerd op: 18 apr 2023 om 21:17
 -- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.6
+-- PHP-versie: 8.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `digifixx`
@@ -48,7 +42,7 @@ CREATE TABLE `digifixxcms` (
 INSERT INTO `digifixxcms` (`id`, `item1`, `item2`, `item3`, `item4`, `item5`, `tekst`, `keuze`, `paginaurl`, `status`, `datum`) VALUES
 (1, 'Home', '', '', '', '', '', 'hoofdmenu', 'home', 'actief', '0000-00-00'),
 (2, 'Producten', '', '', '', '', '', 'hoofdmenu', 'producten', 'actief', '0000-00-00'),
-(3, 'Over ons', '', '', '', '', 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.', 'hoofdmenu', 'over-ons', 'actief', '0000-00-00'),
+(3, 'Over ons', '', '', '', '', 'Welkom bij onze fietsenwinkel, waar we gepassioneerd zijn over fietsen en de fietscultuur. Onze winkel is ontstaan uit een liefde voor fietsen en een verlangen om deze passie te delen met anderen. We bieden een breed scala aan fietsen van topkwaliteit en accessoires voor alle soorten fietsers.Ons team van deskundige fietsliefhebbers staat altijd klaar om u te helpen bij het vinden van de perfecte fiets die past bij uw behoeften en budget. Of u nu op zoek bent naar een stadsfiets, racefiets, mountainbike, e-bike of kinderfiets, wij hebben het allemaal in huis. Naast onze fietsen en accessoires bieden we ook een volledige fietsreparatieservice aan. Onze professionele monteurs hebben jarenlange ervaring in het repareren en onderhouden van fietsen van alle merken en modellen. Van kleine reparaties tot grote revisies, wij zorgen ervoor dat uw fiets weer in topconditie verkeert. Bij onze fietsenwinkel geloven we in duurzaamheid en het verminderen van onze ecologische voetafdruk. Daarom bieden we ook een uitgebreide selectie van milieuvriendelijke fietsen en accessoires aan, die zijn gemaakt van duurzame materialen en op een milieuvriendelijke manier zijn geproduceerd. We zijn trots op ons vakmanschap en onze klantenservice en streven ernaar om onze klanten de best mogelijke winkelervaring te bieden. Of u nu een doorgewinterde fietser bent of net begint met fietsen, we staan altijd klaar om u te helpen. Kom langs in onze winkel en ontdek ons aanbod van fietsen en accessoires en maak kennis met ons gepassioneerde team.', 'hoofdmenu', 'over-ons', 'actief', '0000-00-00'),
 (4, 'Contact', '', '', '', '', '', 'hoofdmenu', 'contact', 'actief', '0000-00-00'),
 (5, 'Winkelwagen', '', '', '', '', '', 'overige', 'winkelwagen', 'actief', '0000-00-00'),
 (6, 'Betalings Methode', '', '', '', '', '', 'overige', 'betalings-methode', 'actief', '0000-00-00'),
@@ -127,12 +121,12 @@ CREATE TABLE `digifixx_images` (
 --
 
 INSERT INTO `digifixx_images` (`id`, `cms_id`, `product_id`, `file_name`, `uploaded_on`, `status`) VALUES
-(5, 3, 0, 'FietsImage1.png', '2023-03-21 09:13:00', '1'),
 (6, 0, 1, 'FietsImage1.png', '2023-03-24 13:12:07', '1'),
 (8, 0, 2, 'FietsCard.png', '2023-03-24 14:10:32', '1'),
 (9, 0, 3, '03500493_de848293ab__1__0eee.jpg', '2023-03-24 14:15:22', '1'),
 (10, 0, 4, 'fff8515cbcba278caa0f6790a511.png', '2023-03-24 14:37:02', '1'),
-(11, 0, 5, 'Giant-attend-rs2-heren-blue-ashes.progressive.png', '2023-03-24 14:39:52', '1');
+(11, 0, 5, 'Giant-attend-rs2-heren-blue-ashes.progressive.png', '2023-03-24 14:39:52', '1'),
+(13, 3, 0, 'teamfoto.jpg', '2023-04-18 20:27:36', '1');
 
 -- --------------------------------------------------------
 
@@ -215,10 +209,10 @@ CREATE TABLE `digifixx_reviews` (
 --
 
 INSERT INTO `digifixx_reviews` (`id`, `titel`, `tekst`, `auteur`, `aantal_sterren`, `paginaurl`, `status`) VALUES
-(1, 'Dit is een test', 'Dit is een test review, dus niet echt.', 'John Doe', 4, 'review/test-review', 'actief'),
-(2, 'Dit is nog een test review', 'test', 'John Doe', 2, 'review/dit-is-nog-een-test-review', 'actief'),
-(3, 'Dit is nog een test review', 'Dit is een test tekst.', 'John Doe', 2, 'review/dit-is-nog-een-test-review', 'actief'),
-(4, 'review', '', 'John Doe', 4, 'review/review', 'actief');
+(1, 'Fijne hulp in de winkel', 'We hebben een heel fijn bezoek gehad aan uw winkel en komen graag nog eens terug.', 'John Doe', 4, 'review/fijne-hulp-in-de-winkel', 'actief'),
+(2, 'Mooie website', 'Uw heeft een mooi assortiment op uw website. De website zit goed in elkaar, je word er echt in meegenomen.', 'John Doe', 2, 'review/mooie-website', 'actief'),
+(3, 'Snelle service', 'Wij hadden onze fiets na 3 dagen al voor ons huis bezorgt. Top service!!', 'John Doe', 2, 'review/snelle-service', 'actief'),
+(4, 'Geweldige producten', 'Ik vind jullie assortiment aan producten zeer fijn. veel keuze en goede klantenserivce', 'John Doe', 4, 'review/geweldige-producten', 'actief');
 
 -- --------------------------------------------------------
 
@@ -274,18 +268,6 @@ CREATE TABLE `shopping_bag` (
   `quantity` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Gegevens worden geëxporteerd voor tabel `shopping_bag`
---
-
-INSERT INTO `shopping_bag` (`id`, `user_id`, `product_id`, `quantity`, `created_at`) VALUES
-(1, 2, 3, 8, '2023-04-02 12:21:18'),
-(2, 1, 2, 1, '2023-04-02 12:58:01'),
-(3, 1, 3, 1, '2023-04-02 13:22:24'),
-(4, 0, 3, 4, '2023-04-02 18:47:29'),
-(8, 3, 3, 2, '2023-04-05 20:06:36'),
-(9, 3, 5, 1, '2023-04-05 20:06:40');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -378,7 +360,7 @@ ALTER TABLE `digifixxcms_product_reviews`
 -- AUTO_INCREMENT voor een tabel `digifixx_images`
 --
 ALTER TABLE `digifixx_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT voor een tabel `digifixx_producten`
@@ -408,15 +390,11 @@ ALTER TABLE `digifixx_settings`
 -- AUTO_INCREMENT voor een tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `shopping_bag`
 --
 ALTER TABLE `shopping_bag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
