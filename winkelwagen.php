@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="divInput">
-                            <a href="" id="winkelwagen-betaal-btn" class="winkelwagenInput mx-auto">Betalen</a>
+                            <a href="https://localhost/School/Workshops/Workshop-Fietsspecialist/betalings-methode/" id="winkelwagen-betaal-btn" class="winkelwagenInput mx-auto">Betalen</a>
                         </div>
                     </div>
             </div>
