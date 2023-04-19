@@ -59,6 +59,10 @@
     </div>
 
 </footer>
+<div class="NB">
+    <h1>Blijf op de hoogte met onze nieuwsbrief.</h1>
+    <div><input type="email" name="" id=""><input type="submit" class="btn" value="Aanmelden"></div>
+</div>
 <div class="footerEnd">
     <span class="FooterEndContactLeft" >
         © 2023, Fietsspeciaal Bakker
@@ -66,5 +70,5 @@
     <span class="FooterEndContactRight">
         <a>Made by Digifixx</a>
         <img src="<?=$url;?>Images/DigifixxLogo.png" style="width: 60px; height: 30px;">
-    </span>
+    </span>  
 </div>
