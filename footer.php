@@ -61,7 +61,7 @@
 </footer>
 <div class="NB">
     <h1>Blijf op de hoogte met onze nieuwsbrief.</h1>
-    <div><input type="email" name="" id=""><input type="submit" class="btn" value="Aanmelden"></div>
+    <div><input type="email" name="" placeholder="E-mail" id=""><input type="submit" class="btn" value="Aanmelden"></div>
 </div>
 <div class="footerEnd">
     <span class="FooterEndContactLeft" >
