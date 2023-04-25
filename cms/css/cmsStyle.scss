@@ -823,6 +823,45 @@ main {
                 }
             }
 
+            &#bestelling{
+                #orderTab{
+                    background: $groen;
+                    padding: 0.5rem 2rem;
+                    border-radius: 0.5rem;
+                    margin-bottom: 20px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+
+                    .bestelling-fiets{
+                        display: grid;
+                        grid-template-columns: 60px 200px 1fr 1fr 1fr;
+                        grid-gap: 30px;
+                        justify-items: center;
+                        margin: 10px 0;
+                        align-items: center;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            border-radius: 0.5rem;
+                        }
+
+                        .PrijsPproduct{
+                            text-decoration: line-through;
+                        }
+                    }
+
+                    .order-details {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        padding: 1rem 0;
+                    }
+                }
+            }
+
             .title {
                 font-size: 26px;
                 font-weight: 500;
