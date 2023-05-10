@@ -180,7 +180,7 @@ $(document).ready(function() {
     
         // Send an AJAX request to update the product quantity
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://localhost/School/Workshops/Workshop-Fietsspecialist/wijzig-winkelwagen/');
+        xhr.open('POST', 'wijzig-winkelwagen');
         xhr.setRequestHeader('Content-Type', 'application/json');
         
         var data = {
@@ -212,7 +212,7 @@ $(document).ready(function() {
     winkelmandElement.innerHTML = bedragPlusVerzend.toFixed(2);
 
     var naarBetaalMethode = document.getElementById("winkelwagen-betaal-btn");
-    naarBetaalMethode.setAttribute("href", "https://localhost/School/Workshops/Workshop-Fietsspecialist/betalings-methode?totaalbedrag=" + bedragPlusVerzend.toFixed(2));
+    naarBetaalMethode.setAttribute("href", "betalings-methode?totaalbedrag=" + bedragPlusVerzend.toFixed(2));
 
     var updateWinkelwagen = document.getElementById('updateWinkelwagen');
     updateWinkelwagen.addEventListener('click', updateWinkelwagenData);    
