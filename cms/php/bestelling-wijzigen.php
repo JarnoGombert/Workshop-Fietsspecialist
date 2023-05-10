@@ -10,7 +10,7 @@ $sqlOrderWijzig->bind_result($productsOrder, $MethodOrder, $Total_Price_Order);
 ?>
 
 <section id="bestelling">
-    <div class="title">Mijn bestellingen</div>
+    <div class="title">Bestelling wijzigen</div>
     <div class="orders">
         <?php 
         $orderCount = 1;

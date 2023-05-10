@@ -8,7 +8,7 @@ $sqlOrder->bind_result($idOrder, $productsOrder, $MethodOrder, $Total_Price_Orde
 ?>
 
 <section id="bestelling">
-    <div class="title">Mijn bestellingen</div>
+    <div class="title">Mijn bestellingen (<?=$sqlOrder->num_rows;?>)</div>
     <div class="orders">
         <?php 
         $orderCount = 1;
