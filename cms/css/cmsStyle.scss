@@ -824,6 +824,20 @@ main {
             }
 
             &#bestelling{
+                .orders {
+                    overflow-y: scroll;
+                    height: 550px;
+                    padding-right: 1rem;
+
+                    ::-webkit-scrollbar {
+                        background-color: $groen;
+                        color: $donker-groen;
+                    }
+                    ::-webkit-scrollbar-thumb {
+                        background-image: initial;
+                        background-color: $groen;
+                    }
+                }
                 #orderTab{
                     background: $groen;
                     padding: 0.5rem 2rem;
@@ -854,10 +868,27 @@ main {
                     }
 
                     .order-details {
+                        position: relative;
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
                         padding: 1rem 0;
+
+                        #bestelling-wijzigen {
+                            position: absolute;
+                            right: 0rem;
+                            bottom: 2rem;
+
+                            &:hover {
+                                i {
+                                    transform: scale(1.1);
+                                }
+                            }
+                            i {
+                                font-size: 30px;
+                                color: $white;
+                            }
+                        }
                     }
                 }
             }

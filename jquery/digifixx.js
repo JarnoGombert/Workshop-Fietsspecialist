@@ -182,7 +182,7 @@ $(document).ready(function() {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'https://localhost/School/Workshops/Workshop-Fietsspecialist/wijzig-winkelwagen/');
         xhr.setRequestHeader('Content-Type', 'application/json');
-    
+        
         var data = {
             productId: productId,
             quantity: quantity
