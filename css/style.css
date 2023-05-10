@@ -386,7 +386,7 @@ body {
   font-family: fontAwesome;
 }
 .betaalmethode-main input[type=text] {
-  width: 100%;
+  width: 96%;
   height: 40px;
   margin-bottom: 20px;
   padding: 5px 10px;

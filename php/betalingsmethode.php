@@ -73,17 +73,18 @@
             }
             $Allproducts = json_encode($product_ids);
 
-            $shopping_make_order = $mysqli->query("INSERT orders SET user_id = '".$mysqli->real_escape_string($user_id)."',
-                                                                        products 	= '".$Allproducts."',
-                                                                        payment_method	= '".$payment_method."',
-                                                                        card_number	= '".$card_number."',
-                                                                        card_holder_name	= '".$card_holder_name."',
-                                                                        expiry_date	= '".$expiry_date."',
-                                                                        cvv	= '".$cvv."',
-                                                                        btc_address	= '".$btc_address."',
-                                                                        selected_bank	= '".$selected_bank."',
-                                                                        rekening_number	= '".$rekening_number."',
-                                                                        total_price	= '".$totaalBedrag."'") or die($mysqli->error.__LINE__);	
+            $shopping_make_order = $mysqli->query(
+            "INSERT orders SET user_id = '".$mysqli->real_escape_string($user_id)."',
+            products 	= '".$Allproducts."',
+            payment_method	= '".$payment_method."',
+            card_number	= '".$card_number."',
+            card_holder_name	= '".$card_holder_name."',
+            expiry_date	= '".$expiry_date."',
+            cvv	= '".$cvv."',
+            btc_address	= '".$btc_address."',
+            selected_bank	= '".$selected_bank."',
+            rekening_number	= '".$rekening_number."',
+            total_price	= '".$totaalBedrag."'") or die($mysqli->error.__LINE__);	
 
             $betaling_voltooid = $mysqli->query("DELETE FROM `shopping_bag` WHERE user_id = ".$mysqli->real_escape_string($user_id)."") or die($mysqli->error.__LINE__);
         
@@ -108,9 +109,9 @@
 
         <div id="creditcard-form" style="visibility:hidden;height:0;">
             <!-- Credit card form fields -->
-            <input type="text" name="card-number" placeholder="kaart nummer">
-            <input type="text" name="card-holder-name" placeholder="kaart houder naam">
-            <input type="text" name="expiry-date" placeholder="afloop datum">
+            <input type="text" name="card-number" placeholder="Kaart nummer">
+            <input type="text" name="card-holder-name" placeholder="Kaart houder naam">
+            <input type="text" name="expiry-date" placeholder="Afloop datum">
             <input type="text" name="cvv" placeholder="CVV">
         </div>
 
@@ -135,7 +136,7 @@
             </select>
             <input type="text" name="rekening-number" placeholder="Rekening nummer">
         </div>
-        <input class="divInput" type="submit" name="betalen" value="betalen">
+        <input class="divInput" type="submit" name="betalen" value="Betalen">
     </form>
 </div>
 
