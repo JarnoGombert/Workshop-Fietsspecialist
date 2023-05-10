@@ -55,7 +55,7 @@
                 </div>
                 <form id="taw" method="POST" action="#">
                     <label for="aantal">Aantal</label>
-                    <input type="number" min="1" name="quantity" id="quantity">
+                    <input type="number" min="1" max="25" name="quantity" id="quantity">
 
                     <input type="hidden" name="product_id" value="<?=$rowFiets['id'];?>">
 
