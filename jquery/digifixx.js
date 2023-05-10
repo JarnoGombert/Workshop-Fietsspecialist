@@ -14,7 +14,6 @@ $(document).ready(function() {
         $('.tab-pane[data-tab="' + $(this).data('tab') + '"]').addClass('active');
     });
 
-
     $('#slick').slick({
         dots: true,
         infinite: false,
@@ -44,13 +43,10 @@ $(document).ready(function() {
                     slidesToScroll: 1
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
     });
 
-    const swiper = new Swiper('.swiper', {
+    new Swiper('.swiper', {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
@@ -71,7 +67,7 @@ $(document).ready(function() {
       
       });
     
-    const swiperReviews = new Swiper('#reviews', {
+    new Swiper('#reviews', {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
@@ -105,19 +101,7 @@ $(document).ready(function() {
         },
     });
 
-    // // Get the select element
-    // const selectElement = document.getElementById('KortingSelect');
-    // // Add event listener for the change event
-    // selectElement.addEventListener('change', (event) => {
-    // // Get the selected option
-    // const selectedOption = event.target.value;
-
-    // // Do something with the selected option
-    // console.log(selectedOption);
-    // });
-
     var products = document.querySelectorAll('#showProducts');
-    var items = products.length;
 
     var cartItems = [];
     var totalPrice = 0;
@@ -148,8 +132,6 @@ $(document).ready(function() {
     var winkelmandElement = document.getElementById('TotalWinkelmand');
     winkelmandElement.textContent = bedragPlusVerzend.toFixed(2);
 
-    console.log(cartItems);
-
     // Define an event listener function for quantity changes
     function updateCart(event) {
         var index = parseInt(event.target.dataset.index);
@@ -167,8 +149,6 @@ $(document).ready(function() {
         // Update the total price display
         totalEl.textContent = newTotalPrice.toFixed(2);
         winkelmandElement.textContent = newbedragPlusVerzend.toFixed(2);
-
-        console.log(cartItems);
 
         // Call the updateWinkelwagenData function for the current item
         updateWinkelwagenData(index);
