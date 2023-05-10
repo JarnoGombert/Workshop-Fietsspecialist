@@ -1,18 +1,20 @@
 <?php
+$orderID = $_GET['bestellingId'];
 $user_id = $_SESSION['user_id'];
-$sqlOrder = $mysqli -> prepare("SELECT order_id, products, payment_method, total_price status FROM orders WHERE user_id = ? ORDER BY created_at DESC") or die ($mysqli->error.__LINE__);
-$sqlOrder -> bind_param('i',$user_id);
-$sqlOrder->execute();
-$sqlOrder->store_result();
-$sqlOrder->bind_result($idOrder, $productsOrder, $MethodOrder, $Total_Price_Order);
+$sqlOrderWijzig = $mysqli -> prepare("SELECT products, payment_method, total_price status FROM orders WHERE user_id = ? AND order_id = ? ORDER BY created_at DESC") or die ($mysqli->error.__LINE__);
+$sqlOrderWijzig -> bind_param('ii',$user_id, $orderID);
+$sqlOrderWijzig->execute();
+$sqlOrderWijzig->store_result();
+$sqlOrderWijzig->bind_result($productsOrder, $MethodOrder, $Total_Price_Order);
+
 ?>
 
 <section id="bestelling">
-    <div class="title">Mijn bestellingen (<?=$sqlOrder->num_rows;?>)</div>
+    <div class="title">Bestelling wijzigen</div>
     <div class="orders">
         <?php 
         $orderCount = 1;
-        while($sqlOrder->fetch()){ ?>
+        while($sqlOrderWijzig->fetch()){ ?>
             <div id="orderTab">
                 <h2>Order: <?=$orderCount;?></h2>
                 <?php
