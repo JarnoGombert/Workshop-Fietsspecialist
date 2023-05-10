@@ -21,4 +21,5 @@ $pageIsNotset = !isset($_GET['page']);
         <li><a <?php if ($pageIsset== "instellingen") { echo "class=\"active\""; } ?> href="?page=instellingen"><i class="fa fa-cog"></i><span class="menu-item">instellingen</span></a></li>
         <li><a <?php if ($pageIsset== "gebruikers") { echo "class=\"active\""; } ?> href="?page=gebruikers"><i class="fa fa-user"></i><span class="menu-item">gebruikers</span></a></li>
     <?php } ?>
+    <li><a <?php if ($pageIsset== "reparaties") { echo "class=\"active\""; } ?> href="?page=reparaties"><i class="fa fa-wrench"></i><span class="menu-item">Reperaties</span></a></li>
 </ul>
