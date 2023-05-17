@@ -3,11 +3,33 @@ $orderID = $_GET['bestellingId'];
 $user_id = $_SESSION['user_id'];
 
 if(isset($_GET['verwijderItemID'])){
+    $sqlOrder = $mysqli->query("SELECT * FROM orders WHERE user_id = '".$user_id."' ORDER BY created_at DESC") or die ($mysqli->error.__LINE__);
+    $rowOrder = $sqlOrder->fetch_assoc();
+
     $item_verwijder_id = $_GET['verwijderItemID'];
 
-    $shopping_delete = $mysqli->query("DELETE FROM orders WHERE user_id = '".$mysqli->real_escape_string($user_id)."' AND order_id = '".$orderID."'") or die($mysqli->error.__LINE__);	
+    $sqlRemoveBike = $mysqli->query("SELECT * FROM digifixx_producten WHERE id = '".$item_verwijder_id."' ORDER BY datum DESC") or die ($mysqli->error.__LINE__);
+    $rowRemoveBike = $sqlRemoveBike->fetch_assoc();
 
-    header("Location: ".$url."winkelwagen");
+    // Retrieve the current products from the database and decode the JSON string
+    $currentProducts = json_decode($rowOrder['products'], true);
+
+    // Find the index of the number to delete
+    $indexToDelete = array_search($item_verwijder_id, $currentProducts);
+    if ($indexToDelete !== false) {
+        // Remove the number from the array
+        array_splice($currentProducts, $indexToDelete, 1);
+
+        // Update the products field with the updated value
+        $newProducts = json_encode($currentProducts);
+
+        $newTotalPrice  = $rowOrder['total_price'] - $rowRemoveBike['prijs'];
+
+        $updateQuery = "UPDATE orders SET products = '".$mysqli->real_escape_string($newProducts)."', total_price = '".$mysqli->real_escape_string($newTotalPrice)."' WHERE user_id = '".$mysqli->real_escape_string($user_id)."' AND order_id = '".$mysqli->real_escape_string($orderID)."'";
+        $mysqli->query($updateQuery) or die($mysqli->error.__LINE__);
+    }
+
+    header("Location: ".$url."cms/maincms.php?page=bestellingen");
     exit;
 } else {
     $sqlOrderWijzig = $mysqli -> prepare("SELECT products, payment_method, total_price status FROM orders WHERE user_id = ? AND order_id = ? ORDER BY created_at DESC") or die ($mysqli->error.__LINE__);
@@ -16,8 +38,6 @@ if(isset($_GET['verwijderItemID'])){
     $sqlOrderWijzig->store_result();
     $sqlOrderWijzig->bind_result($productsOrder, $MethodOrder, $Total_Price_Order);  
 }
-
-
 ?>
 
 <section id="bestelling">
@@ -68,7 +88,6 @@ if(isset($_GET['verwijderItemID'])){
                     <div><strong>Betaal Methode: </strong><?=ucfirst($MethodOrder);?></div>
                     <div><strong>Totale Prijs: </strong>€ <?=$Total_Price_Order;?>,-</div>
                     <div></div>
-                    <a id="bestelling-wijzigen" class="btn" href="?page=bestelling-wijzigen&bestellingId=<?=$idOrder;?>">Opslaan</a>
                 </div>
             </div>
         <?php 
