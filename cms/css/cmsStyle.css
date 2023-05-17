@@ -734,6 +734,10 @@ main article section#bestelling #orderTab .bestelling-fiets img {
 main article section#bestelling #orderTab .bestelling-fiets .PrijsPproduct {
   text-decoration: line-through;
 }
+main article section#bestelling #orderTab .bestelling-fiets #item-verwijderen {
+  font-size: 30px;
+  color: #fff;
+}
 main article section#bestelling #orderTab .order-details {
   position: relative;
   display: flex;

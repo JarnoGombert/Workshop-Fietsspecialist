@@ -1,11 +1,22 @@
 <?php
 $orderID = $_GET['bestellingId'];
 $user_id = $_SESSION['user_id'];
-$sqlOrderWijzig = $mysqli -> prepare("SELECT products, payment_method, total_price status FROM orders WHERE user_id = ? AND order_id = ? ORDER BY created_at DESC") or die ($mysqli->error.__LINE__);
-$sqlOrderWijzig -> bind_param('ii',$user_id, $orderID);
-$sqlOrderWijzig->execute();
-$sqlOrderWijzig->store_result();
-$sqlOrderWijzig->bind_result($productsOrder, $MethodOrder, $Total_Price_Order);
+
+if(isset($_GET['verwijderItemID'])){
+    $item_verwijder_id = $_GET['verwijderItemID'];
+
+    $shopping_delete = $mysqli->query("DELETE FROM orders WHERE user_id = '".$mysqli->real_escape_string($user_id)."' AND order_id = '".$orderID."'") or die($mysqli->error.__LINE__);	
+
+    header("Location: ".$url."winkelwagen");
+    exit;
+} else {
+    $sqlOrderWijzig = $mysqli -> prepare("SELECT products, payment_method, total_price status FROM orders WHERE user_id = ? AND order_id = ? ORDER BY created_at DESC") or die ($mysqli->error.__LINE__);
+    $sqlOrderWijzig -> bind_param('ii',$user_id, $orderID);
+    $sqlOrderWijzig->execute();
+    $sqlOrderWijzig->store_result();
+    $sqlOrderWijzig->bind_result($productsOrder, $MethodOrder, $Total_Price_Order);  
+}
+
 
 ?>
 
@@ -13,10 +24,8 @@ $sqlOrderWijzig->bind_result($productsOrder, $MethodOrder, $Total_Price_Order);
     <div class="title">Bestelling wijzigen</div>
     <div class="orders">
         <?php 
-        $orderCount = 1;
         while($sqlOrderWijzig->fetch()){ ?>
             <div id="orderTab">
-                <h2>Order: <?=$orderCount;?></h2>
                 <?php
                 $producten = json_decode($productsOrder);
                 for($i = 0; $i < count($producten); $i++){
@@ -49,6 +58,7 @@ $sqlOrderWijzig->bind_result($productsOrder, $MethodOrder, $Total_Price_Order);
                                 <span>Prijs: € <?=$prijsFiets;?></span>
                             <?php } ?>
                         </div>
+                        <div><a id="item-verwijderen" href="?page=bestelling-wijzigen&bestellingId=<?=$orderID;?>&verwijderItemID=<?=$fietsID;?>"><i class="fa fa-trash-o"></i></a></div>
                     </div>
                 <?php }
                 }
@@ -58,11 +68,10 @@ $sqlOrderWijzig->bind_result($productsOrder, $MethodOrder, $Total_Price_Order);
                     <div><strong>Betaal Methode: </strong><?=ucfirst($MethodOrder);?></div>
                     <div><strong>Totale Prijs: </strong>€ <?=$Total_Price_Order;?>,-</div>
                     <div></div>
-                    <a id="bestelling-wijzigen" href="?page=bestelling-wijzigen&bestellingId=<?=$idOrder;?>"><i class="fa fa-edit"></i></a>
+                    <a id="bestelling-wijzigen" class="btn" href="?page=bestelling-wijzigen&bestellingId=<?=$idOrder;?>">Opslaan</a>
                 </div>
             </div>
         <?php 
-        $orderCount++;
         } ?>
     </div>
 </section>

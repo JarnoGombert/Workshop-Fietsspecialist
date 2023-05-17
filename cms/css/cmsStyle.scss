@@ -865,6 +865,11 @@ main {
                         .PrijsPproduct{
                             text-decoration: line-through;
                         }
+
+                        #item-verwijderen {
+                            font-size: 30px;
+                            color: $white;
+                        }
                     }
 
                     .order-details {
