@@ -783,3 +783,9 @@ main article section .title {
   font-family: "Rosario", sans-serif;
   resize: none;
 }
+
+#reparatie-select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 16px;
+}
