@@ -13,6 +13,11 @@
     $sqlPCategorie -> store_result();
 	$sqlPCategorie -> bind_result($idPCategorie, $namePCategorie);
 
+
+    if(isset($_POST['niewsbriefSent'])){
+        $email = $_POST['mail']; // sender mail address use your own
+        $shopping_insert = $mysqli->query("INSERT digifixx_nieuwsbrief SET email	= '".$email."'") or die($mysqli->error.__LINE__);	
+   }
 ?>
 <footer>    
     <div class="row1">
@@ -59,10 +64,17 @@
     </div>
 
 </footer>
+
 <div class="NB">
     <h1>Blijf op de hoogte met onze nieuwsbrief.</h1>
-    <div><input type="email" name="" placeholder="E-mail" id=""><input type="submit" class="btn" value="Aanmelden"></div>
+    <div>
+    <form class="form-group" action="#" method="POST">
+        <input type="email" id="mail" name="mail" required>
+        <input type="submit" class="btn" name="niewsbriefSent" value="Aanmelden">
+    </form>
+    </div>
 </div>
+
 <div class="footerEnd">
     <span class="FooterEndContactLeft" >
         © 2023, Fietsspeciaal Bakker
