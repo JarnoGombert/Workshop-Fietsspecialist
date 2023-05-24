@@ -698,7 +698,7 @@ main article section#reviews .reviewTitels .pageURL {
 }
 main article section#bestelling .orders {
   overflow-y: scroll;
-  height: 550px;
+  height: 475px;
   padding-right: 1rem;
 }
 main article section#bestelling .orders ::-webkit-scrollbar {
