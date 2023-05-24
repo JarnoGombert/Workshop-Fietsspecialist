@@ -6,14 +6,9 @@ $sqlOrder->execute();
 $sqlOrder->store_result();
 $sqlOrder->bind_result($orderId, $orderProducts);
 
-if ($_GET['repareerFiets']) {
+if (isset($_GET['repareerFiets'])) {
     $fietsId = $_GET['repareerFiets'];
-    $mysqli->query("INSERT INTO repairs ('user_id, product_id, status') VALUES ($user_id,$fietsId,'Waiting to be repaired')");
-    echo "INSERT INTO repairs ('user_id, product_id, status') VALUES ($user_id,$fietsId,'Waiting to be repaired')";
-    
-    // $shopping_insert = $mysqli->query("INSERT shopping_bag SET user_id = '".$mysqli->real_escape_string($user_id)."',
-    // product_id 	= '".$product_id."',
-    // quantity	= '".$quantity."'") or die($mysqli->error.__LINE__);
+    $mysqli->query("INSERT repairs SET user_id = $user_id, product_id = $fietsId, status = 'Waiting to be repaired'");
 }
 ?>
 
@@ -47,8 +42,28 @@ $repairs->bind_param('i',$user_id);
 $repairs->execute();
 $repairs->store_result();
 $repairs->bind_result($fietsId, $status);
-while($repairs->fetch()) { ?>
-    <h2><?=$fietsId;?> <?=$status?></h2>
+while($repairs->fetch()) {
+    $orderFietsen = $mysqli -> prepare("SELECT id, naam, model, merk, prijs_korting, prijs, status FROM digifixx_producten WHERE id = ?") or die ($mysqli->error.__LINE__);
+    $orderFietsen->bind_param('i',$fietsId);
+    $orderFietsen->execute();
+    $orderFietsen->store_result();
+    $orderFietsen->bind_result($fietsID, $naamFiets, $modelFiets, $merkFiets, $prijsKFiets, $prijsFiets, $statusFiets);
+    $orderFietsen->fetch(); 
+    $FietsIMG = $mysqli->query("SELECT * FROM digifixx_images WHERE product_id = ".$fietsID."");
+    $rowIMG = $FietsIMG->fetch_assoc();
+    if($FietsIMG->num_rows > 0)
+    {
+        $imageURL = '../img/'.$rowIMG["file_name"];
+    }else
+    {
+        $imageURL = '../img/noimg.jpg';
+    }
+    ?>
+    
+    <div class="fietsRepairs">
+        
+        <?=$naamFiets?> <img src="<?=$imageURL?>">
+    </div>
 <?php
 }
 ?>
