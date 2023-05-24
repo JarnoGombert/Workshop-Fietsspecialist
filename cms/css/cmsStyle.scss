@@ -923,6 +923,19 @@ main {
     background-color: $donker-groen;
     padding: 15px;
     border-radius: 8px;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+
+    p {
+        font-size: 20px;
+    }
+
+    img {
+        height: 300px;
+    }
 }
 
 #reparatie-select {
