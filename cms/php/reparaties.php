@@ -15,7 +15,7 @@ if (isset($_GET['repareerFiets'])) {
 <h1>Voeg een reparatie toe</h1>
 <form method="get">
     <input type="hidden" name="page" value="reparaties">
-    <select name="repareerFiets">
+    <select id="reparatie-select" name="repareerFiets">
     <?php while($sqlOrder->fetch()) { ?>
         <?php
             $producten = json_decode($orderProducts);
@@ -42,7 +42,7 @@ $repairs->bind_param('i',$user_id);
 $repairs->execute();
 $repairs->store_result();
 $repairs->bind_result($fietsId, $status);
-while($repairs->fetch()) { ?>
+while($repairs->fetch()) {
     $orderFietsen = $mysqli -> prepare("SELECT id, naam, model, merk, prijs_korting, prijs, status FROM digifixx_producten WHERE id = ?") or die ($mysqli->error.__LINE__);
     $orderFietsen->bind_param('i',$fietsId);
     $orderFietsen->execute();
