@@ -27,7 +27,6 @@ body {
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 17px;
   text-decoration: none;
@@ -307,8 +306,7 @@ main article .deleteIMG {
   width: 100%;
 }
 main article .deleteIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100%;
   width: 100%;
   border-radius: 12px;
@@ -391,8 +389,7 @@ main article section#paginaBewerken .right .image-wrapper .img, main article sec
   width: 190px;
 }
 main article section#paginaBewerken .right .image-wrapper .img img, main article section#Productbewerken .right .image-wrapper .img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#paginaBewerken .right .image-wrapper .img .btn-delete, main article section#Productbewerken .right .image-wrapper .img .btn-delete {
@@ -537,8 +534,7 @@ main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG {
   width: 80px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#webpaginas #webpaginas-wrapper .webpagina .pageTITLE {
@@ -571,8 +567,7 @@ main article section#webpaginas .webpaginaTitels .pageIMG {
   width: auto;
 }
 main article section#webpaginas .webpaginaTitels .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#webpaginas .webpaginaTitels .pageCAT {
@@ -600,8 +595,7 @@ main article section#producten #producten-wrapper .product .pageIMG {
   width: 80px;
 }
 main article section#producten #producten-wrapper .product .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#producten #producten-wrapper .product .pageCAT {
@@ -637,8 +631,7 @@ main article section#producten .productTitle .pageIMG {
   width: auto;
 }
 main article section#producten .productTitle .pageIMG img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 main article section#producten .productTitle .pageCAT {
@@ -703,6 +696,40 @@ main article section#reviews .reviewTitels .pageCAT {
 }
 main article section#reviews .reviewTitels .pageURL {
   grid-column: span 3/span 3;
+}
+main article section#reparatie-overzicht {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+main article section#reparatie-overzicht .header {
+  display: grid;
+  width: 60%;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  padding-bottom: 10px;
+}
+main article section#reparatie-overzicht .header #naam {
+  grid-column: span 2/span 2;
+}
+main article section#reparatie-overzicht .header p {
+  margin: 0;
+  grid-column: span 2/span 2;
+}
+main article section#reparatie-overzicht .header #naam, main article section#reparatie-overzicht .header p, main article section#reparatie-overzicht .header .counter {
+  font-weight: 600;
+}
+main article section#reparatie-overzicht .reparatie-tab .inner {
+  display: grid;
+  width: 60%;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: center;
+}
+main article section#reparatie-overzicht .reparatie-tab .inner #naam {
+  grid-column: span 2/span 2;
+}
+main article section#reparatie-overzicht .reparatie-tab .inner p {
+  margin: 0;
+  grid-column: span 2/span 2;
 }
 main article section#bestelling .orders {
   overflow-y: scroll;
@@ -802,4 +829,4 @@ main article section .title {
   padding: 0.5rem;
   border-radius: 8px;
   font-size: 16px;
-}/*# sourceMappingURL=cmsStyle.css.map */
+}
