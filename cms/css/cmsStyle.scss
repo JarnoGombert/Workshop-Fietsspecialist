@@ -865,6 +865,11 @@ main {
                         .PrijsPproduct{
                             text-decoration: line-through;
                         }
+
+                        #item-verwijderen {
+                            font-size: 30px;
+                            color: $white;
+                        }
                     }
 
                     .order-details {
@@ -927,4 +932,10 @@ main {
     background-color: $donker-groen;
     padding: 15px;
     border-radius: 8px;
+}
+
+#reparatie-select {
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 16px;
 }

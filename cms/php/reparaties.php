@@ -33,7 +33,7 @@ if (isset($_GET['repareerFiets'])) {
         ?>
     <?php } ?>
     </select>
-    <input type="submit" value="Repareer!">
+    <input type="submit" class="btn" value="Repareer!">
 </form>
 <h1>Huidige reparaties</h1>
 <?php
@@ -42,7 +42,7 @@ $repairs->bind_param('i',$user_id);
 $repairs->execute();
 $repairs->store_result();
 $repairs->bind_result($fietsId, $status);
-while($repairs->fetch()) {
+while($repairs->fetch()) { ?>
     $orderFietsen = $mysqli -> prepare("SELECT id, naam, model, merk, prijs_korting, prijs, status FROM digifixx_producten WHERE id = ?") or die ($mysqli->error.__LINE__);
     $orderFietsen->bind_param('i',$fietsId);
     $orderFietsen->execute();
