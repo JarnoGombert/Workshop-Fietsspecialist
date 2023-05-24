@@ -800,6 +800,7 @@ main article section .title {
   justify-content: start;
   align-items: center;
   gap: 30px;
+  margin-bottom: 20px;
 }
 .fietsRepairs p {
   font-size: 20px;

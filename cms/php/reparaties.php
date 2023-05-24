@@ -61,7 +61,7 @@ while($repairs->fetch()) {
     ?>
     
     <div class="fietsRepairs">
-        <p><?=$naamFiets?></p>
+        <p><?=$merkFiets;?><?=$modelFiets;?><?=$naamFiets;?></p>
         <img src="<?=$imageURL?>">
         <p>Status: <?=$status?></p>
     </div>
