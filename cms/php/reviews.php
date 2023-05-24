@@ -3,7 +3,7 @@ $sqlReviews = $mysqli -> prepare("SELECT id, tekst, auteur, status FROM digifixx
 //$sqlReviews -> bind_param('i',$footerId);
 $sqlReviews->execute();
 $sqlReviews->store_result();
-$sqlReviews->bind_result($idReviews, $auteurReviews, $statusReviews);
+$sqlReviews->bind_result($idReviews, $reviewTekst, $auteurReviews, $statusReviews);
 ?>
 
 <section id="reviews">
