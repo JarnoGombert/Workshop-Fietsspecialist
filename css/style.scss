@@ -927,23 +927,7 @@ footer{
         position: relative;
         display: flex;
         justify-content: space-evenly;
-
-        .swiper-wrapper{
-            padding: 10px;
-            gap: 20px;
-        }
-        .swiperReview-pagination{
-                .swiperReview-pagination-bullet-active{
-                    background: $white !important;
-                }
-                .swiperReview-pagination-bullet {
-                    height: 15px !important;
-                    width: 15px !important;
-                }
-            }
-        .swiperReview-button-prev, .swiperReview-button-next{
-            color: $primary-color !important;
-        }
+        gap: 20px;
 
         .ReviewCard
         {

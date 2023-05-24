@@ -11,22 +11,24 @@
         }
         if($row['id'] == '3') {
             //Reviewen items ophalen
-            $sqlReview = $mysqli -> prepare("SELECT id, titel, tekst, aantal_sterren, auteur, paginaurl, status FROM digifixx_reviews WHERE status = 'actief' ORDER BY id DESC LIMIT 4") or die ($mysqli->error.__LINE__);
+            $sqlReview = $mysqli -> prepare("SELECT id, tekst, aantal_sterren, auteur FROM digifixx_reviews WHERE status = 'actief' ORDER BY id DESC LIMIT 5") or die ($mysqli->error.__LINE__);
             $sqlReview->execute();
             $sqlReview->store_result();
-            $sqlReview->bind_result($idReview, $titelReview, $TekstReview, $sterrenReview, $auteurReview, $urlReview, $statusReview);
-            ?>
-        <div class="Review">
-            <h2 style="text-align: center; margin-bottom: 50px; font-size: 40px">Reviews</h2>
-            <div id="reviews" class="ReviewRow1 swiper">
-                <div class="swiper-wrapper">
+            $sqlReview->bind_result($idReview, $TekstReview, $sterrenReview, $auteurReview);
+        ?>
+            <div class="Review">
+                <div>
+                    <h2 style="text-align: center; margin-bottom: -25px; font-size: 40px">Reviews</h2>
+                    <p style="text-align: center; margin-bottom: 20px; color: darkgray;">(Log eerst in om een review te plaatsen)</p>
+                </div>
+                <div class="ReviewRow1">
                     <?php while($sqlReview->fetch()){ ?>
                         <div class="ReviewCard">
                             <div class="reviewTxt">
                                 <?=$auteurReview;?>
                             </div>
                             <div class="reviewTxt">
-                                <?php for($i = 0; $i <= $sterrenReview; $i++){ ?>
+                                <?php for($i = 1; $i <= $sterrenReview; $i++){ ?>
                                     <i class="fa fa-star"></i>
                                 <?php } ?>
                             </div>
@@ -36,11 +38,7 @@
                         </div>
                     <?php } ?>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
             </div>
-        </div>
         <?php
         }
             if($row['id'] == '4') {
