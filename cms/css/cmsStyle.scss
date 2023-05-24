@@ -766,22 +766,13 @@ main {
 
                     .review {
                         display: grid;
-                        grid-template-columns: repeat(10, minmax(0, 1fr));
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
                         grid-gap: 30px;
                         align-items: center;
                         justify-items: center;
         
                         .page{
                             transition: all 0.3s;
-                            &TITLE{
-                                grid-column: span 2 / span 2;
-                            }
-                            &CAT{
-                                grid-column-start: 5;
-                            }
-                            &URL{
-                                grid-column: span 3 / span 3;
-                            }
                             &EDIT{
                                 &:hover {
                                     i {
@@ -798,7 +789,7 @@ main {
                 }
                 .reviewTitels {
                     display: grid;
-                    grid-template-columns: repeat(10, minmax(0, 1fr));
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
                     grid-gap: 30px;
                     align-items: center;
                     justify-items: center;
@@ -811,15 +802,6 @@ main {
                         
                     .page{
                         transition: all 0.3s;
-                        &TITLE{
-                            grid-column: span 2 / span 2;
-                        }
-                        &CAT{
-                            grid-column-start: 5;
-                        }
-                        &URL{
-                            grid-column: span 3 / span 3;
-                        }
                     }
                 }
             }
@@ -862,6 +844,12 @@ main {
                         }
                     }
                 }
+            .actief {
+                color: rgb(0, 132, 0);
+            }
+
+            .niet-actief {
+                color: rgb(255, 0, 0);
             }
 
             &#bestelling{
@@ -973,6 +961,20 @@ main {
     background-color: $donker-groen;
     padding: 15px;
     border-radius: 8px;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+
+    p {
+        font-size: 20px;
+    }
+
+    img {
+        height: 300px;
+    }
 }
 
 #reparatie-select {

@@ -12,7 +12,6 @@ if (isset($_GET['repareerFiets'])) {
 }
 if($rowUser['niveau'] != "admin") {
 ?>
-
     <h1>Voeg een reparatie toe</h1>
     <form method="get">
         <input type="hidden" name="page" value="reparaties">
@@ -66,9 +65,12 @@ if($rowUser['niveau'] != "admin") {
             <?=$naamFiets?> <img src="<?=$imageURL?>">
         </div>
     <?php
-    }
-}
-?>
+    } ?>
+    </select>
+    <input type="submit" class="btn" value="Repareer!">
+</form>
+<?php } ?>
+
 
 <?php
 if($rowUser['niveau'] == "admin") { ?>
