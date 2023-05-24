@@ -787,20 +787,7 @@ footer .rowHeader a::after, footer .rowCategorieen a::after {
   position: relative;
   display: flex;
   justify-content: space-evenly;
-}
-.Review .ReviewRow1 .swiper-wrapper {
-  padding: 10px;
   gap: 20px;
-}
-.Review .ReviewRow1 .swiperReview-pagination .swiperReview-pagination-bullet-active {
-  background: #fff !important;
-}
-.Review .ReviewRow1 .swiperReview-pagination .swiperReview-pagination-bullet {
-  height: 15px !important;
-  width: 15px !important;
-}
-.Review .ReviewRow1 .swiperReview-button-prev, .Review .ReviewRow1 .swiperReview-button-next {
-  color: #DDD !important;
 }
 .Review .ReviewRow1 .ReviewCard {
   width: 100%;

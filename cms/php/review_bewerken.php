@@ -1,24 +1,22 @@
 <?php
 if(isset($_GET['opslaan']) == "ja") {
     $sql_insert = $mysqli->query("UPDATE digifixx_reviews SET 
-    titel       = '" . $mysqli->real_escape_string($_POST['titel']) . "',
     auteur       = '" . $mysqli->real_escape_string($_POST['auteur']) . "',
     aantal_sterren = '" . $mysqli->real_escape_string($_POST['sterren']) . "',
     tekst = '" . $mysqli->real_escape_string($_POST['tekst']) . "',
-    status      = '" . $_POST['status'] . "',
-    paginaurl   = '" . strtolower($_POST['paginaurl']) . "' WHERE id = '" . $_GET['id'] . "' ") or die($mysqli->error . __LINE__);
+    status   = '" . $_POST['status'] . "' WHERE id = '" . $_GET['id'] . "' ") or die($mysqli->error . __LINE__);
 
     //pagina redirecten om deze te kunnen bewerken
     header('Location: ?page=review_bewerken&id=' . $_GET['id'] . '');
     exit;
 }
 
-$sqlReviews = $mysqli -> prepare("SELECT id, titel, auteur, tekst, aantal_sterren, paginaurl, status FROM digifixx_reviews WHERE id = ? ORDER BY id") or die ($mysqli->error.__LINE__);
+$sqlReviews = $mysqli -> prepare("SELECT id, auteur, tekst, aantal_sterren, status FROM digifixx_reviews WHERE id = ? ORDER BY id") or die ($mysqli->error.__LINE__);
 $reviewID = $_GET['id'];
 $sqlReviews->bind_param('i',$reviewID);
 $sqlReviews->execute();
 $sqlReviews->store_result();
-$sqlReviews->bind_result($idReviews, $titelReviews, $auteurReviews, $tekstReviews, $sterrenReviews, $urlReviews, $statusReviews);
+$sqlReviews->bind_result($idReviews, $auteurReviews, $tekstReviews, $sterrenReviews, $statusReviews);
 $sqlReviews->fetch();
 
 //Als $_GET opgeslagen=ja is de pagina correct ingevuld en opgeslagen: dus we tonen een alert
@@ -36,10 +34,6 @@ if (isset($_GET['opslaan']) == "ja") {
         <div class="title">Pagina bewerken</div>
         <form action="?page=review_bewerken&id=<?=$_GET['id'];?>&opslaan=ja" method="POST">
             <div class="form-group">
-                <label for="titel">Titel Review</label>
-                <input type="text" value="<?=$titelReviews;?>" name="titel" id="titel">
-            </div>
-            <div class="form-group">
                 <label for="auteur">Auteur</label>
                 <input type="text" value="<?=$auteurReviews;?>" name="auteur" id="auteur">
             </div>
@@ -50,14 +44,6 @@ if (isset($_GET['opslaan']) == "ja") {
             <div class="form-group">
                 <label for="tekst">Pagina Tekst</label>
                 <textarea name="tekst" id="tekst" rows="7"><?=$tekstReviews;?></textarea>
-            </div>
-            <div class="form-group">
-                <label for="">Review url Voorbeeld</label>
-                <input type="text" value="<?=$url;?><?=$urlReviews;?>/" readonly>
-            </div>
-            <div class="form-group">
-                <label for="paginaurl">Review url</label>
-                <input type="text" value="<?=$urlReviews;?>" name="paginaurl" id="paginaurl">
             </div>
             <div class="form-group">
                 <label for="status">Review status</label>
