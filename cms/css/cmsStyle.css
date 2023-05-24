@@ -679,12 +679,6 @@ main article section#reviews .reviewTitels > div {
 main article section#reviews .reviewTitels .page {
   transition: all 0.3s;
 }
-main article section .actief {
-  color: rgb(0, 132, 0);
-}
-main article section .niet-actief {
-  color: rgb(255, 0, 0);
-}
 main article section#reparatie-overzicht {
   display: flex;
   flex-direction: column;
@@ -718,6 +712,12 @@ main article section#reparatie-overzicht .reparatie-tab .inner #naam {
 main article section#reparatie-overzicht .reparatie-tab .inner p {
   margin: 0;
   grid-column: span 2/span 2;
+}
+main article section .actief {
+  color: rgb(0, 132, 0);
+}
+main article section .niet-actief {
+  color: rgb(255, 0, 0);
 }
 main article section#bestelling .orders {
   overflow-y: scroll;
