@@ -1,6 +1,7 @@
 <div id="topbar">
     <a href="<?=$url;?>" target="_blank">
-        <img id="logo" src="images/logo.JPG" height="100">
+        <!-- <img id="logo" src="images/logo.JPG" height="100"> -->
+        <img id="logo" src="images/Fietsspeciaal-Bakker-Logo.png" height="100">
     </a>
     <!-- <div class="right">
         <div id="nieuw">
