@@ -796,6 +796,16 @@ main article section .title {
   background-color: #57918a;
   padding: 15px;
   border-radius: 8px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+}
+.fietsRepairs p {
+  font-size: 20px;
+}
+.fietsRepairs img {
+  height: 300px;
 }
 
 #reparatie-select {
