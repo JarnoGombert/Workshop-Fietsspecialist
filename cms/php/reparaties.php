@@ -16,39 +16,41 @@ if ($_GET['repareerFiets']) {
     // quantity	= '".$quantity."'") or die($mysqli->error.__LINE__);
 }
 ?>
-
-<h1>Voeg een reparatie toe</h1>
-<form method="get">
-    <input type="hidden" name="page" value="reparaties">
-    <select name="repareerFiets">
-    <?php while($sqlOrder->fetch()) { ?>
-        <?php
-            $producten = json_decode($orderProducts);
-            for($i = 0; $i < count($producten); $i++) {
-                $orderFietsen = $mysqli -> prepare("SELECT naam, model, merk FROM digifixx_producten WHERE id = ?") or die ($mysqli->error.__LINE__);
-                $orderFietsen->bind_param('i',$producten[$i]);
-                $orderFietsen->execute();
-                $orderFietsen->store_result();
-                $orderFietsen->bind_result($naamFiets, $modelFiets, $merkFiets);
-                $orderFietsen->fetch();
-                ?>
-                <option value="<?=$producten[$i];?>"><?=$merkFiets;?><?=$modelFiets;?><?=$naamFiets;?></option>
-                <?php
-            }
-        ?>
-    <?php } ?>
-    </select>
-    <input type="submit" value="Repareer!">
-</form>
-<h1>Huidige reparaties</h1>
-<?php
-$repairs = $mysqli -> prepare("SELECT product_id, status FROM repairs WHERE user_id = ?") or die ($mysqli->error.__LINE__);
-$repairs->bind_param('i',$user_id);
-$repairs->execute();
-$repairs->store_result();
-$repairs->bind_result($fietsId, $status);
-while($repairs->fetch()) { ?>
-    <h2><?=$fietsId;?> <?=$status?></h2>
-<?php
-}
-?>
+<section id="reparatie">
+    <div class="title">Reparaties</div>
+        <h1>Voeg een reparatie toe</h1>
+    <form method="get">
+        <input type="hidden" name="page" value="reparaties">
+        <select id="reparatie-select" name="repareerFiets">
+        <?php while($sqlOrder->fetch()) { ?>
+            <?php
+                $producten = json_decode($orderProducts);
+                for($i = 0; $i < count($producten); $i++) {
+                    $orderFietsen = $mysqli -> prepare("SELECT naam, model, merk FROM digifixx_producten WHERE id = ?") or die ($mysqli->error.__LINE__);
+                    $orderFietsen->bind_param('i',$producten[$i]);
+                    $orderFietsen->execute();
+                    $orderFietsen->store_result();
+                    $orderFietsen->bind_result($naamFiets, $modelFiets, $merkFiets);
+                    $orderFietsen->fetch();
+                    ?>
+                    <option value="<?=$producten[$i];?>"><?=$merkFiets;?><?=$modelFiets;?><?=$naamFiets;?></option>
+                    <?php
+                }
+            ?>
+        <?php } ?>
+        </select>
+        <input type="submit" class="btn" value="Repareer!">
+    </form>
+    <h1>Huidige reparaties</h1>
+    <?php
+    $repairs = $mysqli -> prepare("SELECT product_id, status FROM repairs WHERE user_id = ?") or die ($mysqli->error.__LINE__);
+    $repairs->bind_param('i',$user_id);
+    $repairs->execute();
+    $repairs->store_result();
+    $repairs->bind_result($fietsId, $status);
+    while($repairs->fetch()) { ?>
+        <h2><?=$fietsId;?> <?=$status?></h2>
+    <?php
+    }
+    ?>
+</section>

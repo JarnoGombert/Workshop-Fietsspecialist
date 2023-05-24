@@ -706,7 +706,7 @@ main article section#reviews .reviewTitels .pageURL {
 }
 main article section#bestelling .orders {
   overflow-y: scroll;
-  height: 550px;
+  height: 475px;
   padding-right: 1rem;
 }
 main article section#bestelling .orders ::-webkit-scrollbar {
@@ -741,6 +741,10 @@ main article section#bestelling #orderTab .bestelling-fiets img {
 }
 main article section#bestelling #orderTab .bestelling-fiets .PrijsPproduct {
   text-decoration: line-through;
+}
+main article section#bestelling #orderTab .bestelling-fiets #item-verwijderen {
+  font-size: 30px;
+  color: #fff;
 }
 main article section#bestelling #orderTab .order-details {
   position: relative;
@@ -786,4 +790,10 @@ main article section .title {
   padding: 5px 10px;
   font-family: "Rosario", sans-serif;
   resize: none;
-}/*# sourceMappingURL=cmsStyle.css.map */
+}
+
+#reparatie-select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 16px;
+}
