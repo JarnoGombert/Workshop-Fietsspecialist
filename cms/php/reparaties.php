@@ -66,9 +66,6 @@ if($rowUser['niveau'] != "admin") {
         </div>
     <?php
     } ?>
-    </select>
-    <input type="submit" class="btn" value="Repareer!">
-</form>
 <?php } ?>
 
 
