@@ -60,6 +60,12 @@ $row = $result->fetch_assoc();
     <script type="text/javascript" src="<?=$url;?>jquery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="<?=$url;?>jquery/digifixx.js"></script>
 
+    <script>
+      if (typeof navigator.serviceWorker !== 'undefined') {
+        navigator.serviceWorker.register('serviceworker.js');
+      }
+    </script>
+
     <title><?php if(isset($row['item1'])){echo $row['item1'];}else{echo $row['merk'] . " " . $row['model'] . " " . $row['naam'];}?></title>
 </head>
 <body>
