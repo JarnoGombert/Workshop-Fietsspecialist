@@ -33,7 +33,7 @@ if (isset($_GET['opslaan']) == "ja") {
         <form action="?page=review_bewerken&id=<?=$_GET['id'];?>&opslaan=ja" method="POST">
             <div class="form-group">
                 <label for="auteur">Auteur</label>
-                <input type="text" value="<?=$auteurReviews;?>" name="auteur" id="auteur" disabled>
+                <input type="text" value="<?=$auteurReviews;?>" name="auteur" id="auteur">
             </div>
             <h1>Huidige status: <span class="<?=$statusReviews == 'actief' ? 'actief' : 'niet-actief';?>"><?=$statusReviews;?></span></h1>
             <div class="form-group">

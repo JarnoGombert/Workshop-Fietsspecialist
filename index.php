@@ -55,6 +55,7 @@ $row = $result->fetch_assoc();
     <link rel="shortcut icon" href="<?=$url;?>favicon.ico" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.webmanifest">
     <!-- jquery files -->
     <script type="text/javascript" src="<?=$url;?>jquery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="<?=$url;?>jquery/digifixx.js"></script>
