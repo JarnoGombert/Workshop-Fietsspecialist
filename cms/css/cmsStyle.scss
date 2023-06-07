@@ -806,6 +806,46 @@ main {
                 }
             }
 
+            &#reparatie-overzicht {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+
+                .header {
+                    display: grid;
+                    width: 60%;
+                    grid-template-columns: repeat(6, minmax(0, 1fr));
+                    padding-bottom: 10px;
+                    
+                    #naam {
+                        grid-column: span 2 / span 2;
+                    }
+                    p{
+                        margin: 0;
+                        grid-column: span 2 / span 2;
+                    }
+                    #naam, p, .counter {
+                        font-weight: 600;
+                    }
+                }
+                .reparatie-tab {
+                    .inner {
+                        display: grid;
+                        width: 60%;
+                        grid-template-columns: repeat(6, minmax(0, 1fr));
+                        align-items: center;
+
+                        #naam {
+                            grid-column: span 2 / span 2;
+                        }
+                        p{
+                            margin: 0;
+                            grid-column: span 2 / span 2;
+                        }
+                    }
+                }
+            }
+            
             .actief {
                 color: rgb(0, 132, 0);
             }
@@ -928,6 +968,7 @@ main {
     justify-content: start;
     align-items: center;
     gap: 30px;
+    margin-bottom: 20px;
 
     p {
         font-size: 20px;
